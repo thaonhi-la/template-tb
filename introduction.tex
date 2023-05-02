@@ -1,7 +1,90 @@
-L'introduction est une section requise dans un rapport technique. Introduisez votre travail, l'idée de départ et les objectifs attendus. Un lecteur qui découvrirait votre projet au travers de cette introduction devrait ainsi être capable d'en comprendre le cadre, l'idée générale et les aboutissants du projet.
+%L'introduction est une section requise dans un rapport technique. Introduisez votre travail, l'idée de départ et les objectifs attendus. Un lecteur qui découvrirait votre projet au travers de cette introduction devrait ainsi être capable d'en comprendre le cadre, l'idée générale et les aboutissants du projet.
+Dans le domaine de la santé, les nouveau-nés sont des patients requérant une attention particulière et un contrôle précis de leur 
+paramètres vitaux. En effet, dès leur plus jeune âge, ils peuvent être victimes de plusieurs maladies dont les détresses respiratoires. 
+
 
 \section{Contexte}
-Cette section \underline{n'est pas obligatoire}, mais elle est souvent présente dans un rapport technique pour compléter l'introduction et définir le contexte du travail \cad le cadre formel dans lequel le travail est mené.
+%Cette section \underline{n'est pas obligatoire}, mais elle est souvent présente dans un rapport technique pour compléter l'introduction et définir le contexte du travail \cad le cadre formel dans lequel le travail est mené.
+Dans le domaine médical, plusieurs appareils de monitoring sont utilisés afin de contrôler les paramètres vitaux des patients. 
+Selon le type de patient, les appareils utilisés sont différents. En effet, un nouveau-né a un comportement différent d'une personne 
+adulte. Il est alors nécessaire de contrôler ces paramètres vitaux à l'aide d'appareils adaptés. \\
+Ce Travail de Bachelor porte sur un débitmètre respiratoire innovant. Ce dernier permettrait de calculer le flux d'air entrant et sortant
+du patient et, ainsi, de contrôler son débit respiratoire. 
+\section{Etat de l'art}
+\subsection{Débitmètre néonataux sur le marché}
+\begin{comment}
+Actuellement, ce qui existe sur le marché sont des anémomètres à double fils chauds (double hot wire anemometer). Ces débitmètre 
+mesure le flux des patients néonataux. \\
+Les revues scientifiques parlent également de débitmètre pédiatrique. Leur fonctionnement  
+\end{comment}
+Plusieurs entreprises proposent des débitmètre néonataux. Ces entreprises ont été regroupées dans le tableau ci-dessous avec les 
+techniques utilisées. \\
+
+\begin{centering}
+    \begin{tabular}{|c|c|}
+        \hline
+        Entreprises & Technologie                         \\
+        \hline
+        Sensirion   & Capteur thermique de débit massique \\
+        \hline
+        Mim-Germany & Anémomètre à fil chaud double       \\
+        \hline
+        Europlaz    &                                     \\
+        \hline
+        Draeger     & Anémomètre à fil chaud              \\
+        \hline
+        \label{tab:marques}
+    \end{tabular}
+\end{centering}
+
+
+\subsection{Revues scientifiques}
+Les revues scientifiques sont également des ressources intéressantes à considérer pour l'élaboration de l'état de l'art. En effet, les 
+articles scientifiques vont permettre d'établir une liste des techniques déjà exploitées, leur fonctionnement plus en détail ainsi que leurs 
+performances. \\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{images/DRP_Etat_de_l_art.png}
+    \caption{Articles scientifiques par ordre chronologique}
+    \label{fig:articlesChrono}
+\end{figure}
+
+Les articles pertinants pour ce Travail de Bachelor sont résumés dans ce chapitre et classé par ordre chronologique sur la figure 
+\ref{fig:articlesChrono}. \\
+
+Le premier article \cite{rolfe_bioengineering_2009}, mentionne plusieurs débitmètres différents. Le pneumotacographe de Fleisch, par exemple, est un 
+système par lequel le débit repiratoire est mesuré grâce à une différence de pression. Cette différence de pression est engendré par 
+un rétrécissement de l'espace de circulation du gaz (principe de Venturi) \cite{oberg_biomedical_2011}. \\
+
+Par la suite, il est expliqué que le pneumotachographe est gentiment remplacé par les anémomètres à fil chaud. Ces capteurs sont 
+constitués d'un ou plusieurs fils chauffé par une source de courant. Lorsqu'un flux d'air va souffler sur le fil, la chaleur sera 
+transférée du fil au gaz. Le capteur viendra alors mesurer la quantité de chaleur transférée ainsi que la différence de température entre 
+le fil et le gaz pour finalement calculer le débit \cite{oberg_biomedical_2011}. \\
+L'article sus-mentionné conseil l'utilisation des anémomètres à plusieurs fils contrairement à ceux à un seul fil qui aurait des performances 
+moindres. 
+L'anémomètre à fils chauds est une technologie incorporée par exemple dans la machine "Draeger Babylog", marque mentionnée dans le tableau \ref{tab:marques}. \\
+
+Le second article exploite le principe de Venturi mentionné auparavant \cite{jacq_ultra-low_2011}. Il est destiné à une aplication 
+quelques peu différente puisqu'il est  intégrer dans un ressuscitateur. Un tel appareil permet la réanimation du patient qui ne respire 
+plus. Le ressuscitateur gonfle les poumons d'air et ainsi s'assure qu'un bon taux d'oxygène circule dans le patient. \\
+Pour les nouveaux-né, la quantité d'air injectée dans les poumons doit être mesurée car un trop grand débit pourrait rapidement engendrer 
+des dégats. \\
+Couplé au système de Venturi, un capteur de force vient mesurer la pression et le volume d'air passant par le ressuscitateur. \\
+
+\section{Un débitmètre innovant}
+Ce travail de Bachelor est un développement d'un débitmètre dont le principe de fonctionnement est innovant. Il utilise des membranes 
+nanoporeuses qui permettent une acquisition de données rapides. 
+
+\section{Fonctionnement du débitmètre respiratoire pédiatrique}
+Le débitmètre
+
+\section{Cahier des charges}
+
+\section{Livrables}
+
+\section{Planification}
+
+\section{Plan du rapport}
 
 %%if
 \section{Citations et bibliographie}
