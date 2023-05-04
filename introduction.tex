@@ -44,7 +44,7 @@ articles scientifiques vont permettre d'établir une liste des techniques déjà
 performances. \\
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.5]{images/DRP_Etat_de_l_art.png}
+    \includegraphics[scale = 0.3]{images/DRP_Etat_de_l_art.png}
     \caption{Articles scientifiques par ordre chronologique}
     \label{fig:articlesChrono}
 \end{figure}
@@ -71,12 +71,58 @@ Pour les nouveaux-né, la quantité d'air injectée dans les poumons doit être 
 des dégats. \\
 Couplé au système de Venturi, un capteur de force vient mesurer la pression et le volume d'air passant par le ressuscitateur. \\
 
+Une autre technologie pour débitmètre consiste à utiliser le transfert de chaleur entre deux transistors. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{images/Debitmetre_transistors.png}
+    \caption{Principe du débitmètre à transistors}
+    \label{fig:transistors}
+\end{figure}
+C'est un principe encore innovant décrit dans l'article \cite{giorgino_design_2014} et utilisé dans l'article \cite{rosi_device_2016}. 
+Le premier transistor est placé perpendiculairement au flux d'air sur un PCB. \\
+Le second est fixé de l'autre côté du PCB dos à dos avec le premier transistor (cf. figure \ref{fig:transistors}). \\
+De cette manière, le capteur sera capable de distinguer une expiration d'une inspiration. Le temps de réponse d'un tel capteur serait 
+d'environ 340ms. C'est un bon temps de réponse en comparaison des capteurs existants sur le marché. Cependant, diverses améliorations 
+doivent encore être faites avant de pouvoir utiliser une telle technologie. \\
+
+\begin{comment}
+L'article suivant est intéressant au niveau du listage des débitmètres pédiatriques existants \cite{}. En effet, il étudie les différents fonctionnements 
+existants et compare les signaux obtenus. Étant donné que cet article étudie plus précisément une caractéristique ("IN-line" vs "Flow-Through"), 
+il est moins important dans le cadre de ce projet.\\
+\end{comment}
+
+Un autre article mentionne les membranes nanoporeuses comme capteur \cite{moharamzadeh_fabrication_2018}. Cependant, ces capteurs sont pour l'humidité et non le débit 
+respiratoire, bien que ces deux mesures sont en lien. 
+
+
 \section{Un débitmètre innovant}
-Ce travail de Bachelor est un développement d'un débitmètre dont le principe de fonctionnement est innovant. Il utilise des membranes 
-nanoporeuses qui permettent une acquisition de données rapides. 
+Ce travail de Bachelor est une recherche à propos d'un débitmètre dont le principe de fonctionnement est encore innovant. Il utilise des 
+membranes nanoporeuses qui permettent une acquisition de données rapides. 
 
 \section{Fonctionnement du débitmètre respiratoire pédiatrique}
-Le débitmètre
+Le capteur développé lors de ce Travail de Bachelor, comme évoqué plus haut, repose sur une membrane nanoporeuse achetée sur le marché. 
+Un côté de la membrane va être recouverte d'un matériau conducteur, l'or. Puis, Les pores de cette membrane sont remplies par 
+électrodéposition avec une solution de Tellure de Bismuth (cf. figure \ref{fig:electrodeposition}). 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{images/Electrodeposition.png}
+    \caption{Electrodéposition \cite{ruiz-gomez_electrodeposition_2022}}
+    \label{fig:electrodeposition}
+\end{figure}
+
+Par la suite, ces étape seront répétées une seconde fois afin d'obtenir le capteur suivant :  
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{images/CapteurFUN.png}
+    \caption{Capteur par membranes nanoporeuses}
+    \label{fig:capteurFUN}
+\end{figure}
+
+La couche d'or en dessous du capteur permet de court-circuiter les deux membranes ensembles. \\
+Un corps de chauffe est placé entre les deux membranes nanoporeuses. Une différence de température entre ces membranes va se créer 
+lorsque le patient viendra expirer ou inspirer de l'air sur le corps de chauffe. \\
+Avec cette différence de température de part et d'autre du dispositif, une tension va apparaître. Il sera alors possible de lier 
+cette tension au débit inspiré et expiré du nouveau-né.\\
 
 \section{Cahier des charges}
 
