@@ -106,9 +106,24 @@ Ce travail de Bachelor est une recherche à propos d'un débitmètre dont le pri
 membranes nanoporeuses qui permettent une acquisition de données rapides. 
 
 \section{Fonctionnement du débitmètre respiratoire pédiatrique}
-Le capteur développé lors de ce Travail de Bachelor, comme évoqué plus haut, repose sur une membrane nanoporeuse achetée sur le marché. 
+Le capteur développé lors de ce Travail de Bachelor, repose sur le phénomène de l'effet Seebeck. Phénomène que l'on peut également retrouver 
+dans les thermocouples. L'effet Seebeck est le suivant :\\
+Lorsque deux matériaux conducteurs ou semi-conducteurs sont soumis à des températures différentes, une tension va être produite entre ces deux matériaux. \\
+Sur la Figure \ref{fig:Seebeck}, deux matériaux sont côte à côte. Une source de chaleur vient chauffer le matériau de gauche. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.3]{images/Seebeck.jpg}
+    \caption{Effect de Seebeck}
+    \label{fig:Seebeck}
+\end{figure}
+Les électrons au sein de la matière vont se déplacer du chaud vers le froid, créant ainsi un courant \cite{instrumentys_effet_2021}.\\
+La tension est calculée grâce à la formule suivante :
+\[V = S \cdot (T_{chaude} - T_{froide})\]
+Avec S, le coefficient de Seebeck\\
+Comme évoqué plus haut, le capteur est constitué de membranes nanoporeuses achetées sur le marché. 
 Un côté de la membrane va être recouverte d'un matériau conducteur, l'or. Puis, Les pores de cette membrane sont remplies par 
-électrodéposition avec une solution de Tellure de Bismuth (cf. figure \ref{fig:electrodeposition}). 
+électrodéposition avec une solution de Tellure de Bismuth (cf. figure \ref{fig:electrodeposition}). Ces pores remplis de tellure de 
+Bismuth deviennent alors des nanofils. 
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.5]{images/Electrodeposition.png}
@@ -116,19 +131,23 @@ Un côté de la membrane va être recouverte d'un matériau conducteur, l'or. Pu
     \label{fig:electrodeposition}
 \end{figure}
 
-Par la suite, ces étape seront répétées une seconde fois afin d'obtenir le capteur suivant :  
+Le fonctionnement du débitmètre pédiatrique combine la technologie des nonofils et de l'effet de Seebeck. \\
+En effet, un corps de chauffe est placé entre deux membranes nanoporeuses reliées entre elle par de l'or (bon conducteur). Une différence de 
+température va se créer lorsque le patient viendra expirer ou inspirer de l'air sur le corps de chauffe (figure \ref{fig:CapteurFUN}). 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.5]{images/CapteurFUN.png}
-    \caption{Capteur par membranes nanoporeuses}
-    \label{fig:capteurFUN}
+    \includegraphics[scale = 0.7]{images/CapteurFUN.png}
+    \caption{Schéma du débitmètre respiratoire pédiatrique}
+    \label{fig:CapteurFUN}
 \end{figure}
+Nous pouvons observer sur la figure \ref{fig:CapteurFUN} que plusieurs électrodépositions ont été faites. Une première se situe à gauche 
+du corps de chauffe et la deuxième, à sa droite. \\
+Avec une différence de température de part et d'autre du corps de chauffe, un courant va circuler entre la couche d'or de gauche, à 
+travers les nanofils gauches, au sein de la couche d'or du bas puis dans les nanofils de droite et une tension va apparaître. Il sera 
+alors possible de lier cette tension au débit inspiré et expiré du nouveau-né.\\
 
-La couche d'or en dessous du capteur permet de court-circuiter les deux membranes ensembles. \\
-Un corps de chauffe est placé entre les deux membranes nanoporeuses. Une différence de température entre ces membranes va se créer 
-lorsque le patient viendra expirer ou inspirer de l'air sur le corps de chauffe. \\
-Avec cette différence de température de part et d'autre du dispositif, une tension va apparaître. Il sera alors possible de lier 
-cette tension au débit inspiré et expiré du nouveau-né.\\
+Étant donné que les nanopores sont extrêmement fines et courtes, il est attendu d'obtenir un temps de réponse très intéressant (temps 
+de réponse faible). 
 
 \section{Cahier des charges}
 
