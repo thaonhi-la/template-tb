@@ -1,7 +1,94 @@
 
-
 \section{Présentation}
+Le banc de test correspond au système composé du capteur et des appareils des mesures. Pour ce banc de test, le matériel suivant est utilisé :
+\begin{itemize}
+    \item Capteur (Design 1 ou 5)
+    \item Débitmètre de référence FESTO SFAH
+    \item Electrovanne FESTO
+    \item Arduino Nano
+    \item transistor MOSFET IRL540N
+\end{itemize}
+
+Le débitmètre de référence est un débitmètre FESTO bidirectionnel dont la datasheet se trouve en annexe. Son graphe de calibation est le
+suivant :
+\begin{comment}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{assets/figures/}
+    \caption{Tension en fonction du débit}
+    \label{fig:calibration}
+\end{figure}
+\end{comment}
 
 \section{Catalogue des solutions}
+\subsection{Flux d'air pulsé}
+Une première solution est d'amener un flux d'air pulsé sur la membrane. Ce flux d'air serait contrôlé par une électrovanne et un
+transistor MOSFET IRL540N. Ce transistor a été choisi car il permet d'être contrôlé grâce à un Arduino Nano. En effet, sa tension de seuil
+($V_{GS}$) est de 4V, 5V ou 10V. Etant donné que l'Arduino Nano sortira une tension de 5V, cette valeur sera suffisante pour faire fonctionner
+le MOSFET.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{assets/figures/MOSFET.png}
+    \caption{Schéma électrique avec MOSFET}
+    \label{fig:MOSFET}
+\end{figure}
+Un contrôle de la chaleur dégagée par effet Joule est utile afin de décider si un dissipateur thermique est nécessaire. Ce calcul se fait
+de la manière suivante :\\
+D'abord, calculons la chaleur dégagée (puissance par effet Joule) :
+
+\[I_{electrovanne} = \frac{P_{electrovanne}}{U} = \frac{6.5}{24} \cong 0.27 A \]
+\[P_{effetJoule} = R_{DS}\cdot I^2\]
+Avec :\\
+$R_{DS}$ (résistance entre les jonctions D et S du MOSFET) = 0.053
+\begin{equation}
+    P_{effetJoule} = 0.053\cdot 0.27^2 \cong 3.86mW
+\end{equation}
+
+Les différentes valeurs de résistances, puissances, etc. se trouvent dans la datasheet du MOSFET qui se trouve en annexe. \\
+
+Puis, nous pouvons calculer la puissance maximum dissipée par le MOSFET :
+\[P_{max\,dissip\acute{e}e} = \frac{max(T_j) - T_A}{R_{\theta JA}} = \frac{175-25}{62}\cong 2.42 W\]
+Avec :\\
+$T_j$ = température de jonction\\
+$T_A$ = température ambiante\\
+$R_{\theta JA}$ = résistance thermique, de jonction à ambiant
+
+Ainsi, comme $P_{effetJoule} < P_{max\,dissip\acute{e}e}$, un dissipateur thermique n'est pas nécessaire. \\
+
+Au niveau du fonctionnement général du système, le transistor est commandé par un Arduino Nano qui alimente le MOSFET avec 5V par pulsation (1 seconde à 5V et 1 seconde à 0V). \\
+Lorsque le MOSFET reçoit 5V, il s'active et "laisse passer" le courant qui permet à l'électrovanne de s'ouvrir et de faire passer le
+flux d'air.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \hspace{-1.5cm}
+        \includegraphics[scale = 0.3]{assets/figures/MOSFET_0V.png}
+        \caption{MOSFET non-alimenté}
+        \label{fig:MOSFET_0V}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[scale = 0.3]{assets/figures/MOSFET_5V.png}
+        \caption{MOSFET alimenté}
+        \label{fig:MOSFET_5V}
+    \end{subfigure}
+    \caption{Fonctionnement du flux d'air pulsé}
+    \label{fig:flux_pulse}
+\end{figure}
+
+Le corps de chauffe, constitué d'une fine couche d'or, doit être alimenté avec un certain courant. Ce courant, s'il est trop élevé, va abîmer la
+membrane mais s'il est trop bas, il sera insuffisant pour entraîner un différence de température de part et d'autres du capteur. \\
+
+U
+
+\subsubsection{Essais sur Design 5}
+Cette version est pratique, car lors de la mise en pratique, le flux d'air pulsé est aisément vérifiable. Lors des premiers tests,
+aucun signal n'était visible sur l'oscilloscope. Ceci peut être dû à différentes raisons :
+\begin{itemize}
+    \item Un mauvais contact avec les pointes ressorts
+    \item La puissance du corps de chauffe n'est pas suffisante
+\end{itemize}
+
+\subsection{Corps de chauffe pulsé}
 
 \section{Validation}
