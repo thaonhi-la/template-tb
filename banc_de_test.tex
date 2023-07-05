@@ -2,23 +2,30 @@
 \section{Présentation}
 Le banc de test correspond au système composé du capteur et des appareils des mesures. Pour ce banc de test, le matériel suivant est utilisé :
 \begin{itemize}
-    \item Capteur (Design 1 ou 5)
+    \item Capteur avec son support (Design 1 ou 5)
     \item Débitmètre de référence FESTO SFAH
     \item Electrovanne FESTO
     \item Arduino Nano
     \item transistor MOSFET IRL540N
 \end{itemize}
 
-Le débitmètre de référence est un débitmètre FESTO bidirectionnel dont la datasheet se trouve en annexe. Son graphe de calibation est le
-suivant :
-\begin{comment}
+Le débitmètre de référence est un débitmètre FESTO bidirectionnel dont la datasheet se trouve en annexe. Son graphe de calibation  a été
+construit grâce à la sortie analogique fournie par le débitmètre :
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.5]{assets/figures/}
+    \includegraphics[scale = 0.4]{assets/figures/Calibration_maison.jpg}
     \caption{Tension en fonction du débit}
     \label{fig:calibration}
 \end{figure}
-\end{comment}
+
+Sur le figure \ref{fig:calibration}, nous pouvons observer la tension mesurée en fonction d'un certain débit d'air. Les paramètres utilisés
+pour cette calibration sont les suivants :
+\begin{itemize}
+    \item Sortie analogique en tension sur une plage de 0V à 10V
+    \item Full Scale allant de 0\% à +100\%
+\end{itemize}
+
+Le graphe montre une fonction linéaire qui se rapproche très fortement de la fonction $y = x$ (f$_{mesur\acute{e}}$(x) = 1.0004x - 0.0038).
 
 \section{Catalogue des solutions}
 \subsection{Flux d'air pulsé}
@@ -40,6 +47,7 @@ D'abord, calculons la chaleur dégagée (puissance par effet Joule) :
 \[P_{effetJoule} = R_{DS}\cdot I^2\]
 Avec :\\
 $R_{DS}$ (résistance entre les jonctions D et S du MOSFET) = 0.053
+
 \begin{equation}
     P_{effetJoule} = 0.053\cdot 0.27^2 \cong 3.86mW
 \end{equation}
@@ -77,17 +85,22 @@ flux d'air.
 \end{figure}
 
 Le corps de chauffe, constitué d'une fine couche d'or, doit être alimenté avec un certain courant. Ce courant, s'il est trop élevé, va abîmer la
-membrane mais s'il est trop bas, il sera insuffisant pour entraîner un différence de température de part et d'autres du capteur. \\
+membrane mais s'il est trop bas, il sera insuffisant pour entraîner une différence de température de part et d'autres du capteur. \\
 
-U
+Le calcul suivant a don été effectué afin de déterminer le courant à utiliser pour le corps de chauffe :
+\[P_{max} = R\cdot I^2\]
+Avec :\\
+$P_{parSurface}$ (puissance max par unité de surface) = 100 $\frac{W}{m^2}$\\
+$R$ (résistance du corps de chauffe) = 45 $\Omega$\\
 
-\subsubsection{Essais sur Design 5}
-Cette version est pratique, car lors de la mise en pratique, le flux d'air pulsé est aisément vérifiable. Lors des premiers tests,
-aucun signal n'était visible sur l'oscilloscope. Ceci peut être dû à différentes raisons :
-\begin{itemize}
-    \item Un mauvais contact avec les pointes ressorts
-    \item La puissance du corps de chauffe n'est pas suffisante
-\end{itemize}
+La valeur de puissance par unité de surface a été tirée de la puissance maximale utilisée pour les chauffages du marché (chauffage au sol).
+Elle permet d'avoir un ordre de grandeur pour la valeur de courant à fournir au corps de chauffe.
+La surface du corps de chauffe à été approximée à 80 mm$^2$ ($2mm x 40mm$).\\
+Ainsi une règle de 3 a été effectuée afin de trouver la valeur de puissance pour le corps de chauffe concerné :
+\[P_{max} = 8\cdot 10^{-5}\cdot 100 = 1.78\cdot 10^{-4}\]
+\[I = \sqrt{\frac{P_{max}}{R}} = \sqrt{\frac{1.78\cdot 10^{-4}}{45}} \cong 13 mA\]
+Plusieurs tests ont été alors effectué dans une plage de 10 mA à 20 mA. Ces tests ont donné un courant maximum a 15 mA. Au-delà, la membrane
+est abîmée (couche d'or rongée).
 
 \subsection{Corps de chauffe pulsé}
 
