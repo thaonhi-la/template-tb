@@ -57,6 +57,9 @@
 \clearemptydoublepage
 \pagenumbering{arabic}
 
+\label{glossaire}
+\printnoidxglossary
+
 %% Contenu
 \mainmatter
 \chapter{Introduction}
@@ -91,6 +94,7 @@ Les annexes n'ont pas un contenu \underline{normatif} mais \underline{descriptif
 Les annexes contiennent généralement :
 
 \begin{itemize}
+    \item le cahier des charges
     \item les dessins mécaniques (mises en plan);
     \item les schémas électriques détaillés;
     \item des photographies du projet;
@@ -109,12 +113,12 @@ Les annexes contiennent généralement :
 \let\cleardoublepage\clearpage
 \backmatter
 
-\label{glossaire}
-\printnoidxglossary
+%\label{glossaire}
+%\printnoidxglossary
 \label{index}
 \printindex
 
 % Le colophon est le dernier élément d'un document qui contient des notes de l'auteur concernant la mise en page et l'édition du document : il est parfaitement optionnel.
-\input{colophon.tex}
+%\input{colophon.tex}
 
 \end{document}

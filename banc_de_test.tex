@@ -1,33 +1,43 @@
 
 \section{Présentation}
-Le banc de test correspond au système composé du capteur et des appareils des mesures. Pour ce banc de test, le matériel suivant est utilisé :
+Le banc de test correspond au système composé du capteur \gls{capteur} et des appareils des mesures. Pour ce banc de test, le matériel suivant est utilisé :
 \begin{itemize}
-    \item Capteur avec son support (Design 1 ou 5)
-    \item Débitmètre de référence FESTO SFAH
-    \item Electrovanne FESTO
-    \item Arduino Nano
-    \item transistor MOSFET IRL540N
+    \item Capteur avec son support (Design 1 ou 5)\\
+          La géométrie générale du Design 1 et 5 est espliquée et représentée au chaptire \ref*{chap:catalogueSol}
+    \item Débitmètre de référence FESTO SFAH-10B-Q6S-PNLK-PNVBA-M8\\
+          Le débitmètre choisi est un débitmètre bidirectionnel avec une entrée d'air de 6mm de diamètre. Il sera placé juste avant l'entrée du flux
+          d'air dans le capteur, permettant ainsi d'avoir une valeur de référence fiable.\\
+
+          Un graphe de la tension en fonction du débit fourni par le débitmètre de référence a été construit grâce à la sortie analogique de ce dernier :
+          \begin{figure}[H]
+              \centering
+              \includegraphics[scale = 0.4]{assets/figures/Calibration_maison.jpg}
+              \caption{Tension en fonction du débit}
+              \label{fig:calibration}
+          \end{figure}
+
+          Sur le figure \ref{fig:calibration}, nous pouvons observer la tension mesurée en fonction d'un certain débit d'air. Les paramètres utilisés
+          pour cette calibration sont les suivants :
+          \begin{itemize}
+              \item Sortie analogique en tension sur une plage de 0V à 10V
+              \item Full Scale allant de 0\% à +100\%
+          \end{itemize}
+
+          Le graphe montre une fonction linéaire qui se rapproche très fortement de la fonction $y = x$ (f$_{mesur\acute{e}}$(x) = 1.0004x - 0.0038).
+    \item Electrovanne FESTO MHE3-MS1H-3/2G-QS-6-K\\
+          Cette électrovanne fonctionne avec une tension de 24V.  Elle permet de créer un flux d'air pulsé. Ce flux d'air pulsé alimentera le
+          capteur \gls{capteur}.
+    \item Transistor MOSFET IRL540N\\
+          Le MOSFET (metal-oxide-semiconductor field-effect transistor) est un transistor fonctionnant en tension. Dans notre cas, il va
+          être utilisé comme un interrupteur qui va alimenter ou non l'électrovanne.
+    \item Arduino Nano\\
+          L'Arduino Nano est un circuit-imprimé qui va également participer à la création du flux d'air pulsé. C'est grâce à l'arduino que la
+          fréquence du flux d'air sera modulable. En effet, ce composant va contrôler le MOSFET, qui transmettra ensuite les informations é l'électrovanne.
 \end{itemize}
 
-Le débitmètre de référence est un débitmètre FESTO bidirectionnel dont la datasheet se trouve en annexe. Son graphe de calibation  a été
-construit grâce à la sortie analogique fournie par le débitmètre :
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale = 0.4]{assets/figures/Calibration_maison.jpg}
-    \caption{Tension en fonction du débit}
-    \label{fig:calibration}
-\end{figure}
+Toutes les Datasheet des composants utilisés et achetés se trouvent en annexe. \\
 
-Sur le figure \ref{fig:calibration}, nous pouvons observer la tension mesurée en fonction d'un certain débit d'air. Les paramètres utilisés
-pour cette calibration sont les suivants :
-\begin{itemize}
-    \item Sortie analogique en tension sur une plage de 0V à 10V
-    \item Full Scale allant de 0\% à +100\%
-\end{itemize}
-
-Le graphe montre une fonction linéaire qui se rapproche très fortement de la fonction $y = x$ (f$_{mesur\acute{e}}$(x) = 1.0004x - 0.0038).
-
-\section{Catalogue des solutions}
+\section{Modélisation du banc de test}
 \subsection{Flux d'air pulsé}
 Une première solution est d'amener un flux d'air pulsé sur la membrane. Ce flux d'air serait contrôlé par une électrovanne et un
 transistor MOSFET IRL540N. Ce transistor a été choisi car il permet d'être contrôlé grâce à un Arduino Nano. En effet, sa tension de seuil
@@ -100,8 +110,83 @@ Ainsi une règle de 3 a été effectuée afin de trouver la valeur de puissance 
 \[P_{max} = 8\cdot 10^{-5}\cdot 100 = 1.78\cdot 10^{-4}\]
 \[I = \sqrt{\frac{P_{max}}{R}} = \sqrt{\frac{1.78\cdot 10^{-4}}{45}} \cong 13 mA\]
 Plusieurs tests ont été alors effectué dans une plage de 10 mA à 20 mA. Ces tests ont donné un courant maximum a 15 mA. Au-delà, la membrane
-est abîmée (couche d'or rongée).
+est abîmée (couche d'or rongée).\\
+
+\subsection{Conception 3D}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{assets/figures/Banc_de_test.png}
+    \caption{Conception 3D du banc de test}
+    \label{fig:3D_banc_test}
+\end{figure}
 
 \subsection{Corps de chauffe pulsé}
 
-\section{Validation}
+\section{Vérification du banc de test}
+La première version du banc de test est pratique, car lors de la mise en pratique, le flux d'air pulsé est aisément vérifiable. \\
+Cependant, lors des premiers tests, aucun signal n'était visible sur l'oscilloscope. Ceci peut être dû à différentes raisons :
+\begin{itemize}
+    \item Un mauvais contact avec les pointes ressorts
+    \item La puissance du corps de chauffe n'est pas suffisante
+    \item L'échantillon (capteur \gls{capteur}) est défectueux
+\end{itemize}
+
+Afin de vérifier quel-s paramètre-s entraîne-nt un mauvais résultat, une première décision a été de tester le \gls{capteur} ouvert (sans son support,
+en utilisant seulement la membrane).
+Des pinces plates viennent faire le contact électrique directement sur les couches d'or afin de mesurer la tension y circulant.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.05]{assets/figures/CapteurOuvert.jpg}
+    \caption{Tests sur capteur ouvert}
+    \label{fig:capteurOuvert}
+\end{figure}
+Cette installation ne communiquait pas non plus de résultat concluant (tension à 0V). \\
+
+Le corps de chauffe a donc été mis en question. Une alternative à ce corps de chauffe a été de venir toucher la pince plate d'un côté du
+capteur afin d'engendrer une différence de température entre les deux parties coudées. Ceci a bel et bien entraîné une différence de
+température et donc, une tension. Cependant, cette dernière provient de la différence de température entre l'or (sur la membrane) et le métal
+de la pince plate. \\
+
+Afin de chauffer une des deux parties électrodéposées, une court tube a été utilisé. Un flux d'air chaud a été soufflé directement sur cette
+partie afin de créer un gradient de température mais à nouveau, auncune fluctuation n'a été perçue. Cependant, lorsque le flux d'air chaud
+était soufflé au niveau de la pince plate, une plus grande fluctuation de tension était visible. Cela signifie que la jonction avec le tellure
+de bismuth est probablement pathologique.\\
+
+Il était tout de même nécessaire et intéressant de vérifier si le banc de test fonctionnait de manière appropriée. Pour cela, un autre capteur
+a été utilisé afin de vérifier la fonctionalité du banc de test. \\
+Le capteur utilisé est un capteur infrarouge par nanotechnologie qui traduit un certain rayonnement électromagnétique en tension. Ainsi lorsque l'on souffle
+dessus, un changement dans l'environnement, et plus précisément dans la température ambiante, aura lieu. Ce flux d'air impacte donc
+les rayonnements thermiques qui, eux, sont étroitement liés, entre autres, aux rayonnements infrarouges. C'est donc pour cette raison qu'à
+l'oscilloscope, une fluctuation sur la tension se dessine.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \hspace{-1 cm}
+        \includegraphics[scale = 0.45]{assets/figures/CapteurIR_1s_1s.PNG}
+        \caption{Air pulsé pendant 1s puis repos pendant 1s}
+        \label{fig:1s1s}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[scale = 0.45]{assets/figures/1_8s_repos.PNG}
+        \caption{Air pulsé pendant 1s puis repos pendant 1.8s}
+        \label{fig:1_8s}
+    \end{subfigure}
+    \caption{Résultats avec capteur infrarouge}
+    \label{fig:capteurIR}
+\end{figure}
+
+Les figures ci-dessus (\ref{fig:capteurIR}), montrent que le banc de test et plus précisément, le système de flux d'air pulsé accompagné de
+la sortie à l'oscilloscope (en passant par l'amplificateur) fonctionne bien. En effet, sur les figures \ref*{fig:1s1s} et \ref*{fig:1_8s}
+les différentes pulsations sont bien visibles.\\
+
+Sur la figure \ref*{fig:1s1s}, la récupération du capteur est plus longue que le temps de repos. C'est pourquoi le temps de repos a été allongé
+et fixé à 1.8s (figure \ref*{fig:1_8s}). Ceci permet au capteur de se remettre à zéro et permet aussi de contrôler que la fréquence est bien
+modulable. \\
+
+Une autre partie intéressante à étudier est l'amplificateur. Pour ce faire, un petit programme LabView a été utilisé afin de mesurer, dans un
+premier temps, la réponse du capteur \gls{infrarouge} sans amplificateur, puis, dans un second temps, la réponse avec amplificateur. Ceci nous
+permettra de qualifier l'amplificateur.
+
+Ces tests prouvent que le banc de test semble fonctionner de manière correcte. L'échantillon est alors certainement le facteur engendrant de
+maunvais résultats.
