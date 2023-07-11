@@ -2,9 +2,10 @@
 \section{Présentation}
 Le banc de test correspond au système composé du capteur \gls{capteur} et des appareils des mesures. Pour ce banc de test, le matériel suivant est utilisé :
 \begin{itemize}
-    \item Capteur avec son support (Design 1 ou 5)\\
-          La géométrie générale du Design 1 et 5 est espliquée et représentée au chaptire \ref*{chap:catalogueSol}
-    \item Débitmètre de référence FESTO SFAH-10B-Q6S-PNLK-PNVBA-M8\\
+    \item \textbf{Capteur avec son support (Design 1 ou 5)}\\
+          La géométrie générale du Design 1 et 5 est espliquée et représentée au chaptire \ref*{chap:catalogueSol}. \\
+
+    \item \textbf{Débitmètre de référence FESTO SFAH-10B-Q6S-PNLK-PNVBA-M8}\\
           Le débitmètre choisi est un débitmètre bidirectionnel avec une entrée d'air de 6mm de diamètre. Il sera placé juste avant l'entrée du flux
           d'air dans le capteur, permettant ainsi d'avoir une valeur de référence fiable.\\
 
@@ -23,19 +24,32 @@ Le banc de test correspond au système composé du capteur \gls{capteur} et des 
               \item Full Scale allant de 0\% à +100\%
           \end{itemize}
 
-          Le graphe montre une fonction linéaire qui se rapproche très fortement de la fonction $y = x$ (f$_{mesur\acute{e}}$(x) = 1.0004x - 0.0038).
-    \item Electrovanne FESTO MHE3-MS1H-3/2G-QS-6-K\\
+          Le graphe montre une fonction linéaire qui se rapproche très fortement de la fonction $y = x$ (f$_{mesur\acute{e}}$(x) = 1.0004x - 0.0038).\\
+
+    \item \textbf{Electrovanne FESTO MHE3-MS1H-3/2G-QS-6-K}\\
           Cette électrovanne fonctionne avec une tension de 24V.  Elle permet de créer un flux d'air pulsé. Ce flux d'air pulsé alimentera le
-          capteur \gls{capteur}.
-    \item Transistor MOSFET IRL540N\\
+          capteur \gls{capteur}.\\
+          Cet appareil possède 3 entrées/sorties disposées selon le schéma ci-dessous :
+          \begin{figure}[H]
+              \centering
+              \includegraphics[scale = 0.3]{assets/figures/Electrovanne_InOutput.png}
+              \caption{Entrée et sortie de l'électrovanne}
+              \label{fig:electrovanne_InOutput}
+          \end{figure}
+
+    \item \textbf{Transistor MOSFET IRL540N}\\
           Le MOSFET (metal-oxide-semiconductor field-effect transistor) est un transistor fonctionnant en tension. Dans notre cas, il va
-          être utilisé comme un interrupteur qui va alimenter ou non l'électrovanne.
-    \item Arduino Nano\\
+          être utilisé comme un interrupteur qui va alimenter ou non l'électrovanne.\\
+
+    \item \textbf{Arduino Nano}\\
           L'Arduino Nano est un circuit-imprimé qui va également participer à la création du flux d'air pulsé. C'est grâce à l'arduino que la
-          fréquence du flux d'air sera modulable. En effet, ce composant va contrôler le MOSFET, qui transmettra ensuite les informations é l'électrovanne.
+          fréquence du flux d'air sera modulable. En effet, ce composant va contrôler le MOSFET, qui transmettra ensuite les informations à
+          l'électrovanne.\\
+          Le code utilisé afin de créer une sortie en tension par pulse est fourni en annexe.
 \end{itemize}
 
-Toutes les Datasheet des composants utilisés et achetés se trouvent en annexe. \\
+Toutes les Datasheet des composants utilisés et achetés se trouvent en annexe. Ces Datasheet contiennent toutes les valeurs et schéma nécessaire
+au dimensionnement du banc de test.
 
 \section{Modélisation du banc de test}
 \subsection{Flux d'air pulsé}
@@ -126,9 +140,11 @@ est abîmée (couche d'or rongée).\\
 La première version du banc de test est pratique, car lors de la mise en pratique, le flux d'air pulsé est aisément vérifiable. \\
 Cependant, lors des premiers tests, aucun signal n'était visible sur l'oscilloscope. Ceci peut être dû à différentes raisons :
 \begin{itemize}
-    \item Un mauvais contact avec les pointes ressorts
-    \item La puissance du corps de chauffe n'est pas suffisante
-    \item L'échantillon (capteur \gls{capteur}) est défectueux
+    \item Un mauvais contact avec les pointes ressorts\\
+
+    \item La puissance du corps de chauffe n'est pas suffisante\\
+
+    \item L'échantillon (capteur \gls{capteur}) est défectueux\\
 \end{itemize}
 
 Afin de vérifier quel-s paramètre-s entraîne-nt un mauvais résultat, une première décision a été de tester le \gls{capteur} ouvert (sans son support,
@@ -189,4 +205,6 @@ premier temps, la réponse du capteur \gls{infrarouge} sans amplificateur, puis,
 permettra de qualifier l'amplificateur.
 
 Ces tests prouvent que le banc de test semble fonctionner de manière correcte. L'échantillon est alors certainement le facteur engendrant de
-maunvais résultats.
+mauvais résultats. Un développement de cette thématique sera effectué dans le chapitre \ref{chap:mesures}.
+
+\subsection{Procédure d'utilisation du banc de test}
