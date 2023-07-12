@@ -108,7 +108,66 @@ effectuées. Ces mesures nous ont montré que le capteur fonctionnait. En effet,
         \end{tabular}
     \end{center}
 \end{table}
-Malgré le bruit non-négligeable mesuré à travers l'amplificateur, la tension change suivant les conditions du capteur.
+Malgré le bruit non-négligeable mesuré à travers l'amplificateur, la tension change suivant les conditions du capteur. Afin de se concentrer
+uniquement sur la réponse du capteur, l'amplificateur a été mis de côté pour les futures mesures.
+
+\section{Mesures du capteur sans amplificateur}
+Plusieurs mesures ont été faites avec plusieurs types de paramètres. Toutes les mesures avec leurs paramètres ont été regroupées et sauvegardées
+dans un document excel qui se trouve en annexe.\\
+Chacune des mesures sur cet Excel est liée à un autre fichier contenant toutes les valeurs concernant cette mesure.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.4]{assets/figures/Data.png}
+    \caption{Organisation des données}
+    \label{fig:data_orga}
+\end{figure}
+
+Les mesures les plus significatives seront présentées dans ce rapport. \\
+
+Des premières mesures ont été effectuées sans flux d'air. En effet, il est déjà intéressant d'observer le comportement du capteur
+lorsque seulement le corps de chauffe est activé. Ce dernier est alimenté avec 15 mA. Les résultats sont les suivants :
+\begin{figure}[H]
+    \hspace{-0.5cm}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[scale = 0.45]{assets/figures/corps_chauffe_pulse_green.png}
+        \caption{Support Design 5 - Corps de chauffe pulsé}
+        \label{fig:chauffe_pulse_g}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[scale = 0.45]{assets/figures/corps_chauffe_pulse_blue.png}
+        \caption{Support Design 1 - Corps de chauffe pulsé}
+        \label{fig:chauffe_pulse_b}
+    \end{subfigure}
+\end{figure}
+
+Sur la figure \ref*{fig:chauffe_pulse_g}, aucun signal n'est distingable. En effet, il semble n'y avoir que du bruit. Cependant, sur la figure
+\ref*{fig:chauffe_pulse_b}, la tension est bien moins stable. Pourtant aucune flux n'est encore ajouté. \\
+
+La raison de ce phénomène peut se trouver dans le fait que chaque électrodéposition est faite à la main, une après l'autre. Ceci signifie que
+les deux électrodépositions diffèrent certainement l'une de l'autre. \\
+De plus, le corps de chauffe est assez proche des deux électrodépositions. De ce fait, il est probable que lorsqu'il est en marche, le corps de
+chauffe transfert de la chaleur aux deux extrémités du capteur. Ces deux extrémités sont alors chauffées mais comme elles possèdent des nanofils
+quelque peu différents d'un côté ou de l'autre, un gradient de température se forme et une certaine tension circule. \\
+C'est une hypothèse du phénomène que l'on peut observer sur la figure \ref*{fig:chauffe_pulse_b}.\\
+
+Le support Design 5 semble, lui, éviter ce transfert de chaleur. Cela peut être dû au fait qu'étant donné que la membrane est plaquée contre
+la pièce du support, la chaleur transférée par le corps de chauffe est "perdue" dans la matière du support (ici : PLA).\\
+
+Par la suite, les mesures ont été poursuivies mais sans grand succès. Un facteur a alors été modifé. Au lieu d'amener le flux d'air par une
+source d'air copmrimée, l'arrivée d'air sera effectué par une respiration humaine. Ceci nous a donné les résultats suivants :
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[scale = 0.43]{assets/figures/humanBreath_green_sansCorpsDeChauffe.png}
+        \caption{Réponse du capteur à la respiration humaine - Design 5 - sans corps de chauffe}
+        \label{fig:human_breath_green_without_heat}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[scale = 0.43]{assets/figures/humanBreath_green_avecCorpsDeChauffe.png}
+        \caption{Réponse du capteur à la respiration humaine - Design 5 - avec corps de chauffe}
+        \label{fig:human_breath_green_with_heat}
+    \end{subfigure}
+\end{figure}
 
 \section{Dépandances}
 \section{Discussion}

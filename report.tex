@@ -8,6 +8,7 @@
 \usepackage{comment}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{pdfpages}
 
 
 \signature{ThaoNhi.svg} % Remplacer par votre propre signature vectorielle.
@@ -87,7 +88,7 @@
 \addappheadtotoc
 
 %%if
-\chapter{Première annexe}
+\chapter{Liste annexe}
 
 Les annexes n'ont pas un contenu \underline{normatif} mais \underline{descriptif}. Tout contenu annexé ne doit pas être nécessaire à la bonne compréhension du travail.
 
@@ -112,6 +113,9 @@ Les annexes contiennent généralement :
 \section{Sous section}
 \lipsum[1]
 %%fi
+
+\chapter{Datasheet Câble de liaison pour Débitmètre FESTO}
+\includepdf[pages=-]{assets/pdf/Festo_Cable_liaison.pdf}
 
 \let\cleardoublepage\clearpage
 \backmatter
