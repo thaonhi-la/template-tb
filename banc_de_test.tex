@@ -38,7 +38,7 @@ Le banc de test correspond au système composé du capteur \gls{capteur} et des 
           \end{figure}
           Les entrées/sorties sont représentées par les numéros 1, 2 et 3. L'électrovanne est représentée par deux carrés accolés (cf. figure
           \ref*{fig:electrovanne_InOutput}. Le carré de gauche montre le système au repos. Le carré de droite représente la deuxième position de
-          l'électrovanne, lorsque celle-ci est mise sous tension \cite{mimwebsite}.
+          l'électrovanne, lorsque celle-ci est mise sous tension \cite{mimwebsite}.\\
 
     \item \textbf{Transistor MOSFET IRL540N}\\
           Le MOSFET (metal-oxide-semiconductor field-effect transistor) est un transistor fonctionnant en tension. Dans notre cas, il va
@@ -54,7 +54,8 @@ Le banc de test correspond au système composé du capteur \gls{capteur} et des 
           L'Arduino Nano est un circuit-imprimé qui va également participer à la création du flux d'air pulsé. C'est grâce à l'arduino que la
           fréquence du flux d'air sera modulable. En effet, ce composant va contrôler le MOSFET, qui transmettra ensuite les informations à
           l'électrovanne.\\
-          Le code utilisé afin de créer une sortie en tension par pulse est fourni en annexe. Il a été réalisé sur le logiciel Arduino IDE.
+          Le code utilisé afin de créer une sortie en tension par pulse est fourni en annexe. Il a été réalisé sur le logiciel Arduino IDE.\\
+
 \end{itemize}
 
 Toutes les Datasheet des composants utilisés et achetés se trouvent en annexe. Ces Datasheet contiennent toutes les valeurs et schéma nécessaire
@@ -144,6 +145,14 @@ est abîmée (couche d'or rongée).\\
 \end{figure}
 
 \subsection{Corps de chauffe pulsé}
+Une autre manière de tester les capteurs \gls{capteur} serait de faire pulser le corps de chauffe et d'amener un flux d'air constant. \\
+Cela signifie qu'il faut alimenter le corps de chauffe un certain temps, puis couper l'alimentation. Ceci peut se faire, comme pour l'arrivée
+d'air pulsé, par un relais, un transistor tel le MOSFET ou un générateur de fontion. \\
+
+Pour ce projet, un générateur de fonction a été utilisé afin de simplifier le processus. Ce générateur de fonction sortait un signal carré
+d'une certaine tension (dépendante de la résistance du corps de chauffe) avec un offset permettant d'avoir un front descendant autour des
+0V. La tension était choisie en fonction de la résistance du corps de chauffe et du courant souhaité (ici 15 mA). En utilisant la loi d'Ohm
+$U = R\cdot I$, la tension est facilement calculée.
 
 \section{Vérification du banc de test}
 La première version du banc de test est pratique, car lors de la mise en pratique, le flux d'air pulsé est aisément vérifiable. \\
@@ -217,7 +226,7 @@ Ces tests prouvent que le banc de test semble fonctionner de manière correcte. 
 mauvais résultats. Un développement de cette thématique sera effectué dans le chapitre \ref{chap:mesures}.
 
 \newpage
-\subsection{Procédure d'utilisation du banc de test}
+\section{Procédure d'utilisation du banc de test}
 \begin{enumerate}
     \item Brancher l'alimentation 24V au banc de test :
           \begin{itemize}

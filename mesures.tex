@@ -90,6 +90,7 @@ Afin de détecter où se situe le problème, les différents paramètres du capt
           d'or de court-circuit plus distantes aux électrodépositions
 \end{itemize}
 
+\begin{comment}
 \section{Résultats concluants}
 Avec une nouvelle solution de Tellure de Bismuth et deux nouvelles électrodépositions sur une membrane de GTTP, de nouvelles mesures ont été
 effectuées. Ces mesures nous ont montré que le capteur fonctionnait. En effet, une réponse a été mesurée.
@@ -110,6 +111,52 @@ effectuées. Ces mesures nous ont montré que le capteur fonctionnait. En effet,
 \end{table}
 Malgré le bruit non-négligeable mesuré à travers l'amplificateur, la tension change suivant les conditions du capteur. Afin de se concentrer
 uniquement sur la réponse du capteur, l'amplificateur a été mis de côté pour les futures mesures.
+\end{comment}
+
+\section{Procédure de mesures "classiques"}
+\begin{enumerate}
+    \item Mesure avec un corps de chauffe pulsé\\
+    \item Mesure avec un corps de chauffe pulsé et un flux d'air comprimé constant\\
+    \item Mesure avec un flux d'air comprimé pulsé et un corps de chauffe constant\\
+    \item Mesure sans corps de chauffe et une respiration humaine\\
+    \item Mesure avec corps de chauffe constant et respiration humaine
+\end{enumerate}
+
+Ces mesures ont été effectuées sur quatre échantillons (quatre types de capteurs) :
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Échantillon & Membrane & Méthode d'électrodéposition \\
+        \hline
+        D06         & GTTP     & A                           \\
+        \hline
+        D12         & PI25005  & A                           \\
+        \hline
+        D13         & PI25005  & B                           \\
+        \hline
+        D14         & VCTP     & A                           \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Les méthodes d'électrodéposition correspondent à la définition suivante :
+\begin{itemize}
+    \item Méthode A
+          \begin{enumerate}
+              \item Dépôt physique en phase vapeur (PVD) d'or du court-circuit
+              \item Première électrodéposition
+              \item Deuxième électrodéposition
+              \item PVD d'or des branches en L
+          \end{enumerate}
+    \item Méthode B
+          \begin{enumerate}
+              \item PVD d'or des branches en L
+              \item Première électrodéposition
+              \item Deuxième électrodéposition
+              \item PVD d'or du court-circuit
+          \end{enumerate}
+\end{itemize}
 
 \section{Mesures du capteur sans amplificateur}
 Plusieurs mesures ont été faites avec plusieurs types de paramètres. Toutes les mesures avec leurs paramètres ont été regroupées et sauvegardées
@@ -153,8 +200,11 @@ C'est une hypothèse du phénomène que l'on peut observer sur la figure \ref*{f
 Le support Design 5 semble, lui, éviter ce transfert de chaleur. Cela peut être dû au fait qu'étant donné que la membrane est plaquée contre
 la pièce du support, la chaleur transférée par le corps de chauffe est "perdue" dans la matière du support (ici : PLA).\\
 
-Par la suite, les mesures ont été poursuivies mais sans grand succès. Un facteur a alors été modifé. Au lieu d'amener le flux d'air par une
-source d'air copmrimée, l'arrivée d'air sera effectué par une respiration humaine. Ceci nous a donné les résultats suivants :
+Pour ces raisons, le support Design 1 a été privilégié étant donné qu'il semblait plus sensible que le support Design 5.\\
+
+Par la suite, les mesures ont été poursuivies mais sans grand succès.
+
+Un facteur a alors été modifé. Au lieu d'amener le flux d'air par une source d'air copmrimée, l'arrivée d'air sera effectué par une respiration humaine. Ceci nous a donné les résultats suivants :
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
