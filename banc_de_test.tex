@@ -77,19 +77,20 @@ Un contrôle de la chaleur dégagée par effet Joule est utile afin de décider 
 de la manière suivante :\\
 D'abord, calculons la chaleur dégagée (puissance par effet Joule) :
 
-\[I_{electrovanne} = \frac{P_{electrovanne}}{U} = \frac{6.5}{24} \cong 0.27 A \]
+\[I_{electrovanne} = \frac{P_{electrovanne}}{U} = \frac{6.5}{24} \cong 0.27 \text{ A} \]
 \[P_{effetJoule} = R_{DS}\cdot I^2\]
 Avec :\\
-$R_{DS}$ (résistance entre les jonctions D et S du MOSFET) = 0.053
+$R_{DS}$ (résistance entre les jonctions D et S du MOSFET) = 0.053 $\Omega$
 
+Ainsi :
 \begin{equation}
-    P_{effetJoule} = 0.053\cdot 0.27^2 \cong 3.86mW
+    P_{effetJoule} = 0.053\cdot 0.27^2 \cong 3.86 \text{ mW}
 \end{equation}
 
 Les différentes valeurs de résistances, puissances, etc. se trouvent dans la datasheet du MOSFET qui se trouve en annexe. \\
 
 Puis, nous pouvons calculer la puissance maximum dissipée par le MOSFET :
-\[P_{max\,dissip\acute{e}e} = \frac{max(T_j) - T_A}{R_{\theta JA}} = \frac{175-25}{62}\cong 2.42 W\]
+\[P_{max\,dissip\acute{e}e} = \frac{max(T_j) - T_A}{R_{\theta JA}} = \frac{175-25}{62}\cong 2.42 \text{ W}\]
 Avec :\\
 $T_j$ = température de jonction\\
 $T_A$ = température ambiante\\
