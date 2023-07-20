@@ -4,11 +4,11 @@ Le banc de test correspond au système composé du capteur \gls{capteur} et des 
 \begin{itemize}
     \item \textbf{Capteur avec son support (Design 1 ou 5)}\\
           La géométrie générale du Design 1 et 5 est espliquée et représentée au chaptire \ref*{chap:catalogueSol}. \\
-
+          
     \item \textbf{Débitmètre de référence FESTO SFAH-10B-Q6S-PNLK-PNVBA-M8}\\
           Le débitmètre choisi est un débitmètre bidirectionnel avec une entrée d'air de 6mm de diamètre. Il sera placé juste avant l'entrée du flux
           d'air dans le capteur, permettant ainsi d'avoir une valeur de référence fiable.\\
-
+          
           Un graphe de la tension en fonction du débit fourni par le débitmètre de référence a été construit grâce à la sortie analogique de ce dernier :
           \begin{figure}[H]
               \centering
@@ -16,16 +16,16 @@ Le banc de test correspond au système composé du capteur \gls{capteur} et des 
               \caption{Tension en fonction du débit}
               \label{fig:calibration}
           \end{figure}
-
+          
           Sur le figure \ref{fig:calibration}, nous pouvons observer la tension mesurée en fonction d'un certain débit d'air. Les paramètres utilisés
           pour cette calibration sont les suivants :
           \begin{itemize}
-              \item Sortie analogique en tension sur une plage de 0V à 10V
+              \item Sortie analogique en tension sur une plage de 0 V à 10 V
               \item Full Scale allant de 0\% à +100\%
           \end{itemize}
-
-          Le graphe montre une fonction linéaire qui se rapproche très fortement de la fonction $y = x$ (f$_{mesur\acute{e}}$(x) = 1.0004x - 0.0038).\\
-
+          
+          Le graphe montre une fonction linéaire qui se rapproche très fortement de la fonction $y = x$ (f$_{mesur\acute{e}}(x) = 1.0004x - 0.0038$).\\
+          
     \item \textbf{Electrovanne FESTO MHE3-MS1H-3/2G-QS-6-K}\\
           Cette électrovanne fonctionne avec une tension de 24V.  Elle permet de créer un flux d'air pulsé. Ce flux d'air pulsé alimentera le
           capteur \gls{capteur}.\\
@@ -39,7 +39,7 @@ Le banc de test correspond au système composé du capteur \gls{capteur} et des 
           Les entrées/sorties sont représentées par les numéros 1, 2 et 3. L'électrovanne est représentée par deux carrés accolés (cf. figure
           \ref*{fig:electrovanne_InOutput}. Le carré de gauche montre le système au repos. Le carré de droite représente la deuxième position de
           l'électrovanne, lorsque celle-ci est mise sous tension \cite{mimwebsite}.\\
-
+          
     \item \textbf{Transistor MOSFET IRL540N}\\
           Le MOSFET (metal-oxide-semiconductor field-effect transistor) est un transistor fonctionnant en tension. Dans notre cas, il va
           être utilisé comme un interrupteur qui va alimenter ou non l'électrovanne.
@@ -49,13 +49,13 @@ Le banc de test correspond au système composé du capteur \gls{capteur} et des 
               \caption{MOSFET}
               \label{fig:mosfet}
           \end{figure}
-
+          
     \item \textbf{Arduino Nano}\\
           L'Arduino Nano est un circuit-imprimé qui va également participer à la création du flux d'air pulsé. C'est grâce à l'arduino que la
           fréquence du flux d'air sera modulable. En effet, ce composant va contrôler le MOSFET, qui transmettra ensuite les informations à
           l'électrovanne.\\
           Le code utilisé afin de créer une sortie en tension par pulse est fourni en annexe. Il a été réalisé sur le logiciel Arduino IDE.\\
-
+          
 \end{itemize}
 
 Toutes les Datasheet des composants utilisés et achetés se trouvent en annexe. Ces Datasheet contiennent toutes les valeurs et schéma nécessaire
@@ -65,7 +65,7 @@ au dimensionnement du banc de test.
 \subsection{Flux d'air pulsé}
 Une première solution est d'amener un flux d'air pulsé sur la membrane. Ce flux d'air serait contrôlé par une électrovanne et un
 transistor MOSFET IRL540N. Ce transistor a été choisi car il permet d'être contrôlé grâce à un Arduino Nano. En effet, sa tension de seuil
-($V_{GS}$) est de 4V, 5V ou 10V. Etant donné que l'Arduino Nano sortira une tension de 5V, cette valeur sera suffisante pour faire fonctionner
+($V_{GS}$) est de 4 V, 5 V ou 10 V. Etant donné que l'Arduino Nano sortira une tension de 5 V, cette valeur sera suffisante pour faire fonctionner
 le MOSFET.
 \begin{figure}[H]
     \centering
@@ -92,9 +92,9 @@ Les différentes valeurs de résistances, puissances, etc. se trouvent dans la d
 Puis, nous pouvons calculer la puissance maximum dissipée par le MOSFET :
 \[P_{max\,dissip\acute{e}e} = \frac{max(T_j) - T_A}{R_{\theta JA}} = \frac{175-25}{62}\cong 2.42 \text{ W}\]
 Avec :\\
-$T_j$ = température de jonction\\
-$T_A$ = température ambiante\\
-$R_{\theta JA}$ = résistance thermique, de jonction à ambiant
+$T_j$ = température de jonction [\textdegree C]\\
+$T_A$ = température ambiante [\textdegree C]\\
+$R_{\theta JA}$ = résistance thermique, de jonction à ambiant [$\Omega$]
 
 Ainsi, comme $P_{effetJoule} < P_{max\,dissip\acute{e}e}$, un dissipateur thermique n'est pas nécessaire. \\
 
@@ -125,15 +125,15 @@ membrane mais s'il est trop bas, il sera insuffisant pour entraîner une différ
 Le calcul suivant a don été effectué afin de déterminer le courant à utiliser pour le corps de chauffe :
 \[P_{max} = R\cdot I^2\]
 Avec :\\
-$P_{parSurface}$ (puissance max par unité de surface) = 100 $\frac{W}{m^2}$\\
+$P_{parSurface}$ (puissance max par unité de surface) = 100 $\frac{\text{W}}{\text{m}^2}$\\
 $R$ (résistance du corps de chauffe) = 45 $\Omega$\\
 
 La valeur de puissance par unité de surface a été tirée de la puissance maximale utilisée pour les chauffages du marché (chauffage au sol).
 Elle permet d'avoir un ordre de grandeur pour la valeur de courant à fournir au corps de chauffe.
-La surface du corps de chauffe à été approximée à 80 mm$^2$ ($2mm x 40mm$).\\
+La surface du corps de chauffe à été approximée à 80 mm$^2$ (2 mm $\cdot$ 40 mm).\\
 Ainsi une règle de 3 a été effectuée afin de trouver la valeur de puissance pour le corps de chauffe concerné :
-\[P_{max} = 8\cdot 10^{-5}\cdot 100 = 1.78\cdot 10^{-4}\]
-\[I = \sqrt{\frac{P_{max}}{R}} = \sqrt{\frac{1.78\cdot 10^{-4}}{45}} \cong 13 mA\]
+\[P_{max} = 8\cdot 10^{-5}\cdot 100 = 1.78\cdot 10^{-4} \text{ W}\]
+\[I = \sqrt{\frac{P_{max}}{R}} = \sqrt{\frac{1.78\cdot 10^{-4}}{45}} \cong 13\text{ mA}\]
 Plusieurs tests ont été alors effectué dans une plage de 10 mA à 20 mA. Ces tests ont donné un courant maximum a 15 mA. Au-delà, la membrane
 est abîmée (couche d'or rongée).\\
 
@@ -152,7 +152,7 @@ d'air pulsé, par un relais, un transistor tel le MOSFET ou un générateur de f
 
 Pour ce projet, un générateur de fonction a été utilisé afin de simplifier le processus. Ce générateur de fonction sortait un signal carré
 d'une certaine tension (dépendante de la résistance du corps de chauffe) avec un offset permettant d'avoir un front descendant autour des
-0V. La tension était choisie en fonction de la résistance du corps de chauffe et du courant souhaité (ici 15 mA). En utilisant la loi d'Ohm
+0 V. La tension était choisie en fonction de la résistance du corps de chauffe et du courant souhaité (ici 15 mA). En utilisant la loi d'Ohm
 $U = R\cdot I$, la tension est facilement calculée.
 
 \section{Vérification du banc de test}
@@ -160,9 +160,9 @@ La première version du banc de test est pratique, car lors de la mise en pratiq
 Cependant, lors des premiers tests, aucun signal n'était visible sur l'oscilloscope. Ceci peut être dû à différentes raisons :
 \begin{itemize}
     \item Un mauvais contact avec les pointes ressorts\\
-
+          
     \item La puissance du corps de chauffe n'est pas suffisante\\
-
+          
     \item L'échantillon (capteur \gls{capteur}) est défectueux\\
 \end{itemize}
 
@@ -175,7 +175,7 @@ Des pinces plates viennent faire le contact électrique directement sur les couc
     \caption{Tests sur capteur ouvert}
     \label{fig:capteurOuvert}
 \end{figure}
-Cette installation ne communiquait pas non plus de résultat concluant (tension à 0V). \\
+Cette installation ne communiquait pas non plus de résultat concluant (tension oscillant autour des 0 V). \\
 
 Le corps de chauffe a donc été mis en question. Une alternative à ce corps de chauffe a été de venir toucher la pince plate d'un côté du
 capteur afin d'engendrer une différence de température entre les deux parties coudées. Ceci a bel et bien entraîné une différence de
@@ -227,28 +227,28 @@ Ces tests prouvent que le banc de test semble fonctionner de manière correcte. 
 mauvais résultats. Un développement de cette thématique sera effectué dans le chapitre \ref{chap:mesures}.
 
 \newpage
-\section{Procédure d'utilisation du banc de test}
+\section{Mise en place du banc de test}
 \begin{enumerate}
-    \item Brancher l'alimentation 24V au banc de test :
+    \item Brancher l'alimentation 24 V au banc de test :
           \begin{itemize}
               \item Connecter le pôle positif de l'alimentation à une des broche de l'électrovanne
               \item Connecter le pôle négatif de l'alimentation à la broche S du MOSFET par le Jumper Wire blanc (il s'agit de la connexion à la terre)
           \end{itemize}
-
+          
     \item Connecter le débitmètre de référence à l'alimentation :
           \begin{itemize}
               \item Connecter le câble marron du débitmètre au pôle positif de l'alimentation (par exemple, grâce à un câble sortant de l'alimentation
                     avec une pince crocodile au bout, lier la broche de l'électrovanne et le fil marron du débitmètre)
               \item Le câble bleu du débitmètre doit être lié à la broche S du MOSFET par le biais du bornier à vis sur la Breadboard
           \end{itemize}
-
-
+          
+          
     \item Brancher le deuxième brin de l'électrovanne à la broche D du MOSFET par le bornier à vis\\
-
+          
     \item Brancher l'amplificateur à une alimentation secteur\\
-
+          
     \item Brancher l'Arduino Nano à un ordinateur et lancer le programme\\
-
+          
     \item Placer le capteur :
           \begin{itemize}
               \item Connecter le corps de chauffe et l'alimentant de maximum 15 mA. Une alimentation de laboratoire peut être utilisée en connectant
@@ -266,10 +266,10 @@ mauvais résultats. Un développement de cette thématique sera effectué dans l
                         \label{fig:pointes_ressorts_chauffe}
                     \end{figure}
           \end{itemize}
-
-
+          
+          
     \item Si l'amplificateur est utilisé : Connecter les deux pointes ressorts restantes à l'amplificateur grâce aux câbles sortant en haut
           à droite du banc de test\\
-
+          
     \item Si l'amplificateur n'est pas utilisé : Connecter directement les deux pointes ressorts restantes à l'appareil de mesure utilisé
 \end{enumerate}
