@@ -98,7 +98,7 @@ $R_{\theta JA}$ = résistance thermique, de jonction à ambiant [$\Omega$]
 
 Ainsi, comme $P_{effetJoule} < P_{max\,dissip\acute{e}e}$, un dissipateur thermique n'est pas nécessaire. \\
 
-Au niveau du fonctionnement général du système, le transistor est commandé par un Arduino Nano qui alimente le MOSFET avec 5V par pulsation (1 seconde à 5V et 1 seconde à 0V). \\
+Au niveau du fonctionnement général du système, le transistor est commandé par un Arduino Nano qui alimente le MOSFET avec 5V par pulsation (1 seconde à 5 V et 1 seconde à 0 V). \\
 Lorsque le MOSFET reçoit 5V, il s'active et "laisse passer" le courant qui permet à l'électrovanne de s'ouvrir et de faire passer le
 flux d'air.
 \begin{figure}[H]
@@ -198,13 +198,13 @@ l'oscilloscope, une fluctuation sur la tension se dessine.
     \begin{subfigure}[b]{0.45\textwidth}
         \hspace{-1 cm}
         \includegraphics[scale = 0.45]{assets/figures/CapteurIR_1s_1s.PNG}
-        \caption{Air pulsé pendant 1s puis repos pendant 1s}
+        \caption{Air pulsé pendant 1 s puis repos pendant 1 s}
         \label{fig:1s1s}
     \end{subfigure}
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[scale = 0.45]{assets/figures/1_8s_repos.PNG}
-        \caption{Air pulsé pendant 1s puis repos pendant 1.8s}
+        \caption{Air pulsé pendant 1 s puis repos pendant 1.8 s}
         \label{fig:1_8s}
     \end{subfigure}
     \caption{Résultats avec capteur infrarouge}
@@ -215,7 +215,7 @@ Les figures ci-dessus (\ref{fig:capteurIR}), montrent que le banc de test et plu
 la sortie à l'oscilloscope (en passant par l'amplificateur) fonctionne bien. En effet, sur les figures \ref*{fig:1s1s} et \ref*{fig:1_8s}
 les différentes pulsations sont bien visibles.\\
 
-Sur la figure \ref*{fig:1s1s}, la récupération du capteur est plus longue que le temps de repos. C'est pourquoi le temps de repos a été allongé
+Sur la figure \ref{fig:1s1s}, la récupération du capteur est plus longue que le temps de repos. C'est pourquoi le temps de repos a été allongé
 et fixé à 1.8s (figure \ref*{fig:1_8s}). Ceci permet au capteur de se remettre à zéro et permet aussi de contrôler que la fréquence est bien
 modulable. \\
 

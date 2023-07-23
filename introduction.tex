@@ -9,7 +9,7 @@ De ce fait, plusieurs appareils de monitoring sont utilisés afin de contrôler 
 Selon le type de patient, les appareils utilisés sont différents. En effet, un nouveau-né a un comportement différent d'une personne 
 adulte. Il est alors nécessaire de contrôler ces paramètres vitaux à l'aide d'appareils adaptés. \\
 
-Ce Travail de Bachelor porte sur un débitmètre respiratoire innovant. Ce dernier permettrait de calculer le flux d'air entrant et sortant
+Ce Travail de Bachelor porte sur la réalisation d'un débitmètre respiratoire innovant. Ce dernier permettrait de calculer le flux d'air entrant et sortant
 du patient et, ainsi, de contrôler son débit respiratoire. 
 
 \section{Cahier des charges et objectifs}
@@ -42,7 +42,8 @@ Les revues scientifiques parlent également de débitmètre pédiatrique. Leur f
 Plusieurs entreprises proposent des débitmètre néonataux. Ces entreprises ont été regroupées dans le tableau ci-dessous avec les 
 techniques utilisées. \\
 
-\begin{centering}
+\begin{table}[H]
+    \centering
     \begin{tabular}{|c|c|}
         \hline
         Entreprises & Technologie                         \\
@@ -57,7 +58,9 @@ techniques utilisées. \\
         \hline
         \label{tab:marques}
     \end{tabular}
-\end{centering}
+    \caption{Débitmètres pédiatriques sur le marché}
+    \label{tab:debitmetreMarche}
+\end{table}
 
 
 \subsection{Revues scientifiques}
@@ -65,8 +68,8 @@ Les revues scientifiques sont également des ressources intéressantes à consid
 articles scientifiques vont permettre d'établir une liste des techniques déjà exploitées, leur fonctionnement plus en détail ainsi que leurs 
 performances. \\
 \begin{figure}[H]
-    \centering
-    \includegraphics[scale = 0.3]{images/DRP_Etat_de_l_art.png}
+    \hspace{-1cm}
+    \includegraphics[scale = 0.45]{images/DRP_Etat_de_l_art.png}
     \caption{Articles scientifiques par ordre chronologique}
     \label{fig:articlesChrono}
 \end{figure}
@@ -122,14 +125,35 @@ Le prochain article repose sur une technologie de monitoring non-invasive. Elle 
 Cette technologie permet également d'enregistrer d'autres signaux tels que la fréquence cardiaque mais elle requiert encore quelques améliorations 
 ainsi que quelques recherches supplémentaires. 
 
+\section{Benchmarking}
+Avec les différentes informations récoltées de l'état de l'art, un benchmarking peut être élaboré. Ce dernier est composé de différentes valeurs 
+de performance à atteindre dans l'idéal. 
 
-\section{Un débitmètre innovant}
-Ce travail de Bachelor est une recherche à propos d'un débitmètre dont le principe de fonctionnement est encore innovant. Il utilise des 
-membranes nanoporeuses qui permettent une acquisition de données rapides. 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Plage de débit}           & $\pm 8$ l/min     \\
+        \hline
+        \textbf{Sensibilité de détection} & < 0.1 l/min       \\
+        \hline
+        \textbf{Temps de réponse}         & < 340 ms          \\
+        \hline
+        \textbf{Fréquence de respiration} & entre 0.3 et 3 Hz \\
+        \hline
+        \textbf{Géométrie des conduits}   & < 10 mm           \\
+        \hline
+    \end{tabular}
+    \caption{Benchmarking}
+    \label{fig:benchmarking}
+\end{table}
+
 
 \section{Fonctionnement du débitmètre respiratoire pédiatrique}
-Le capteur développé lors de ce Travail de Bachelor, repose sur le phénomène de l'effet Seebeck. Phénomène que l'on peut également retrouver 
-dans les thermocouples. L'effet Seebeck est le suivant :\\
+Ce travail de Bachelor est donc une recherche à propos d'un débitmètre dont le principe de fonctionnement est encore innovant. \\
+
+Le capteur développé repose sur le phénomène de l'effet Seebeck. Phénomène que l'on peut également retrouver dans les thermocouples. L'effet 
+Seebeck est le suivant :\\
 Lorsque deux matériaux conducteurs ou semi-conducteurs sont soumis à des températures différentes, une tension va être produite entre ces deux matériaux. \\
 Sur la Figure \ref{fig:Seebeck}, deux matériaux sont côte à côte. Une source de chaleur vient chauffer le matériau de gauche. 
 \begin{figure}[H]
@@ -180,6 +204,20 @@ de réponse faible).
     \item Rapport technique
 \end{itemize}
 \section{Planification}
+Le travail effectué s'est organisé en plusieurs parties : \\
+\begin{enumerate}
+    \item Cahier des spécifications\\
+          Revue de la littérature, rédaction d'un état de l'art et définition du benchmarking. \\
+    \item Conception et réalisation du capteur nanostructuré\\
+          Électrodéposition, déposition physique en phase vapeur (\gls{pvd}), conditionnement du capteur (réalisation des supports)\\
+    \item Conception et réalisation du banc de test\\
+          Commandes, études des différents composants du banc de test, réalisation, montage et validation\\
+    \item Qualification du capteur\\
+          Définition d'un protocole de mesures, résultats et analyses\\
+    \item Rapport technique
+          Rédaction du raport
+\end{enumerate}
+L'avancée du travail a été suivie par une scéance d'une heure hebdomadaire. 
 
 \section{Plan du rapport}
 

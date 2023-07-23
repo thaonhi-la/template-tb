@@ -28,7 +28,7 @@ dessiner au stylo un point noir sur les pistes à mesurer. Ainsi, les problèmes
 pas été suffisante. \\
 
 Une autre mesure a alors été faite dans des conditions moins lumineuses (après le coucher du soleil). La figure \ref*{fig:cameraThermique},
-montre que le corps de chauffe possède une température avoisinant les 37\textdegree C. \\
+montre que le corps de chauffe de l'échantillon D06 possède une température avoisinant les 37\textdegree C. \\
 
 Un second type de mesure permettant de comprendre chaque partie du \gls{capteur} a été effectuée. Celle-ci concerne la résistance du corps de
 chauffe et du circuit thermoélectrique.
@@ -61,7 +61,11 @@ Sur le tableau \ref*{tab:resistancePointeRessort}, une légère différence entr
 appelée Résistance directe) et la résistance à travers les pointes ressort est visible. Ceci peut être dû au fait que les pointes ressort ont 
 également une petite résistance qui vient alors changer la résistance totale du corps de chauffe. Cependant, il faut également prendre en 
 compte le fait que la résistance change suivant la position de la mesure. En effet, une mesure faite aux extrémités de la piste d'or sera différente 
-d'une mesure effectuée sur le centre de la piste d'or. 
+d'une mesure effectuée sur le centre de la piste d'or. \\
+
+Les tests de chauffe à la caméra ont été effectué sur d'autres échantillons tels que les échantillons D12, D13 et D14. Malheureusement ces derniers 
+n'ont donné aucun résultat à la caméra thermique (auncu signe d'échauffement). Le corps de chauffe devra donc être amélioré en épaississant la 
+couche d'or formé par la \gls{pvd} et/ou en modifiant la forme générale du corps de chauffe. 
 
 \subsection{Hypothèses concernant l'échantillon défectueux}
 Afin de détecter où se situe le problème, les différents paramètres du capteur \gls{capteur} ont été remis en question :
@@ -131,7 +135,6 @@ uniquement sur la réponse du capteur, l'amplificateur a été mis de côté pou
     \item Mesure sans corps de chauffe et une respiration humaine\\
     \item Mesure avec corps de chauffe constant et respiration humaine
 \end{enumerate}
-
 Ces mesures ont été effectuées sur quatre échantillons décrit au chapitre \ref{chap:capteur}. 
 
 \section{Mesures du capteur sans amplificateur}
@@ -164,15 +167,15 @@ lorsque seulement le corps de chauffe est activé. Ce dernier est alimenté avec
     \end{subfigure}
 \end{figure}
 
-Sur la figure \ref*{fig:chauffe_pulse_g}, aucun signal n'est distingable. En effet, il semble n'y avoir que du bruit. Cependant, sur la figure
-\ref*{fig:chauffe_pulse_b}, la tension est bien moins stable. Pourtant aucune flux n'est encore ajouté. \\
+Sur la figure \ref{fig:chauffe_pulse_g}, aucun signal n'est distingable. En effet, il semble n'y avoir que du bruit. Cependant, sur la figure
+\ref{fig:chauffe_pulse_b}, la tension est bien moins stable. Pourtant aucune flux n'est encore ajouté. \\
 
 La raison de ce phénomène peut se trouver dans le fait que chaque électrodéposition est faite à la main, une après l'autre. Ceci signifie que
 les deux électrodépositions diffèrent certainement l'une de l'autre. \\
 De plus, le corps de chauffe est assez proche des deux électrodépositions. De ce fait, il est probable que lorsqu'il est en marche, le corps de
 chauffe transfert de la chaleur aux deux extrémités du capteur. Ces deux extrémités sont alors chauffées mais comme elles possèdent des nanofils
 quelque peu différents d'un côté ou de l'autre, un gradient de température se forme et une certaine tension circule. \\
-C'est une hypothèse du phénomène que l'on peut observer sur la figure \ref*{fig:chauffe_pulse_b}.\\
+C'est une hypothèse du phénomène que l'on peut observer sur la figure \ref{fig:chauffe_pulse_b}.\\
 
 Le support Design 5 semble, lui, éviter ce transfert de chaleur. Cela peut être dû au fait qu'étant donné que la membrane est plaquée contre
 la pièce du support, la chaleur transférée par le corps de chauffe est "perdue" dans la matière du support (ici : PLA).\\
@@ -186,13 +189,30 @@ Pour ces raisons, le support Design 1 a été privilégié étant donné qu'il s
     \caption{Échantillon D06 - Flux d'air comprimé pulsé (corps de chauffe constant)}
     \label{fig:D06_airPulse}
 \end{figure}
+La figure \ref{fig:D06_airPulse}, montre la réponse du capteur lorsqu'un flux d'air comprimé vient souffler sur le capteur pendant 3 s, puis 
+stoppe le flux d'air pendant également 3 s. 
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.6]{assets/figures/D13_air_comprime_pulse_blue.pdf}
-    \caption*{Échantillon D13 - Flux d'air comprimé pulsé en sens inverse puis direct}
+    \caption{Échantillon D13 - Flux d'air comprimé pulsé en sens inverse puis direct}
     \label{fig:D13_air_comp_pulse}
 \end{figure}
+
+Sur la figure \ref{fig:D13_air_comp_pulse}, la fréquence du souffle d'air comprimé est la même que pour la figure précédente 
+(\ref{fig:D06_airPulse}). Cependant, après environ 50 s, le tube d'arrivée d'air est débranché pour venir se rebrancher dans l'autre sens. 
+du capteur. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.3]{assets/figures/Inverse_direct.pdf}
+    \caption{Sens direct ou inverse du flux d'air}
+    \label{fig:direct_inverse}
+\end{figure}
+
+Cette manipulation permet d'observer si un comportement différent est à noter. Dans notre cas, l'allure du graphe semble peu changer d'un sens 
+ou de l'autre. Les électrodépositions sont alors assez différentes du côté droit que du côté gauche pour générer un signal lorsque seulement un 
+corps de chauffe pulsé et utilisé mais pas complètement dissemblables, jusqu'à obtenir des résultats qui diffèrenet d'un sens ou de l'autre. 
 
 \subsection{Respiration humaine}
 Au lieu d'amener le flux d'air par une source d'air copmrimé, l'arrivée d'air sera effectué par une respiration humaine. Ceci nous a donné les résultats suivants :
@@ -200,14 +220,38 @@ Au lieu d'amener le flux d'air par une source d'air copmrimé, l'arrivée d'air 
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.6]{assets/figures/D13_human_breath_direct_invert_blue.pdf}
-    \caption{D06 - Réponse du capteur à la respiration humaine en sens direct et inverse}
+    \caption{D13 - Réponse du capteur à la respiration humaine en sens direct et inverse}
     \label{fig:D13_human_breath_direct_invert}
 \end{figure}
+
+La partie gauche du graphe de la figure \ref{fig:D13_human_breath_direct_invert}, correspond à la réponse du capteur et du débitmètre lorsque la 
+respiration se fait en sens direct. La partie droite, quant à elle, montre ces deux mêmes réponses mais lorsque la respiration se fait en sens 
+inverse (cf. figure \ref{fig:direct_inverse}). 
 
 Les mesures de la respiration humaine avec et sans corps de chauffe ont montré très peu de différences. Ainsi, le corps de chauffe a été laissé 
 de côté pour le moment. 
 
 \subsection{Mesure concernant la condensation}
+Les résultats avec la respiration humaine sont bien plus nettes que ceux avec l'air comprimé. Ce phénomène peut être dû au fait que le capteur 
+est sensible à l'humidité (en plus de la chaleur). De plus, étant donné que le comportement est différent lors de l'inspiration ou l'expiration, 
+il étatit intéressant d'émettre quelques hypothèses :
+\begin{itemize}
+    \item L'expiration humaine est constituée d'air humide chaud qui vient donc réchauffer et humidifier le capteur
+    \item L'humidité vient se déposer sur la membrane
+    \item Lors de l'inspiration, il y aura un phénomène d'évaporation qui viendra changer à nouveau la température du capteur
+\end{itemize}
+
+Afin d'étudier ces hypothèses, une expérience a été efffectuée en expirant seulement pendant quelques secondes (ici 5 s), puis en laissant le 
+capteur reposer un certain temps. Cette manipulation permettrait d'observer si l'humidité de l'expiration s'évapore (si tel est le cas, le 
+capteur devrait montrer quelque chose après l'expiration mais avant le retour au zéro). 
+\begin{comment}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{name}
+    \caption{title}
+    \label{fig:}
+\end{figure}
+\end{comment}
 
 \section{Dépandances}
 \section{Discussion}

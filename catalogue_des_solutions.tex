@@ -1,10 +1,11 @@
 \section{Méthode de fabrication du capteur}
 \label{chap:capteur}
-Le capteur constitué de la membrane nanoporeuse, des électrodépositions ainsi que des dépôts physiques en phase vapeur d'or (PVD) sont 
+Les capteurs, constitués de la membrane nanoporeuse, des électrodépositions ainsi que des dépôts physiques en phase vapeur d'or (\gls{pvd}) sont 
 fabriquées avec plusieurs membranes différentes et selon 2 méthodes :
 
 \subsection{Membranes à disposition}
 \begin{table}[H]
+    \centering
     \begin{tabular}{|c|c|}
         \hline
         Matériau de la membrane & Épaisseur de la membrane \\
@@ -17,6 +18,7 @@ fabriquées avec plusieurs membranes différentes et selon 2 méthodes :
         \hline
     \end{tabular}
     \caption{Matériau des membranes disponibles}
+    \label{tab:membranes}
 \end{table}
 
 \subsection{Dénomination des échantillons}
@@ -38,48 +40,61 @@ fabriquées avec plusieurs membranes différentes et selon 2 méthodes :
     \caption{Dénomination des échantillons}
 \end{table}
 
+\newpage
 \subsection{Méthode A et B}
-Les méthodes d'électrodéposition correspondent à la définition suivante :
+Les capteurs ont été conçus soit par la méthode A, soit par la méthode B. Ces méthodes sont expliquées et écrites dans les paragraphes qui suivent :
 \begin{itemize}
-    \item Méthode A
+    \item \textbf{Méthode A}
           \begin{figure}[H]
-              \hspace{-0.5cm}
+              \centering
               \begin{subfigure}{0.45\textwidth}
-                  \includegraphics[scale = 0.25]{assets/figures/Membrane_nue.png}
+                  \includegraphics[scale = 0.22]{assets/figures/Membrane_nue.png}
                   \caption{Membrane nanoporeuse}
               \end{subfigure}
               \begin{subfigure}{0.45\textwidth}
-                  \includegraphics[scale = 0.3]{assets/figures/Court_circuit.png}
+                  \includegraphics[scale = 0.27]{assets/figures/Court_circuit.png}
                   \caption{Dépôt physique en phase vapeur (PVD) d'or du court-circuit}
               \end{subfigure}
               \newline
               \begin{subfigure}{0.45\textwidth}
-                  \includegraphics[scale = 0.3]{assets/figures/ED.png}
+                  \includegraphics[scale = 0.27]{assets/figures/ED.png}
                   \caption{Électrodépositions effectuées un côté après l'autre}
               \end{subfigure}
               \begin{subfigure}{0.45\textwidth}
-                  \includegraphics[scale = 0.3]{assets/figures/PVD_L.png}
+                  \includegraphics[scale = 0.27]{assets/figures/PVD_L.png}
                   \caption{PVD d'or des branches en L}
               \end{subfigure}
           \end{figure}
-    \item Méthode B
+          
+          \begin{enumerate}[label=(\alph*), wide, labelwidth=!, labelindent = 0pt]
+              \item C'est à partir d'une membrane nanoporeuse qu'un capteur est fabriqué. Les différentes membranes sont listées dans le tableau
+                    \ref{tab:membranes}. 
+              \item Une première \gls{pvd} est effectuée. Pour cette méthodes, de l'or vient se déposer grâce à un masque en forme de bande.
+                    Cette couche d'or servira de court-circuit pour le capteur. 
+              \item Cette étape concerne les électrodépositions. Une première électrodéposition vient remplir les nanopores de la membrane sur
+                    un diamètre défini (nommé diamètre du via). Puis une seconde se fera de l'autre côté de la couche d'or du court-circuit.
+              \item La dernière étape de cette méthode consiste à effectuer une \gls{pvd} sur l'autre face de la membrane. Cette \gls{pvd} formera
+                    le circuit du themrmocouple complet ainsi que le corps de chauffe (au centre). 
+          \end{enumerate}
+          
+    \item \textbf{Méthode B}
           \begin{figure}[H]
               \hspace{-0.5cm}
               \begin{subfigure}{0.45\textwidth}
-                  \includegraphics[scale = 0.3]{assets/figures/Membrane_nue_B.png}
+                  \includegraphics[scale = 0.27]{assets/figures/Membrane_nue_B.png}
                   \caption{Membrane nanoporeuse}
               \end{subfigure}
               \begin{subfigure}{0.45\textwidth}
-                  \includegraphics[scale = 0.3]{assets/figures/PVD_L_B.png}
+                  \includegraphics[scale = 0.27]{assets/figures/PVD_L_B.png}
                   \caption{PVD d'or des branches en L}
               \end{subfigure}
               \newline
               \begin{subfigure}{0.45\textwidth}
-                  \includegraphics[scale = 0.3]{assets/figures/ED_B.png}
+                  \includegraphics[scale = 0.27]{assets/figures/ED_B.png}
                   \caption{Électrodépositions effectuées une après l'autre}
               \end{subfigure}
               \begin{subfigure}{0.45\textwidth}
-                  \includegraphics[scale = 0.3]{assets/figures/Court_circuit_B.png}
+                  \includegraphics[scale = 0.27]{assets/figures/Court_circuit_B.png}
                   \caption{PVD d'or du court-circuit}
               \end{subfigure}
           \end{figure}
@@ -94,7 +109,7 @@ ainsi que d'y attacher un système apportant un flux d'air (imitation de la resp
 \subsection{Design 1}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.3]{images/Design1.png}
+    \includegraphics[scale = 0.3]{assets/figures/Design7.png}
     \caption{Design 1}
     \label{fig:design1}
 \end{figure}
