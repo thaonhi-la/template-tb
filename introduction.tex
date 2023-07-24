@@ -3,44 +3,39 @@ Dans le cadre des études à la HEIG-VD, un travail de Bachelor et demandé en f
 
 \section{Contexte}
 %Cette section \underline{n'est pas obligatoire}, mais elle est souvent présente dans un rapport technique pour compléter l'introduction et définir le contexte du travail \cad le cadre formel dans lequel le travail est mené.
-Dans le domaine de la santé, les nouveau-nés sont des patients requérant une attention particulière et un contrôle précis de leur 
+Dans le domaine de la santé, les nouveau-nés sont des patients requérant une attention particulière et un contrôle précis de leurs 
 paramètres vitaux. En effet, dès leur plus jeune âge, ils peuvent être victimes de plusieurs maladies dont les détresses respiratoires. 
-De ce fait, plusieurs appareils de monitoring sont utilisés afin de contrôler les paramètres vitaux des patients. 
+De ce fait, plusieurs appareils de monitoring sont utilisés afin de contrôler, par exemple, l'activité pulmonaire des patients. 
 Selon le type de patient, les appareils utilisés sont différents. En effet, un nouveau-né a un comportement différent d'une personne 
 adulte. Il est alors nécessaire de contrôler ces paramètres vitaux à l'aide d'appareils adaptés. \\
 
-Ce Travail de Bachelor porte sur la réalisation d'un débitmètre respiratoire innovant. Ce dernier permettrait de calculer le flux d'air entrant et sortant
-du patient et, ainsi, de contrôler son débit respiratoire. 
+Ce Travail de Bachelor porte sur la faisabilité d'un débitmètre respiratoire par nanotechnologie. Ce dernier permettrait de calculer le flux 
+d'air entrant et sortant du patient avec des performances meilleures que ce qui existe actuellement sur le marché. \\
 
-\section{Cahier des charges et objectifs}
-Le cahier des charges fourni était le suivant :\\
-\textbf{Contexte}\\
-Dans les unités de soins intensifs, de nombreux dispositifs biomédicaux assurent le monitoring des fonctions vitales des patients. Un 
-paramètre important est la mesure du débit respiratoire. Cependant, cette mesure est délicate pour les bébés nés prématurément, car leur 
-faible capacité pulmonaire est du même ordre de grandeur que les « volumes morts » des appareils de mesures classiques. Une solution 
-consiste à installer un débitmètre de très faible encombrement à l’extrémité du tuyau d’intubation, juste à l’entrée des poumons.
+L'objectif principal de ce projet est donc de fabriquer des débitmètres par nanotechnologie ainsi qu'un banc de test adapté permettant de tester le 
+fonctionnement de ces nouveaux capteurs. 
 
-\textbf{But du TB}\\
-Le but de ce travail de Bachelor est de prouver la faisabilité d’un tel débitmètre, qui intégrera des capteurs flexibles ultra-minces 
-élaboré par nanotechnologie à la HEIG-VD lors d'un précédent TB. Le travail de Bachelor sera proposé comme candidat au prix Sensor.ch 2024.
+\section{Objectifs spécifiques}
+Le cahier des charges complet est accessible dans les annexes. Ce chapitre se concentrera sur les différents objectifs compris dans le cahier 
+des charges. \\
 
 \textbf{Objectifs}
 \begin{itemize}
-    \item Elaboration d’un cahier de spécifications – Elaboration d’un catalogue de solutions.
+    \item Élaboration d’un cahier de spécifications – Élaboration d’un catalogue de solutions.
     \item Conception et réalisation d’un débitmètre par nanotechnologie.
     \item Montage d’un banc de test dédié au débitmètre.
     \item Qualification des performances du débitmètre
 \end{itemize}
 
-\section{Etat de l'art}
-\subsection{Débitmètre néonataux sur le marché}
+\section{État de l'art}
+\subsection{Débitmètres néonatals sur le marché}
 \begin{comment}
-Actuellement, ce qui existe sur le marché sont des anémomètres à double fils chauds (double hot wire anemometer). Ces débitmètre 
-mesure le flux des patients néonataux. \\
+Actuellement, ce qui existe sur le marché sont des anémomètres à double fils chauds (double hot wire anemometer). Ces débitmètres 
+mesurent le flux des patients néonatals. \\
 Les revues scientifiques parlent également de débitmètre pédiatrique. Leur fonctionnement  
 \end{comment}
-Plusieurs entreprises proposent des débitmètre néonataux. Ces entreprises ont été regroupées dans le tableau ci-dessous avec les 
-techniques utilisées. \\
+Plusieurs entreprises proposent des débitmètres néonatals. Ces entreprises ont été regroupées dans le tableau ci-dessous avec les 
+technologies de capteur utilisées. \\
 
 \begin{table}[H]
     \centering
@@ -56,7 +51,6 @@ techniques utilisées. \\
         \hline
         Draeger     & Anémomètre à fil chaud              \\
         \hline
-        \label{tab:marques}
     \end{tabular}
     \caption{Débitmètres pédiatriques sur le marché}
     \label{tab:debitmetreMarche}
@@ -74,26 +68,31 @@ performances. \\
     \label{fig:articlesChrono}
 \end{figure}
 
-Les articles pertinants pour ce Travail de Bachelor sont résumés dans ce chapitre et classé par ordre chronologique sur la figure 
+Les articles pertinents pour ce Travail de Bachelor sont résumés dans ce chapitre et classé par ordre chronologique sur la figure 
 \ref{fig:articlesChrono}. \\
 
+\subsubsection{Anémomètre à fils chauds}
+\subsubsection{Principe de Venturi}
+\subsubsection{Pneumotachographe}
+\subsubsection{Transfert de chaleur entre deux transistors}
+
 Le premier article \cite{rolfe_bioengineering_2009}, mentionne plusieurs débitmètres différents. Le pneumotacographe de Fleisch, par exemple, est un 
-système par lequel le débit repiratoire est mesuré grâce à une différence de pression. Cette différence de pression est engendré par 
+système par lequel le débit respiratoire est mesuré grâce à une différence de pression. Cette différence de pression est engendré par 
 un rétrécissement de l'espace de circulation du gaz (principe de Venturi) \cite{oberg_biomedical_2011}. \\
 
 Par la suite, il est expliqué que le pneumotachographe est gentiment remplacé par les anémomètres à fil chaud. Ces capteurs sont 
-constitués d'un ou plusieurs fils chauffé par une source de courant. Lorsqu'un flux d'air va souffler sur le fil, la chaleur sera 
+constitués d'un ou plusieurs fils chauffés par une source de courant. Lorsqu'un flux d'air va souffler sur le fil, la chaleur sera 
 transférée du fil au gaz. Le capteur viendra alors mesurer la quantité de chaleur transférée ainsi que la différence de température entre 
 le fil et le gaz pour finalement calculer le débit \cite{oberg_biomedical_2011}. \\
-L'article sus-mentionné conseil l'utilisation des anémomètres à plusieurs fils contrairement à ceux à un seul fil qui aurait des performances 
+L'article susmentionné conseil l'utilisation des anémomètres à plusieurs fils contrairement à ceux à un seul fil qui aurait des performances 
 moindres. 
 L'anémomètre à fils chauds est une technologie incorporée par exemple dans la machine "Draeger Babylog", marque mentionnée dans le tableau \ref{tab:marques}. \\
 
-Le second article exploite le principe de Venturi mentionné auparavant \cite{jacq_ultra-low_2011}. Il est destiné à une aplication 
-quelques peu différente puisqu'il est  intégrer dans un ressuscitateur. Un tel appareil permet la réanimation du patient qui ne respire 
+Le second article exploite le principe de Venturi mentionné auparavant \cite{jacq_ultra-low_2011}. Il est destiné à une application 
+quelque peu différente puisqu'il est  intégré dans un ressuscitateur. Un tel appareil permet la réanimation du patient qui ne respire 
 plus. Le ressuscitateur gonfle les poumons d'air et ainsi s'assure qu'un bon taux d'oxygène circule dans le patient. \\
-Pour les nouveaux-né, la quantité d'air injectée dans les poumons doit être mesurée car un trop grand débit pourrait rapidement engendrer 
-des dégats. \\
+Pour les nouveaux-né, la quantité d'air injectée dans les poumons doit être mesurée, car un trop grand débit pourrait rapidement engendrer 
+des dégâts. \\
 Couplé au système de Venturi, un capteur de force vient mesurer la pression et le volume d'air passant par le ressuscitateur. \\
 
 Une autre technologie pour débitmètre consiste à utiliser le transfert de chaleur entre deux transistors. 
@@ -107,7 +106,7 @@ C'est un principe encore innovant décrit dans l'article \cite{giorgino_design_2
 Le premier transistor est placé perpendiculairement au flux d'air sur un PCB. \\
 Le second est fixé de l'autre côté du PCB dos à dos avec le premier transistor (cf. figure \ref{fig:transistors}). \\
 De cette manière, le capteur sera capable de distinguer une expiration d'une inspiration. Le temps de réponse d'un tel capteur serait 
-d'environ 340ms. C'est un très bon temps de réponse en comparaison des capteurs médicaux existants sur le marché. Cependant, diverses améliorations 
+d'environ 340 ms. C'est un très bon temps de réponse en comparaison des capteurs médicaux existants sur le marché. Cependant, diverses améliorations 
 doivent encore être faites avant de pouvoir utiliser une telle technologie. \\
 
 \begin{comment}
@@ -117,12 +116,12 @@ il est moins important dans le cadre de ce projet.\\
 \end{comment}
 
 Un autre article mentionne les membranes nanoporeuses comme capteur \cite{moharamzadeh_fabrication_2018}. Cependant, ces capteurs sont pour l'humidité et non le débit 
-respiratoire. Des nanostructures d'oxyde de Zinc sont utilisées, car elles possèdes de bonnes propriétés physiques et chimiques. Bien que l'humidit 
+respiratoire. Des nanostructures d'oxyde de Zinc sont utilisées, car elles possèdent de bonnes propriétés physiques et chimiques. Bien que l'humidité 
 et le débit respiratoire soient en lien, l'article n'a pas étudiés en détail l'application de cette membrane au débit respiratoire directement. \\
 Cependant, un temps de réponse plutôt bon, de l'ordre de la seconde est attendu avec une telle technologie. \\
 
-Le prochain article repose sur une technologie de monitoring non-invasive. Elle utilise une caméra qui suit les mouvements du nouveaux-né. 
-Cette technologie permet également d'enregistrer d'autres signaux tels que la fréquence cardiaque mais elle requiert encore quelques améliorations 
+Le prochain article repose sur une technologie de monitoring non invasive. Elle utilise une caméra qui suit les mouvements du nouveaux-né. 
+Cette technologie permet également d'enregistrer d'autres signaux tels que la fréquence cardiaque, mais elle requiert encore quelques améliorations 
 ainsi que quelques recherches supplémentaires. 
 
 \section{Benchmarking}
@@ -159,7 +158,7 @@ Sur la Figure \ref{fig:Seebeck}, deux matériaux sont côte à côte. Une source
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.3]{images/Seebeck.jpg}
-    \caption{Effect de Seebeck}
+    \caption{Effet de Seebeck}
     \label{fig:Seebeck}
 \end{figure}
 Les électrons au sein de la matière vont se déplacer du chaud vers le froid, créant ainsi un courant \cite{instrumentys_effet_2021}.\\
@@ -173,7 +172,7 @@ Bismuth deviennent alors des nanofils.
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.5]{images/Electrodeposition.png}
-    \caption{Electrodéposition \cite{ruiz-gomez_electrodeposition_2022}}
+    \caption{Électrodéposition \cite{ruiz-gomez_electrodeposition_2022}}
     \label{fig:electrodeposition}
 \end{figure}
 
@@ -215,9 +214,9 @@ Le travail effectué s'est organisé en plusieurs parties : \\
     \item Qualification du capteur\\
           Définition d'un protocole de mesures, résultats et analyses\\
     \item Rapport technique
-          Rédaction du raport
+          Rédaction du rapport
 \end{enumerate}
-L'avancée du travail a été suivie par une scéance d'une heure hebdomadaire. 
+L'avancée du travail a été suivie par une séance d'une heure hebdomadaire. 
 
 \section{Plan du rapport}
 
@@ -226,7 +225,7 @@ L'avancée du travail a été suivie par une scéance d'une heure hebdomadaire.
 \section{Citations et bibliographie}
 Citer vos sources est essentiel. Avec \texttt{biblatex} vous pouvez facilement citer des articles, des livres ou des sites internet. Toutes les citations dans le texte seront automatiquement regroupées en fin de document dans la section \guillemotleft Bibliographie\guillemotright. Par exemple, citons un article d'Einstein \cite{einstein} ou le livre de Dirac \cite{dirac}.
 
-Parfois il peut être utile d'utiliser un gestionnaire de bibliographie. La communauté académique recommande l'outil \href{https://www.zotero.org/}{Zotero} qui permet de gérer une bibliothèque numérique d'ouvrages et de références numériques. Il permet également de générer une bibliographie compatible avec \LaTeX.
+Parfois, il peut être utile d'utiliser un gestionnaire de bibliographie. La communauté académique recommande l'outil \href{https://www.zotero.org/}{Zotero} qui permet de gérer une bibliothèque numérique d'ouvrages et de références numériques. Il permet également de générer une bibliographie compatible avec \LaTeX.
 
 Notez qu'il est très facile d'obtenir l'extrait \texttt{bibtex} depuis des journaux. Sélectionnez \emph{export/citation}. Si vous le pouvez choisissez \texttt{bibtex}. Dans le cas d'un format \texttt{.ris}, utilisez un convertisseur en ligne comme \href{http://www.bruot.org/ris2bib/}{ris2bib}.
 

@@ -36,38 +36,41 @@ chauffe et du circuit thermoélectrique.
     \begin{center}
         \begin{tabular}{|p{2cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
             \hline
-            Échantillon & \multicolumn{2}{|c|}{Corps de chauffe} & \multicolumn{2}{|c|}{Circuit du thermocouple}                                                                         \\
+            Échantillon & \multicolumn{2}{|c|}{Corps de chauffe} & \multicolumn{2}{|c|}{Circuit du thermocouple}                                                                          \\
             \hline
-                        & Résistance directe [$\Omega$]          & Résistance pointes ressort [$\Omega$]         & Résistance directe [$\Omega$] & Résistance pointes ressort [$\Omega$] \\
+                        & Résistance directe [$\Omega$]          & Résistance pointes ressorts [$\Omega$]        & Résistance directe [$\Omega$] & Résistance pointes ressorts [$\Omega$] \\
             \hline
-            D06         & 74.29                                  & 75.3                                          & 151.5                         & 157                                   \\
+            D06         & 74.29                                  & 75.3                                          & 151.5                         & 157                                    \\
             \hline
-            D11         & 2.8                                    & 2.7                                           & 35 000 000                    & 20 000 000                            \\
+            D11         & 2.8                                    & 2.7                                           & 35 000 000                    & 20 000 000                             \\
             \hline
-            D12         & 2.44                                   & 2.45                                          & 5600                          & 5580                                  \\
+            D12         & 2.44                                   & 2.45                                          & 5600                          & 5580                                   \\
             \hline
-            D13         & 6.07                                   & 6.14                                          & 585.5                         & 570.2                                 \\
+            D13         & 6.07                                   & 6.14                                          & 585.5                         & 570.2                                  \\
             \hline
-            D14         & 2.53                                   & 2.58                                          & 6.83                          & 6.91                                  \\
+            D14         & 2.53                                   & 2.58                                          & 6.83                          & 6.91                                   \\
             \hline
-            D17         & 9.2                                    & 9.4                                           & 13.6                          & 14                                    \\
+            D17         & 9.2                                    & 9.4                                           & 13.6                          & 14                                     \\
             \hline
         \end{tabular}
         \caption{Résistances sur le capteur}
         \label{tab:resistancePointeRessort}
     \end{center}
 \end{table}
-Sur le tableau \ref*{tab:resistancePointeRessort}, une légère différence entre la resistance mesurée directement sur la piste d'or (résistance 
+Sur le tableau \ref*{tab:resistancePointeRessort}, une légère différence entre la résistance mesurée directement sur la piste d'or (résistance 
 appelée Résistance directe) et la résistance à travers les pointes ressort est visible. Ceci peut être dû au fait que les pointes ressort ont 
 également une petite résistance qui vient alors changer la résistance totale du corps de chauffe. Cependant, il faut également prendre en 
 compte le fait que la résistance change suivant la position de la mesure. En effet, une mesure faite aux extrémités de la piste d'or sera différente 
 d'une mesure effectuée sur le centre de la piste d'or. \\
 
+L'échantillon D11 possède une résistance de thermocouple très instable et élevée. Pour cette raison, il a été décidé que les mesures ne seront 
+pas effectuées, car ce capteur a peu de chance de donner des résultats concluants. 
+
 Les tests de chauffe à la caméra ont été effectué sur d'autres échantillons tels que les échantillons D12, D13 et D14. Malheureusement ces derniers 
-n'ont donné aucun résultat à la caméra thermique (auncu signe d'échauffement). Le corps de chauffe devra donc être amélioré en épaississant la 
+n'ont donné aucun résultat à la caméra thermique (aucun signe d'échauffement). Le corps de chauffe devra donc être amélioré en épaississant la 
 couche d'or formé par la \gls{pvd} et/ou en modifiant la forme générale du corps de chauffe. 
 
-\subsection{Hypothèses concernant l'échantillon défectueux}
+\subsection{Hypothèses concernant l'échantillon pathologique}
 Afin de détecter où se situe le problème, les différents paramètres du capteur \gls{capteur} ont été remis en question :
 \begin{itemize}
     \item \textbf{Matériau thermoélectrique (ThEl)}\\
@@ -76,32 +79,32 @@ Afin de détecter où se situe le problème, les différents paramètres du capt
     \item \textbf{Distance des pistes d'or du capteur au corps de chauffe}\\
           La distance entre le corps de chauffe et les piste d'or peut être importante, car trop proches, les unes des autres, la chaleur du corps
           de chauffe risque de se transmettre aux deux extrémités du capteur. De ce fait, la même température sera mesurable en tout point du
-          capteur, engendrant donc aucune différence de température entre la partie droite et la partie gauche du \gls{capteur}, et donc aucune
+          capteur, n'engendrant donc aucune différence de température entre la partie droite et la partie gauche du \gls{capteur}, et donc aucune
           tension ne sera mesurable.\\
           
-    \item \textbf{Epaisseur de la membrane} \\
+    \item \textbf{Épaisseur de la membrane} \\
           Plus la membrane est épaisse, plus la couche d'or de court-circuit sera éloignée. Cela permettrait à la source de chaleur d'être concentrée
           à un endroit spécifique. Ceci est important pour des raisons similaires au premier paramètre cité. Un transfert de chaleur faible (voir
           inexistant) entre les deux extrémités du \gls{capteur} est souhaitable (c'est la différence de température qui va engendrer une tension
           mesurable). \\
           
-          Dans le stock de matière de membranes se trouvent les choix suivant :
+          Dans le stock de matière de membranes se trouvent les choix suivants :
           \begin{itemize}
               \item GTTP 6-10 $\mu$m d'épaisseur
               \item VCTP 6-10 $\mu$m d'épaisseur
               \item PI25005 25 $\mu$m d'épaisseur
           \end{itemize}
-          L'objectif sera alors de faire des capteurs en PI25005 (Kepton) et de les comparer grâce au banc de test aux échantillon en GTTP ou VCTP.
+          L'objectif sera alors de faire des capteurs en PI25005 (Kepton) et de les comparer grâce au banc de test aux échantillons en GTTP ou VCTP.
           Ceci permettra d'affirmer ou désaffirmer l'hypothèse.\\
           
     \item \textbf{Diamètre du via}\\
-          Lors de l'électrodéposition, un joint en caoutchouc percé au centre d'un diamètre de 0.3 mm, 0.5 mm ou 1 mm (appelé diammètre du via) permet de concentrer
+          Lors de l'électrodéposition, un joint en caoutchouc percé au centre d'un diamètre de 0.3 mm, 0.5 mm ou 1 mm (appelé diamètre du via) permet de concentrer
           l'électrodéposition aux endroits souhaités. Cependant, si le diamètre du via est trop faible, l'électrodéposition peut avoir du mal à
           se produire (phénomènes de bulles, électrodéposition non-régulière, etc.)\\
           
     \item \textbf{Position de la piste de court-circuit}\\
-          Afin de s'assurer que le corps de chauffe de transmet pas la chaleur au deux extrémités du capteur, il serait possible de placer la couche
-          d'or de court-circuit plus distantes aux électrodépositions
+          Afin de s'assurer que le corps de chauffe transmette un minimum de chaleur au deux extrémités du capteur, il serait possible de placer la couche
+          d'or de court-circuit plus distante aux électrodépositions
 \end{itemize}
 
 \begin{comment}
@@ -135,11 +138,11 @@ uniquement sur la réponse du capteur, l'amplificateur a été mis de côté pou
     \item Mesure sans corps de chauffe et une respiration humaine\\
     \item Mesure avec corps de chauffe constant et respiration humaine
 \end{enumerate}
-Ces mesures ont été effectuées sur quatre échantillons décrit au chapitre \ref{chap:capteur}. 
+Ces mesures ont été effectuées sur quatre échantillons décrits au chapitre \ref{chap:capteur}. 
 
 \section{Mesures du capteur sans amplificateur}
 Plusieurs mesures ont été faites avec plusieurs types de paramètres. Toutes les mesures avec leurs paramètres ont été regroupées et sauvegardées
-dans un document excel qui se trouve en annexe.\\
+dans un document Excel qui se trouve en annexe.\\
 Chacune des mesures sur cet Excel est liée à un autre fichier contenant toutes les valeurs concernant cette mesure.
 \begin{figure}[H]
     \centering
@@ -167,13 +170,13 @@ lorsque seulement le corps de chauffe est activé. Ce dernier est alimenté avec
     \end{subfigure}
 \end{figure}
 
-Sur la figure \ref{fig:chauffe_pulse_g}, aucun signal n'est distingable. En effet, il semble n'y avoir que du bruit. Cependant, sur la figure
-\ref{fig:chauffe_pulse_b}, la tension est bien moins stable. Pourtant aucune flux n'est encore ajouté. \\
+Sur la figure \ref{fig:chauffe_pulse_g}, aucun signal n'est distinguable. En effet, il semble n'y avoir que du bruit. Cependant, sur la figure
+\ref{fig:chauffe_pulse_b}, la tension est bien moins stable. Pourtant, aucun flux n'est encore ajouté. \\
 
 La raison de ce phénomène peut se trouver dans le fait que chaque électrodéposition est faite à la main, une après l'autre. Ceci signifie que
 les deux électrodépositions diffèrent certainement l'une de l'autre. \\
 De plus, le corps de chauffe est assez proche des deux électrodépositions. De ce fait, il est probable que lorsqu'il est en marche, le corps de
-chauffe transfert de la chaleur aux deux extrémités du capteur. Ces deux extrémités sont alors chauffées mais comme elles possèdent des nanofils
+chauffe transfert de la chaleur aux deux extrémités du capteur. Ces deux extrémités sont alors chauffées, mais comme elles possèdent des nanofils
 quelque peu différents d'un côté ou de l'autre, un gradient de température se forme et une certaine tension circule. \\
 C'est une hypothèse du phénomène que l'on peut observer sur la figure \ref{fig:chauffe_pulse_b}.\\
 
@@ -200,7 +203,7 @@ stoppe le flux d'air pendant également 3 s.
 \end{figure}
 
 Sur la figure \ref{fig:D13_air_comp_pulse}, la fréquence du souffle d'air comprimé est la même que pour la figure précédente 
-(\ref{fig:D06_airPulse}). Cependant, après environ 50 s, le tube d'arrivée d'air est débranché pour venir se rebrancher dans l'autre sens. 
+(\ref{fig:D06_airPulse}). Cependant, après environ 50 s, le tube d'arrivée d'air est débranché pour venir se rebrancher dans l'autre sens 
 du capteur. 
 
 \begin{figure}[H]
@@ -212,10 +215,10 @@ du capteur.
 
 Cette manipulation permet d'observer si un comportement différent est à noter. Dans notre cas, l'allure du graphe semble peu changer d'un sens 
 ou de l'autre. Les électrodépositions sont alors assez différentes du côté droit que du côté gauche pour générer un signal lorsque seulement un 
-corps de chauffe pulsé et utilisé mais pas complètement dissemblables, jusqu'à obtenir des résultats qui diffèrenet d'un sens ou de l'autre. 
+corps de chauffe pulsé et utilisé, mais pas complètement dissemblables, jusqu'à obtenir des résultats qui diffèrent d'un sens ou de l'autre. 
 
 \subsection{Respiration humaine}
-Au lieu d'amener le flux d'air par une source d'air copmrimé, l'arrivée d'air sera effectué par une respiration humaine. Ceci nous a donné les résultats suivants :
+Au lieu d'amener le flux d'air par une source d'air comprimé, l'arrivée d'air sera effectué par une respiration humaine. Ceci nous a donné les résultats suivants :
 
 \begin{figure}[H]
     \centering
@@ -225,7 +228,7 @@ Au lieu d'amener le flux d'air par une source d'air copmrimé, l'arrivée d'air 
 \end{figure}
 
 La partie gauche du graphe de la figure \ref{fig:D13_human_breath_direct_invert}, correspond à la réponse du capteur et du débitmètre lorsque la 
-respiration se fait en sens direct. La partie droite, quant à elle, montre ces deux mêmes réponses mais lorsque la respiration se fait en sens 
+respiration se fait en sens direct. La partie droite, quant à elle, montre ces deux mêmes réponses, mais lorsque la respiration se fait en sens 
 inverse (cf. figure \ref{fig:direct_inverse}). 
 
 Les mesures de la respiration humaine avec et sans corps de chauffe ont montré très peu de différences. Ainsi, le corps de chauffe a été laissé 
@@ -234,16 +237,16 @@ de côté pour le moment.
 \subsection{Mesure concernant la condensation}
 Les résultats avec la respiration humaine sont bien plus nettes que ceux avec l'air comprimé. Ce phénomène peut être dû au fait que le capteur 
 est sensible à l'humidité (en plus de la chaleur). De plus, étant donné que le comportement est différent lors de l'inspiration ou l'expiration, 
-il étatit intéressant d'émettre quelques hypothèses :
+il était intéressant d'émettre quelques hypothèses :
 \begin{itemize}
     \item L'expiration humaine est constituée d'air humide chaud qui vient donc réchauffer et humidifier le capteur
     \item L'humidité vient se déposer sur la membrane
     \item Lors de l'inspiration, il y aura un phénomène d'évaporation qui viendra changer à nouveau la température du capteur
 \end{itemize}
 
-Afin d'étudier ces hypothèses, une expérience a été efffectuée en expirant seulement pendant quelques secondes (ici 5 s), puis en laissant le 
+Afin d'étudier ces hypothèses, une expérience a été effectuée en expirant seulement pendant quelques secondes (ici 5 s), puis en laissant le 
 capteur reposer un certain temps. Cette manipulation permettrait d'observer si l'humidité de l'expiration s'évapore (si tel est le cas, le 
-capteur devrait montrer quelque chose après l'expiration mais avant le retour au zéro). 
+capteur devrait montrer quelque chose après l'expiration, mais avant le retour au zéro). 
 \begin{comment}
 \begin{figure}[H]
     \centering
@@ -253,5 +256,5 @@ capteur devrait montrer quelque chose après l'expiration mais avant le retour a
 \end{figure}
 \end{comment}
 
-\section{Dépandances}
+\section{Dépendances}
 \section{Discussion}
