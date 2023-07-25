@@ -42,7 +42,7 @@ fabriquées avec plusieurs membranes différentes et selon 2 méthodes :
 
 \newpage
 \subsection{Méthode A et B}
-Les capteurs ont été conçus soit par la méthode A, soit par la méthode B. Ces méthodes sont expliquées et écrites dans les paragraphes qui suivent :
+Les capteurs ont été conçus soit par la méthode A, soit par la méthode B. Ces méthodes sont expliquées dans les paragraphes qui suivent :
 \begin{itemize}
     \item \textbf{Méthode A}
           \begin{figure}[H]
@@ -66,21 +66,23 @@ Les capteurs ont été conçus soit par la méthode A, soit par la méthode B. C
               \end{subfigure}
           \end{figure}
           
-          \begin{enumerate}[label=(\alph*), wide, labelwidth=!, labelindent = 0pt]
+          \noindent \begin{enumerate}[label=(\alph*), wide, labelwidth=!, labelindent = 0pt]
               \item C'est à partir d'une membrane nanoporeuse qu'un capteur est fabriqué. Les différentes membranes sont listées dans le tableau
-                    \ref{tab:membranes}. 
-              \item Une première \gls{pvd} est effectuée. Pour cette méthodes, de l'or vient se déposer grâce à un masque en forme de bande.
-                    Cette couche d'or servira de court-circuit pour le capteur. 
-              \item Cette étape concerne les électrodépositions. Une première électrodéposition vient remplir les nanopores de la membrane sur
-                    un diamètre défini (nommé diamètre du via). Puis une seconde se fera de l'autre côté de la couche d'or du court-circuit.
+                    \ref{tab:membranes}. \\
+              \item Une première \gls{pvd} est effectuée.De l'or vient être déposé grâce à un masque en forme de bande.
+                    Cette couche d'or servira de court-circuit pour le capteur. \\
+              \item Par la suite, vient l'étape des électrodépositions. Une première électrodéposition vient remplir les nanopores de la membrane
+                    sur un côté du court-circuit. L'électrodéposition se fait au sein de toutes les nanopores dans un diamètre défini (nommé diamètre du via). 
+                    Les nanofis se forment depuis la couche d'or de court-circuit et s'accroissent jusqu'à atteindre l'autre face de la membrane. 
+                    Puis une seconde électrodéposition se fera, de la même manière, de l'autre côté de la couche d'or du court-circuit. \\
               \item La dernière étape de cette méthode consiste à effectuer une \gls{pvd} sur l'autre face de la membrane. Cette \gls{pvd} formera
-                    le circuit du themrmocouple complet ainsi que le corps de chauffe (au centre). 
+                    le circuit du thermocouple complet ainsi que le corps de chauffe (au centre). 
           \end{enumerate}
           
           \newpage
     \item \textbf{Méthode B}
           \begin{figure}[H]
-              \hspace{-0.5cm}
+              \centering
               \begin{subfigure}{0.45\textwidth}
                   \includegraphics[scale = 0.27]{assets/figures/Membrane_nue_B.png}
                   \caption{Membrane nanoporeuse}
@@ -99,89 +101,116 @@ Les capteurs ont été conçus soit par la méthode A, soit par la méthode B. C
                   \caption{PVD d'or du court-circuit}
               \end{subfigure}
           \end{figure}
+          \begin{enumerate}[label=(\alph*), wide, labelwidth=!, labelindent = 0pt]
+              \item La première étape de cette méthode est également l'acquisition de la membrane nanoporeuse souhaitée.\\
+              \item La première \gls{pvd} de cette méthode est la déposition des couches d'or en forme de "L" et du corps de chauffe.\\
+              \item Puis, vient l'étape des électrodépositions. Une première électrodéposition vient remplir les nanopores de la membrane sur une
+                    des extrémités en forme de "L". Les nanofis se forment depuis la couche d'or en forme de "L" et s'accroissent jusqu'à 
+                    atteindre l'autre face de la membrane. Puis une seconde électrodéposition se fera, de la même manière, sur l'autre piste d'or 
+                    en forme de "L".\\
+              \item La deuxième \gls{pvd} se fait sur l'autre face de la membrane. Cette \gls{pvd} formera la piste de court-circuit du thermochouple.
+          \end{enumerate}
 \end{itemize}
 
+\newpage
 \section{Catalogue des solutions du support}
 \label{chap:catalogueSol}
 Plusieurs systèmes ont été étudiés afin d'incorporer le capteur dans une conception permettant de connecter les membranes et le corps de chauffe
-ainsi que d'y attacher un système apportant un flux d'air (imitation de la respiration du patient). Ces différentes solutions seront appeléess
-"Support des capteur \gls{capteur}s".
+ainsi que d'y attacher un système apportant un flux d'air (imitation de la respiration du patient). Ces différentes solutions seront appelées
+"Support des capteurs \gls{capteur}s".
 
-\subsection{Design 1}
+\subsection{Solution 1}
 \begin{figure}[H]
-    \centering
-    \includegraphics[scale = 0.3]{assets/figures/Design7.png}
-    \caption{Design 1}
-    \label{fig:design1}
+    \hspace{-0.5cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[scale = 0.3]{images/Design1_dessous.png}
+        \caption{Vue de dessous}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[scale = 0.45]{images/Design1_dessus.png}
+        \caption{Vue de dessus}
+    \end{subfigure}
+    \caption{Support solution 1}
+    \label{fig:solution1}
 \end{figure}
-Ce premier design est le plus basique. Il vient plaquer le capteur entre deux couches presque semblables. Sur une des couches se trouvent des
-perçages permettant de tenir des contacts à ressorts (pointes ressorts). Celles-ci viennent s'appuyer d'un côté sur le capteur et
-de l'autre, une  connection pourra être faite par des pinces crocodiles ou des soudures. \\
+Cette première solution est la plus basique. Elle vient plaquer le capteur entre deux pièces presque semblables. Sur le couvercle se trouve des
+perçages permettant de tenir des contacts à ressorts (pointes ressorts). Ceux-ci viennent s'appuyer d'un côté sur le capteur et
+de l'autre, une  connexion pourra être faite par des pinces crocodiles ou des soudures. \\
 Un joint plat peut venir de part et d'autre du capteur afin d'assurer l'étanchéité du système.\\
-Cette solution a le désavantage d'avoir une arrivé d'air scindée en deux. Le placement ainsi que l'étanchéité au niveau de l'entrée
+Cette solution a le désavantage d'avoir une arrivée d'air scindée en deux. Le placement ainsi que l'étanchéité au niveau de l'entrée
 d'air risque d'être mauvaise. \\
 Ceci mis de côté, c'est une solution simple, rapide et compacte.
 
-\subsection{Design 2}
+\subsection{Solution 2}
 Afin d'éviter l'entrée d'air scindée en deux, une solution pourrait être celle représentée ci-dessous :
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.3]{images/Capteur_design2_caoutch.png}
-    \caption{Design 2}
-    \label{fig:design2}
+    \includegraphics[scale = 0.4]{images/Capteur_design2_caoutch.png}
+    \caption{Solution 2}
+    \label{fig:solution2}
 \end{figure}
 L'arrivée d'air se fait par le haut du système et est dévié par la suite afin d'arriver sur le capteur. Cette solution permet d'avoir une
-entrée d'air plus régulière et utilisable que la solution précédente. Cependant, elle ajoute un risque non-négligeable au niveau des turbulences. En effet,
-les coudées risquent d'engendrer des turbulences au niveau du flux qui pourraient altérer les résultats.\\
-Une particularité à noter est le fait que la membrane se retrouve entièrement plaquée contre une surface contrairement à la solution
-précédante où le centre de la membrane (là où est situé le capteur), "flotte" au milieu du flux d'air.
+entrée d'air plus solide que la solution précédente avec l'utilisation, par exemple d'un raccord pneumatique. Cependant, elle ajoute un risque 
+non-négligeable au niveau des turbulences. En effet, les coudées risquent d'engendrer des turbulences au niveau du flux qui pourraient altérer 
+les résultats.\\
+Une particularité à noter est le fait que la membrane se retrouve entièrement plaquée contre la base contrairement à la solution
+précédente où le centre de la membrane (là où sont situés les \gls{ed}), est suspendu.
 
-\subsection{Design 3}
+\subsection{Solution 3}
 Une manière de diminuer les turbulences seraient d'élargir le système afin que les coudées ne se retrouvent pas trop proches de la
-membrane.
+membrane. Cette solution est illustrée par la figure \ref{fig:solution3}. 
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.3]{images/Design4}
-    \caption{Design 3}
-    \label{fig:design4}
+    \caption{Solution 3}
+    \label{fig:solution3}
 \end{figure}
+Cette solution a le désavantage d'augmenter l'encombrement général du capteur et ne garanti pas de supprimer totalement les turbulences. 
+
 
 \begin{comment}
-\section{Design 4}
+\section{Solution 4}
 Une autre manière d'éviter ce problème de turbulences et de changer la conception. Ainsi, le capteur pourrait être fabriqué selon la
-figure \ref{fig:design6}.
+figure \ref{fig:solution6}.
 
-\section{Design 4}%à effacer
+\section{Solution 4}%à effacer
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.5]{images/Design6}
+    \includegraphics[scale = 0.5]{images/Solution6}
     \caption{}
-    \label{fig:design6}
+    \label{fig:solution6}
 \end{figure}
 
-Cependant cette solution engendre un nombre de pièces plus élevé que les designs précédents. En effet, pour un conception comme celle
-de la figure \ref{fig:design6}, 4 pièces seraient nécessaires contre 2 pièces pour les solutions précédentes.\\
-Deux pièces viendraient pincer le capteur en sandwich comme montré pour le design 1, figure \ref{fig:design1}, puis, deux autres pièces
-viendraient se poser sur les deux longueurs du système afin de permettre de conncter facilement une arrivée d'air.
+Cependant, cette solution engendre un nombre de pièces plus élevé que les solutions précédentes. En effet, pour une conception comme celle
+de la figure \ref{fig:solution6}, 4 pièces seraient nécessaires contre 2 pièces pour les solutions précédentes.\\
+Deux pièces viendraient pincer le capteur en sandwich comme montré pour le solution 1, figure \ref{fig:solution1}, puis, deux autres pièces
+viendraient se poser sur les deux longueurs du système afin de permettre de connecter facilement une arrivée d'air.
 \end{comment}
 
-\subsection{Design 4}
+\subsection{Solution 4}
 Finalement, une dernière conception a été imaginée :
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.4]{images/Design5_int_caoutch.png}
-    \caption{Design 4}
-    \label{fig:design5}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[scale = 0.45]{images/Design5_dessus.png}
+        \caption{Vue de dessus}
+    \end{subfigure}
+    \hspace{1cm}
+    \begin{subfigure}{0.3\textwidth}
+        \includegraphics[scale = 0.3]{images/Design5_dessous.png}
+        \caption{Vue de dessous}
+    \end{subfigure}
+    \caption{Solution support 4}
+    \label{fig:solution4}
 \end{figure}
 
-Cette dernière permettrait de garder une solution à deux pièces seulement et incorporerait une entrée et une sortie d'air facilitée
-(non-scindée en deux).\\
-La membrane (capteur) posée sur une première pièce légèrement surrélevée. Un joint plat d'échantéité viendrait sur la membrane (en noir
-sur la figure). Puis, une seconde pièce viendrait s'appuyer en sandwich contre le joint et le capteur. Cette pièce, sur le dessus, est
-percée afin d'amener le flux d'air au niveau du capteur. Des plus petits perçages ainsi que des espaces creusés dans la pièce du dessus
-permettent aux pointes ressorts de venir se poser sur la membrane afin d'assurer la connection électrique.\\
+Cette dernière garderait une entrée/sortie d'air facilitée (non-scindée en deux) mais serait sans coudées (turbulences).\\
+La membrane (capteur) est posée sur une surface de la base légèrement surélevée. Un joint plat d'étanchéité viendrait sur la membrane (en noir
+sur la figure). Puis, un couvercle viendrait s'appuyer en sandwich contre le joint et le capteur. Ce couvercle est percé afin d'amener le flux 
+d'air au niveau du capteur. Des plus petits perçages ainsi que des espaces creusés dans la pièce du dessus permettent aux pointes ressorts de 
+venir se poser sur la membrane afin d'assurer la connexion électrique.\\
 
-Finalement, deux designs ont été retenus. Le Design 1 ainsi que le Design 5. Ces deux designs vont être testés afin de mesurer la
+Finalement, deux solutions ont été retenues. La solution 1 ainsi que la solution 5. Ces deux solutions vont être testées afin de mesurer la
 performance d'un capteur recevant un flux d'air depuis le haut et depuis le bas simultanément ainsi qu'un capteur ne recevant un flux
 d'air seulement par le haut (car le capteur est plaqué contre une surface).
