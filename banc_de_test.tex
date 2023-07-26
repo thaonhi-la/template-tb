@@ -20,22 +20,22 @@ Le deuxième type de sortie utilise un amplificateur de tension. La sortie en te
 d'être affichée à l'oscilloscope. 
 
 
-\section{Présentation}
+\section{Présentation des composants}
 Le banc de test permet de tester de manière efficace le capteur \gls{capteur} en utilisant différents composants électroniques et appareils de 
 mesures. Pour ce banc de test, le matériel suivant est utilisé :
 \begin{itemize}
     \item \textbf{Capteur avec son support (Solution 1 ou 5)}\\
           La géométrie générale du Design 1 et 5 est expliquée et représentée au chapitre \ref*{chap:catalogueSol}. \\
           
-    \item Alimentation de laboratoire\\
+    \item \textbf{Alimentation de laboratoire}\\
           Elle fournit la tension nécessaire au débitmètre de référence, à l'électrovanne et au corps de chauffe si ce dernier chauffe de manière 
           continue. \\
           
-    \item Générateur de fonctions
-          Le générateur de fonctions permet d'alimenter le corps de chauffe de manière discontinue. \\
+    \item \textbf{Générateur de fonctions}
+          Le générateur de fonctions permet d'alimenter le corps de chauffe de manière cadencée. \\
           
-    \item Oscilloscope\\
-          Cet appareil permet d'observer le signal analogique du débitmètre de référence. \\
+    \item \textbf{Oscilloscope}\\
+          Cet appareil permet d'observer le signal analogique du débitmètre de référence ainsi que le signal du capteur \gls{capteur}. \\
           
     \item \textbf{Débitmètre de référence FESTO SFAH-10B-Q6S-PNLK-PNVBA-M8}\\
           Le débitmètre choisi est un débitmètre bidirectionnel avec une entrée d'air de 6 mm de diamètre. Il sera placé juste avant l'entrée du flux
@@ -100,7 +100,8 @@ mesures. Pour ce banc de test, le matériel suivant est utilisé :
           
     \item \textbf{Transistor \gls{mosfet} IRL540N}\\
           Le \gls{mosfet} (metal-oxide-semiconductor field-effect transistor) est un transistor fonctionnant en tension. Dans notre cas, il va
-          être utilisé comme un interrupteur qui va alimenter ou non l'électrovanne.
+          être utilisé comme un interrupteur qui va alimenter ou non l'électrovanne. \\
+          Le \gls{mosfet} possède trois branches nommées D (drain), G (gate) et S (source). 
           \begin{figure}[H]
               \centering
               \includegraphics[scale = 0.3]{assets/figures/mosfet_visuel.png}
@@ -130,7 +131,8 @@ au dimensionnement du banc de test.
 Une première possibilité est d'amener un flux d'air pulsé sur la membrane. Comme mentionné, ce flux d'air serait contrôlé par une électrovanne et un
 transistor MOSFET IRL540N. Ce transistor a été choisi, car il permet d'être contrôlé grâce à un Arduino Nano. En effet, sa tension de seuil
 ($V_{GS}$) est de 4 V, 5 V ou 10 V. Étant donné que l'Arduino Nano sortira une tension de 5 V, cette valeur sera suffisante pour faire fonctionner
-le \gls{mosfet}. La figure \ref{fig:MOSFET} illustre le fonctionnement du flux pulsé avec l'électrovanne, le \gls{mosfet} et l'Arduino Nano. 
+le \gls{mosfet}. La figure \ref{fig:MOSFET} illustre le fonctionnement du flux pulsé avec l'électrovanne, l'Arduino Nano et le \gls{mosfet} et 
+ses trois connexions (D, G et S). 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.6]{assets/figures/MOSFET.png}
@@ -221,6 +223,7 @@ de la couche conductrice. C'est pour cette raison qu'une vérification réelle (
 plus conséquente d'or permet certainement la circulation d'une valeur courant plus élevé. 
 
 \subsubsection{Corps de chauffe pulsé}
+\label{chap:corps_chauffe_pulse}
 Une manière de tester les capteurs \gls{capteur} serait de faire pulser le corps de chauffe et d'amener un flux d'air constant. \\
 Cela signifie qu'il faut alimenter le corps de chauffe un certain temps, puis couper l'alimentation. Ceci peut se faire, comme pour l'arrivée
 d'air pulsé, par un relais, un transistor tel le \gls{mosfet} ou un générateur de fonction. \\
@@ -230,12 +233,12 @@ d'une certaine tension (dépendante de la résistance du corps de chauffe) avec 
 0 V. La tension est choisie en fonction de la résistance du corps de chauffe et du courant souhaité (ici 15 mA, cf. chapitre 
 \ref{chap:corps_de_chauffe}). En utilisant la loi d'Ohm $U = R\cdot I$, la tension est facilement calculée.
 
-\subsubsection{Schéma général du banc de test}
+\subsubsection{Schémas blocs du banc de test}
 La figure \ref{fig:schema_cables} illustre les différents composants du banc de test ainsi que le câblage.
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.35]{assets/figures/cablage_electrique.drawio.png}
-    \caption{Composition du banc de test et câblage général}
+    \includegraphics[scale = 0.35]{assets/figures/cablage_electrique.png}
+    \caption{Schéma bloc du banc de test}
     \label{fig:schema_cables}
 \end{figure}
 
@@ -246,7 +249,7 @@ Le capteur est situé dans un circuit relativement déconnecté du système illu
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.35]{assets/figures/Raccord_air.png}
-    \caption{Circuit autour du capteur}
+    \caption{Schéma bloc des connexions autour du capteur}
     \label{fig:circuit_capteur}
 \end{figure}
 Le capteur est relié au débitmètre de référence et à l'électrovanne par les tuyaux d'air comprimé. Il est ensuite connecté soit directement au 
@@ -274,18 +277,28 @@ de chauffe cadencé). La figure \ref{fig:circuit_capteur} montre le cas du corps
 \end{figure}
 
 La figure \ref{fig:banc_test_reel} montre le banc de test réalisé. Les murs du boîtier sont en MDF et le couvercle est en plastique. Un double 
-fond (visible sur la figure \ref{fig:3D_banc_test} a été mis en place afin d'y ranger les câbles. 
+fond (visible sur la figure \ref{fig:3D_banc_test}) a été mis en place afin d'y ranger les câbles. 
 
 \newpage
 \section{Mise en place du banc de test}
 \begin{enumerate}
-    \item Brancher l'alimentation 24 V au banc de test :
+    \item Brancher les différents composants du banc de test selon le schéma \ref{fig:schema_cables}.
+    \item L'alimentation 24 V est réglée avec une tension maximale à 24 V et un courant maximal autour des 1 A.
+    \item Le générateur de fonction, s'il est utilisé, est paramétré avec un signal carré d'amplitude égale à la moitié de la tension souhaitée
+          (cf. chapitre \ref{chap:corps_de_chauffe_pulse}) et avec un décalage (offset) égal à la moitié de l'amplitude citée précédemment. 
+    \item L'entrée de l'oscilloscope pour le débitmètre de référence peut être paramétré avec une division en temps à 5 s ou 10 s et une division
+          en tension à 2 V. 
+    \item Le programme LabView était déjà écrit et est réutilisé pour ce projet. Il se trouve en annexe
+          Le paramètre encadré en rouge sur la figure \ref{fig:labview} est important, car il permet d'ajuster la vitesse d'acquisition et la gamme souhaitée. 
+          
+          \begin{comment}
+          \item Brancher l'alimentation 24 V au banc de test :
           \begin{itemize}
               \item Connecter le pôle positif de l'alimentation à une des broches de l'électrovanne
               \item Connecter le pôle négatif de l'alimentation à la broche S du \gls{mosfet} par le Jumper Wire blanc (il s'agit de la connexion à la terre)
           \end{itemize}
           
-    \item Connecter le débitmètre de référence à l'alimentation :
+          \item Connecter le débitmètre de référence à l'alimentation :
           \begin{itemize}
               \item Connecter le câble marron du débitmètre au pôle positif de l'alimentation (par exemple, grâce à un câble sortant de l'alimentation
                     avec une pince crocodile au bout, lier la broche de l'électrovanne et le fil marron du débitmètre)
@@ -293,12 +306,12 @@ fond (visible sur la figure \ref{fig:3D_banc_test} a été mis en place afin d'y
           \end{itemize}
           
           
-    \item Brancher le deuxième brin de l'électrovanne à la broche D du \gls{mosfet} par le bornier à vis\\
+          \item Brancher le deuxième brin de l'électrovanne à la broche D du \gls{mosfet} par le bornier à vis\\
           
-    \item Brancher l'amplificateur à une alimentation secteur\\
+          \item Brancher l'amplificateur à une alimentation secteur\\
           
-    \item Brancher l'Arduino Nano à un ordinateur et lancer le programme\\
-          
+          \item Brancher l'Arduino Nano à un ordinateur et lancer le programme\\
+          \end{comment}
     \item Placer le capteur :
           \begin{itemize}
               \item Connecter le corps de chauffe et l'alimentant de maximum 15 mA. Une alimentation de laboratoire peut être utilisée en connectant
