@@ -108,7 +108,7 @@ mesures. Pour ce banc de test, le matériel suivant est utilisé :
               \caption{\gls{mosfet}}
               \label{fig:mosfet}
           \end{figure}
-          
+          \newpage
     \item \textbf{Arduino Nano}\\
           L'Arduino Nano est un circuit-imprimé (cf. figure \ref{fig:arduino}) qui va également participer à la création du flux d'air pulsé.
           \begin{figure}[H]
@@ -124,7 +124,7 @@ mesures. Pour ce banc de test, le matériel suivant est utilisé :
 
 Toutes les Datasheets des composants utilisés et achetés se trouvent en annexe. Ces Datasheets contiennent toutes les valeurs et schémas nécessaires
 au dimensionnement du banc de test.
-
+\newpage
 \section{Modélisation du banc de test}
 \subsection{Gestion du flux d'air}
 \subsubsection{Flux d'air pulsé}
@@ -197,7 +197,6 @@ Une autre manière est de dés-alimenter le \gls{mosfet}, et de brancher l'arriv
 figure \ref{fig:electrovanne_InOutput}. 
 
 \subsection{Gestion du corps de chauffe}
-\subsubsection{Corps de chauffe continu}
 \label{chap:corps_de_chauffe}
 Le corps de chauffe, constitué d'une fine couche d'or, doit être alimenté avec un certain courant. Ce courant, s'il est trop élevé, va abîmer la
 membrane, mais s'il est trop bas, il sera insuffisant pour entraîner une différence de température de part et d'autre du capteur. \\
@@ -222,6 +221,11 @@ Ces calculs ont été faits afin d'obtenir une estimation de l'ordre de grandeur
 de la couche conductrice. C'est pour cette raison qu'une vérification réelle (avec le corps de chauffe physique) a été effectuée. Une épaisseur 
 plus conséquente d'or permet certainement la circulation d'une valeur courant plus élevé. 
 
+\subsubsection{Corps de chauffe continu}
+Afin de chauffer le corps de chauffe de manière continue, une alimentation de laboratoire peut être utilisée. Pour ce projet, une double 
+alimentation est utilisée. Un côté de l'alimentation sort un courant maximal de 15 mA pour le corps de chauffe et l'autre côté sort 24 V pour 
+les autres composants. 
+
 \subsubsection{Corps de chauffe pulsé}
 \label{chap:corps_chauffe_pulse}
 Une manière de tester les capteurs \gls{capteur} serait de faire pulser le corps de chauffe et d'amener un flux d'air constant. \\
@@ -234,7 +238,7 @@ d'une certaine tension (dépendante de la résistance du corps de chauffe) avec 
 \ref{chap:corps_de_chauffe}). En utilisant la loi d'Ohm $U = R\cdot I$, la tension est facilement calculée.
 
 \subsubsection{Schémas blocs du banc de test}
-La figure \ref{fig:schema_cables} illustre les différents composants du banc de test ainsi que le câblage.
+La figure \ref{fig:schema_cables} illustre les différents composants du banc de test ainsi que le câblage électrique.
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.35]{assets/figures/cablage_electrique.png}
@@ -245,14 +249,14 @@ La figure \ref{fig:schema_cables} illustre les différents composants du banc de
 Une alimentation de laboratoire est utilisée pour les 24 V requit par l'électrovanne et le débitmètre de référence. Puis, une platine d'expérimentation 
 (breadboard) est consacrée à la connexion du \gls{mosfet} et de l'Arduino. \\
 
-Le capteur est situé dans un circuit relativement déconnecté du système illustré par la figure \ref{fig:schema_cables}. 
+Le capteur, quant à lui, est situé dans un circuit relativement déconnecté du système illustré par la figure \ref{fig:schema_cables}. 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.35]{assets/figures/Raccord_air.png}
     \caption{Schéma bloc des connexions autour du capteur}
     \label{fig:circuit_capteur}
 \end{figure}
-Le capteur est relié au débitmètre de référence et à l'électrovanne par les tuyaux d'air comprimé. Il est ensuite connecté soit directement au 
+Le capteur \gls{capteur} est relié au débitmètre de référence et à l'électrovanne par les tuyaux d'air comprimé. Il est ensuite connecté soit directement au 
 multimètre soit à l'oscilloscope via l'amplificateur. La figure \ref{fig:circuit_capteur} illustre le cas du multimètre. \\
 
 Le corps de chauffe du capteur peut être alimenté soit par une alimentation (corps de chauffe continu), soit par un générateur de fonction (corps 
@@ -280,43 +284,42 @@ La figure \ref{fig:banc_test_reel} montre le banc de test réalisé. Les murs du
 fond (visible sur la figure \ref{fig:3D_banc_test}) a été mis en place afin d'y ranger les câbles. 
 
 \newpage
-\section{Mise en place du banc de test}
+\section{Mise en place et paramétrage du banc de test}
 \begin{enumerate}
-    \item Brancher les différents composants du banc de test selon le schéma \ref{fig:schema_cables}.
+    \item Brancher les différents composants du banc de test selon le schéma \ref{fig:schema_cables} et \ref{fig:circuit_capteur}.
     \item L'alimentation 24 V est réglée avec une tension maximale à 24 V et un courant maximal autour des 1 A.
-    \item Le générateur de fonction, s'il est utilisé, est paramétré avec un signal carré d'amplitude égale à la moitié de la tension souhaitée
-          (cf. chapitre \ref{chap:corps_de_chauffe_pulse}) et avec un décalage (offset) égal à la moitié de l'amplitude citée précédemment. 
+    \item Le générateur de fonction, s'il est utilisé, est paramétré avec un signal carré d'amplitude ($V_{pp}$) égale à la moitié de la tension souhaitée
+          (cf. chapitre \ref{chap:corps_chauffe_pulse}) et avec un décalage (offset) égal à la moitié de l'amplitude citée précédemment. 
     \item L'entrée de l'oscilloscope pour le débitmètre de référence peut être paramétré avec une division en temps à 5 s ou 10 s et une division
           en tension à 2 V. 
-    \item Le programme LabView était déjà écrit et est réutilisé pour ce projet. Il se trouve en annexe
-          Le paramètre encadré en rouge sur la figure \ref{fig:labview} est important, car il permet d'ajuster la vitesse d'acquisition et la gamme souhaitée. 
+    \item Le programme LabView était déjà écrit et est réutilisé pour ce projet. Il se trouve en annexe. \\
+          Le paramètre encadré en rouge sur l'annexe est important, car il permet d'ajuster la vitesse d'acquisition et la gamme souhaitée. 
           
-          \begin{comment}
-          \item Brancher l'alimentation 24 V au banc de test :
-          \begin{itemize}
-              \item Connecter le pôle positif de l'alimentation à une des broches de l'électrovanne
-              \item Connecter le pôle négatif de l'alimentation à la broche S du \gls{mosfet} par le Jumper Wire blanc (il s'agit de la connexion à la terre)
-          \end{itemize}
+          %\item Brancher l'alimentation 24 V au banc de test :
+          %\begin{itemize}
+          %    \item Connecter le pôle positif de l'alimentation à une des broches de l'électrovanne
+          %    \item Connecter le pôle négatif de l'alimentation à la broche S du \gls{mosfet} par le Jumper Wire blanc (il s'agit de la connexion à la terre)
+          %\end{itemize}
           
-          \item Connecter le débitmètre de référence à l'alimentation :
-          \begin{itemize}
-              \item Connecter le câble marron du débitmètre au pôle positif de l'alimentation (par exemple, grâce à un câble sortant de l'alimentation
-                    avec une pince crocodile au bout, lier la broche de l'électrovanne et le fil marron du débitmètre)
-              \item Le câble bleu du débitmètre doit être lié à la broche S du \gls{mosfet} par le biais du bornier à vis sur la Breadboard
-          \end{itemize}
+          %\item Connecter le débitmètre de référence à l'alimentation :
+          %\begin{itemize}
+          %    \item Connecter le câble marron du débitmètre au pôle positif de l'alimentation (par exemple, grâce à un câble sortant de l'alimentation
+          %          avec une pince crocodile au bout, lier la broche de l'électrovanne et le fil marron du débitmètre)
+          %    \item Le câble bleu du débitmètre doit être lié à la broche S du \gls{mosfet} par le biais du bornier à vis sur la Breadboard
+          %\end{itemize}
           
           
-          \item Brancher le deuxième brin de l'électrovanne à la broche D du \gls{mosfet} par le bornier à vis\\
+          %\item Brancher le deuxième brin de l'électrovanne à la broche D du \gls{mosfet} par le bornier à vis\\
           
-          \item Brancher l'amplificateur à une alimentation secteur\\
+          %\item Brancher l'amplificateur à une alimentation secteur\\
           
-          \item Brancher l'Arduino Nano à un ordinateur et lancer le programme\\
-          \end{comment}
+          %\item Brancher l'Arduino Nano à un ordinateur et lancer le programme\\
+          
     \item Placer le capteur :
           \begin{itemize}
-              \item Connecter le corps de chauffe et l'alimentant de maximum 15 mA. Une alimentation de laboratoire peut être utilisée en connectant
-                    les deux pointes ressorts concernées par le corps de chauffe à l'alimentation de 15 mA. Les pointes ressorts pour le corps de chauffe
-                    sont représentées en jaune sur la figure \ref*{fig:pointes_ressorts_chauffe}.
+              \item Connecter le corps de chauffe. Les deux pointes ressorts concernées par le corps de chauffe doivent
+                    être connectées soit à l'alimentation de laboratoire fournissant maximum 15 mA, soit au générateur de fonction. 
+                    Les pointes ressorts pour le corps de chauffe sont représentées en jaune sur la figure \ref{fig:pointes_ressorts_chauffe}.
                     \begin{figure}[H]
                         \centering
                         \begin{subfigure}[b]{0.45\textwidth}
@@ -330,11 +333,11 @@ fond (visible sur la figure \ref{fig:3D_banc_test}) a été mis en place afin d'
                     \end{figure}
           \end{itemize}
           
+    \item Sortie avec amplificateur : Connecter les deux pointes ressorts restantes à l'amplificateur grâce aux câbles nommés "Amplificateur
+          $\leftrightarrow$ Capteur"\\
           
-    \item Si l'amplificateur est utilisé : Connecter les deux pointes ressorts restantes à l'amplificateur grâce aux câbles sortant en haut
-          à droite du banc de test\\
-          
-    \item Si l'amplificateur n'est pas utilisé : Connecter directement les deux pointes ressorts restantes à l'appareil de mesure utilisé
+    \item Sortie directe sur LabView : Connecter directement les deux pointes ressorts restantes à l'appareil de mesure utilisé (multimètre
+          connecté au programme LabView)
 \end{enumerate}
 
 \section{Vérification du banc de test}
@@ -359,13 +362,13 @@ Des pinces plates viennent faire le contact électrique directement sur les couc
 Cette installation ne communiquait pas non plus de résultat concluant (tension oscillant autour des 0 V). \\
 
 Le corps de chauffe a donc été mis en question. Une alternative à ce corps de chauffe a été de venir toucher la pince plate d'un côté du
-capteur afin d'engendrer une différence de température entre les deux parties coudées. Ceci a bel et bien entraîné une différence de
+capteur afin d'engendrer une différence de température entre les deux parties en "L". Ceci a bel et bien entraîné une différence de
 température et donc, une tension. Cependant, cette dernière provient de la différence de température entre l'or (sur la membrane) et le métal
-de la pince plate. \\
+de la pince plate. Or, l'objectif est de générer une différence de température entre l'or et le tellure de Bismuth présent dans les électrodépositions. 
+En effet, ce couple de matériaux possède un coefficient Seebeck plus avantageux que le métal de la pince et l'or. \\
 
-Afin de chauffer une des deux parties électrodéposées, une court tube a été utilisé. Un flux d'air chaud a été soufflé directement sur cette
-partie afin de créer un gradient de température, mais à nouveau, aucune fluctuation n'a été perçue. Cependant, lorsque le flux d'air chaud
-était soufflé au niveau de la pince plate, une plus grande fluctuation de tension était visible. Cela signifie que la jonction avec le tellure
+Ainsi, afin de chauffer une des deux parties électrodéposées, une court tube a été utilisé. Un flux d'air chaud a été soufflé directement sur cette
+partie afin de créer un gradient de température, mais à nouveau, aucun résultat n'a été observé. Cela signifie que la jonction avec le tellure
 de bismuth est probablement pathologique.\\
 
 Il était tout de même nécessaire et intéressant de vérifier si le banc de test fonctionnait de manière appropriée. Pour cela, un autre capteur
@@ -400,11 +403,43 @@ Sur la figure \ref{fig:1s1s}, la récupération du capteur est plus longue que l
 et fixé à 1.8 s (figure \ref*{fig:1_8s}). Ceci permet au capteur de se remettre à zéro et permet aussi de contrôler que la fréquence est bien
 modulable. \\
 
-Une autre partie intéressante à étudier est l'amplificateur. Pour ce faire, un petit programme LabView a été utilisé afin de mesurer, dans un
+Une autre partie du banc de test intéressante à étudier est l'amplificateur. Pour ce faire, le programme LabView a été utilisé afin de mesurer, dans un
 premier temps, la réponse du capteur \gls{infrarouge} sans amplificateur, puis, dans un second temps, la réponse avec amplificateur. Ceci nous
-permettra de qualifier l'amplificateur.
+permet de calculer le facteur d'amplification réel. Cette manipulation, présente dans les détails en annexe, a donné un facteur d'amplification 
+d'environ 670. Cette valeur paraît loin de l'amplification de 1000 indiquée par les données techniques, mais reste dans un ordre de grandeur 
+tout à fait correct. \\
+De plus, les imprécisions de calculs et de manipulation ne sont pas négligeables dans cette étape. 
 
-Ces tests prouvent que le banc de test semble fonctionner de manière correcte. L'échantillon est alors certainement le facteur engendrant de
-mauvais résultats. Un développement de cette thématique sera effectué dans le chapitre \ref{chap:mesures}.
+Ces différents tests prouvent que le banc de test semble fonctionner de manière adéquate. L'échantillon est alors certainement le facteur engendrant de
+mauvais résultats. 
 
-
+\subsection{Hypothèses concernant l'échantillon pathologique}
+Afin de détecter où se situe le problème, les différents paramètres du capteur \gls{capteur} ont été remis en question :
+\begin{itemize}
+    \item \textbf{Matériau thermoélectrique (ThEl)}\\
+          La solution de Tellure de Bismuth est peut-être impure. Une nouvelle solution a été alors refaite.
+          
+    \item \textbf{Distance des pistes d'or du capteur au corps de chauffe}\\
+          La distance entre le corps de chauffe et les piste d'or peut être à revoir, car trop proches les unes des autres, la chaleur du corps
+          de chauffe risque de se transmettre aux deux extrémités du capteur. De ce fait, la même température sera mesurable en tout point du
+          capteur, n'engendrant donc aucune différence de température entre la partie droite et la partie gauche du capteur \gls{capteur}, et donc aucune
+          tension ne sera mesurable.\\
+          
+    \item \textbf{Épaisseur de la membrane} \\
+          Plus la membrane est épaisse, plus la couche d'or de court-circuit sera éloignée des couches d'or en "L". Cela assurerait que la piste 
+          de court-circuit n'est pas atteinte par le corps de chauffe. Ceci est important pour des raisons similaires au premier paramètre cité. 
+          Un transfert de chaleur faible (voir inexistant) par le biais du court-circuit du capteur \gls{capteur} est souhaitable. \\
+          
+          L'objectif est alors de faire des capteurs en PI25005 (Kepton) et de les comparer grâce au banc de test aux échantillons en GTTP ou VCTP.
+          Ceci permettra de vérifier si l'épaisseur de la membrane est un paramètre important.\\
+          
+    \item \textbf{Position de la piste de court-circuit}\\
+          Afin de s'assurer que le corps de chauffe transmette un minimum de chaleur au deux extrémités du capteur, il est également possible de 
+          placer la couche d'or de court-circuit plus distante aux électrodépositions.\\
+          
+    \item \textbf{Diamètre du via}\\
+          Lors de l'électrodéposition, un joint en caoutchouc percé au centre d'un diamètre de 0.3 mm, 0.5 mm ou 1 mm (appelé diamètre du via) permet de concentrer
+          l'électrodéposition dans un diamètre contrôlé. Cependant, si le diamètre du via est trop faible, l'électrodéposition peut avoir du mal à
+          se produire (phénomènes de bulles, électrodéposition non-régulière, etc.)\\
+          Il sera intéressant de produire des échantillons avec un diamètre de via le plus grand possible. 
+\end{itemize}

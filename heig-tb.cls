@@ -188,7 +188,7 @@
 }
 \ProcessOptions
 
-
+\usepackage[table,xcdraw]{xcolor}
 \RequirePackage[fleqn]{amsmath}
 \RequirePackage[small,bf,textfont=it]{caption}
 \RequirePackage{appendix}

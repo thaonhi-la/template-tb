@@ -1,13 +1,13 @@
 \section{Mesures intermédiaires sur le capteur}
 \label{chap:mesures}
 \subsection{Vérification du corps de chauffe}
-Avant toute chose, afin de pouvoir suivre tous les paramètres et le fonctionnement de notre système, une caméra thermique a été utilisée
-pour observer le comportement du corps de chauffe
+Avant toute chose, afin de pouvoir suivre tous les paramètres et le fonctionnement du capteur \gls{capteur}, une caméra thermique a été utilisée
+pour observer le comportement du corps de chauffe.
 
 \begin{figure}[H]
     \hspace{-0.8 cm}
     \begin{subfigure}{0.3\textwidth}
-        \includegraphics[scale = 0.5]{assets/figures/thermique_sans_chauffe.jpg}
+        \includegraphics[scale = 0.45]{assets/figures/thermique_sans_chauffe.jpg}
         \caption{Image thermique du capteur - Corps de chauffe éteint}
     \end{subfigure}
     \hspace{0.2cm}
@@ -21,7 +21,7 @@ pour observer le comportement du corps de chauffe
         \includegraphics[scale = 0.5]{assets/figures/thermique_avec_chauffe.jpg}
         \caption{Image thermique du capteur - Corps de chauffe allumé}
     \end{subfigure}
-    \caption{Résultats de la caméra thermique}
+    \caption{D06 - Résultats de la caméra thermique}
     \label{fig:cameraThermique}
 \end{figure}
 
@@ -30,29 +30,32 @@ dessiner au stylo un point noir sur les pistes à mesurer. Ainsi, les problèmes
 pas été suffisante. \\
 
 Une autre mesure a alors été faite dans des conditions moins lumineuses (après le coucher du soleil). La figure \ref*{fig:cameraThermique},
-montre que le corps de chauffe de l'échantillon D06 possède une température avoisinant les 37\textdegree C. \\
+montre que le corps de chauffe de l'échantillon D06 possède une température avoisinant les 37\textdegree C lorsqu'un courant de 15 mA y circule. \\
 
+Les tests de chauffe à la caméra ont été effectué sur d'autres échantillons tels que les échantillons D12, D13 et D14. Malheureusement ces derniers 
+n'ont donné aucun résultat à la caméra thermique (aucun signe d'échauffement). Le corps de chauffe devra donc être amélioré en épaississant la 
+couche d'or formé par la \gls{pvd} et/ou en modifiant la forme générale du corps de chauffe. 
+
+\subsection{Vérification des résistances}
 Un second type de mesure permettant de comprendre chaque partie du \gls{capteur} a été effectuée. Celle-ci concerne la résistance du corps de
 chauffe et du circuit thermoélectrique.
 \begin{table}[H]
     \begin{center}
         \begin{tabular}{|p{2cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
             \hline
-            Échantillon & \multicolumn{2}{|c|}{Corps de chauffe} & \multicolumn{2}{|c|}{Circuit du thermocouple}                                                                          \\
+            \textbf{Échantillon} & \multicolumn{2}{|c|}{\textbf{Corps de chauffe}} & \multicolumn{2}{|c|}{\textbf{Circuit du thermocouple}}                                                                                            \\
             \hline
-                        & Résistance directe [$\Omega$]          & Résistance pointes ressorts [$\Omega$]        & Résistance directe [$\Omega$] & Résistance pointes ressorts [$\Omega$] \\
+                                 & \textbf{Résistance directe} [$\Omega$]          & \textbf{Résistance pointes ressorts} [$\Omega$]        & \textbf{Résistance directe} [$\Omega$] & \textbf{Résistance pointes ressorts [$\Omega$]} \\
             \hline
-            D06         & 74.29                                  & 75.3                                          & 151.5                         & 157                                    \\
+            D06                  & 74.29                                           & 75.3                                                   & 151.5                                  & 157                                             \\
             \hline
-            D11         & 2.8                                    & 2.7                                           & 35 000 000                    & 20 000 000                             \\
+            D11                  & 2.8                                             & 2.7                                                    & 35 000 000                             & 20 000 000                                      \\
             \hline
-            D12         & 2.44                                   & 2.45                                          & 5600                          & 5580                                   \\
+            D12                  & 2.44                                            & 2.45                                                   & 5600                                   & 5580                                            \\
             \hline
-            D13         & 6.07                                   & 6.14                                          & 585.5                         & 570.2                                  \\
+            D13                  & 6.07                                            & 6.14                                                   & 585.5                                  & 570.2                                           \\
             \hline
-            D14         & 2.53                                   & 2.58                                          & 6.83                          & 6.91                                   \\
-            \hline
-            D17         & 9.2                                    & 9.4                                           & 13.6                          & 14                                     \\
+            D14                  & 2.53                                            & 2.58                                                   & 6.83                                   & 6.91                                            \\
             \hline
         \end{tabular}
         \caption{Résistances sur le capteur}
@@ -65,49 +68,8 @@ appelée Résistance directe) et la résistance à travers les pointes ressort e
 compte le fait que la résistance change suivant la position de la mesure. En effet, une mesure faite aux extrémités de la piste d'or sera différente 
 d'une mesure effectuée sur le centre de la piste d'or. \\
 
-L'échantillon D11 possède une résistance de thermocouple très instable et élevée. Pour cette raison, il a été décidé que les mesures ne seront 
+L'échantillon D11 possède une résistance de thermocouple très instable et élevée. Pour cette raison, il a été décidé que les mesures suivantes ne seront 
 pas effectuées, car ce capteur a peu de chance de donner des résultats concluants. 
-
-Les tests de chauffe à la caméra ont été effectué sur d'autres échantillons tels que les échantillons D12, D13 et D14. Malheureusement ces derniers 
-n'ont donné aucun résultat à la caméra thermique (aucun signe d'échauffement). Le corps de chauffe devra donc être amélioré en épaississant la 
-couche d'or formé par la \gls{pvd} et/ou en modifiant la forme générale du corps de chauffe. 
-
-\subsection{Hypothèses concernant l'échantillon pathologique}
-Afin de détecter où se situe le problème, les différents paramètres du capteur \gls{capteur} ont été remis en question :
-\begin{itemize}
-    \item \textbf{Matériau thermoélectrique (ThEl)}\\
-          La solution de Tellure de Bismuth est peut-être impure. Une nouvelle solution a été alors refaite.
-          
-    \item \textbf{Distance des pistes d'or du capteur au corps de chauffe}\\
-          La distance entre le corps de chauffe et les piste d'or peut être importante, car trop proches, les unes des autres, la chaleur du corps
-          de chauffe risque de se transmettre aux deux extrémités du capteur. De ce fait, la même température sera mesurable en tout point du
-          capteur, n'engendrant donc aucune différence de température entre la partie droite et la partie gauche du \gls{capteur}, et donc aucune
-          tension ne sera mesurable.\\
-          
-    \item \textbf{Épaisseur de la membrane} \\
-          Plus la membrane est épaisse, plus la couche d'or de court-circuit sera éloignée. Cela permettrait à la source de chaleur d'être concentrée
-          à un endroit spécifique. Ceci est important pour des raisons similaires au premier paramètre cité. Un transfert de chaleur faible (voir
-          inexistant) entre les deux extrémités du \gls{capteur} est souhaitable (c'est la différence de température qui va engendrer une tension
-          mesurable). \\
-          
-          Dans le stock de matière de membranes se trouvent les choix suivants :
-          \begin{itemize}
-              \item GTTP 6-10 $\mu$m d'épaisseur
-              \item VCTP 6-10 $\mu$m d'épaisseur
-              \item PI25005 25 $\mu$m d'épaisseur
-          \end{itemize}
-          L'objectif sera alors de faire des capteurs en PI25005 (Kepton) et de les comparer grâce au banc de test aux échantillons en GTTP ou VCTP.
-          Ceci permettra d'affirmer ou désaffirmer l'hypothèse.\\
-          
-    \item \textbf{Diamètre du via}\\
-          Lors de l'électrodéposition, un joint en caoutchouc percé au centre d'un diamètre de 0.3 mm, 0.5 mm ou 1 mm (appelé diamètre du via) permet de concentrer
-          l'électrodéposition aux endroits souhaités. Cependant, si le diamètre du via est trop faible, l'électrodéposition peut avoir du mal à
-          se produire (phénomènes de bulles, électrodéposition non-régulière, etc.)\\
-          
-    \item \textbf{Position de la piste de court-circuit}\\
-          Afin de s'assurer que le corps de chauffe transmette un minimum de chaleur au deux extrémités du capteur, il serait possible de placer la couche
-          d'or de court-circuit plus distante aux électrodépositions
-\end{itemize}
 
 \begin{comment}
 \section{Résultats concluants}
@@ -136,6 +98,7 @@ uniquement sur la réponse du capteur, l'amplificateur a été mis de côté pou
 \begin{enumerate}
     \item Mesure avec un corps de chauffe pulsé\\
     \item Mesure avec un corps de chauffe pulsé et un flux d'air comprimé constant\\
+    \item Mesure avec un flux d'air comprimé pulsé\\
     \item Mesure avec un flux d'air comprimé pulsé et un corps de chauffe constant\\
     \item Mesure sans corps de chauffe et une respiration humaine\\
     \item Mesure avec corps de chauffe constant et respiration humaine

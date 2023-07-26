@@ -4,6 +4,7 @@
     %confidential, % Décommentez si le travail est confidentiel
 ]{heig-tb}
 
+%\usepackage[table,xcdraw]{xcolor}
 \usepackage[nooldvoltagedirection,european,americaninductors]{circuitikz}
 \usepackage{comment}
 \usepackage{caption}
@@ -11,6 +12,7 @@
 \usepackage{pdfpages}
 \usepackage{multicol}
 \usepackage{enumitem}
+\usepackage{wrapfig}
 
 
 \signature{ThaoNhi.svg} % Remplacer par votre propre signature vectorielle.
@@ -69,7 +71,7 @@
 \input{introduction.tex}
 %\input{examples.tex}
 
-\chapter{Fabrication des capteurs FUNs}
+\chapter{Fabrication des capteurs}
 \input{catalogue_des_solutions.tex}
 
 \chapter{Banc de test}
@@ -93,7 +95,7 @@
 \addappheadtotoc
 
 %%if
-\chapter{Liste annexe}
+\chapter{Annexes}
 
 Les annexes n'ont pas un contenu \underline{normatif} mais \underline{descriptif}. Tout contenu annexé ne doit pas être nécessaire à la bonne compréhension du travail.
 
@@ -119,8 +121,21 @@ Les annexes contiennent généralement :
 \lipsum[1]
 %%fi
 
-\chapter{Datasheet Câble de liaison pour Débitmètre FESTO}
-\includepdf[pages=-]{assets/pdf/Festo_Cable_liaison.pdf}
+\section{Datasheet Câble de liaison pour Débitmètre FESTO}
+\begin{figure}[H]
+    \hspace{-1cm}
+    \includegraphics[scale = 0.85, page = 1]{assets/pdf/Festo_Cable_liaison.pdf}
+\end{figure}
+\includepdf[pages=2]{assets/pdf/Festo_Cable_liaison.pdf}
+\section{Programme LabView}
+\begin{figure}[H]
+    \hspace{-1cm}
+    \includegraphics[scale = 0.5]{assets/figures/LabView1.PNG}
+\end{figure}
+\begin{figure}[H]
+    \hspace{-1cm}
+    \includegraphics[scale = 0.5]{assets/figures/LabView2.PNG}
+\end{figure}
 
 \let\cleardoublepage\clearpage
 \backmatter
