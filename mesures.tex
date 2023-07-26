@@ -5,7 +5,7 @@ Avant toute chose, afin de pouvoir suivre tous les paramètres et le fonctionnem
 pour observer le comportement du corps de chauffe.
 
 \begin{figure}[H]
-    \hspace{-0.8 cm}
+    \hspace{-0.3 cm}
     \begin{subfigure}{0.3\textwidth}
         \includegraphics[scale = 0.45]{assets/figures/thermique_sans_chauffe.jpg}
         \caption{Image thermique du capteur - Corps de chauffe éteint}
@@ -39,37 +39,39 @@ couche d'or formé par la \gls{pvd} et/ou en modifiant la forme générale du co
 \subsection{Vérification des résistances}
 Un second type de mesure permettant de comprendre chaque partie du \gls{capteur} a été effectuée. Celle-ci concerne la résistance du corps de
 chauffe et du circuit thermoélectrique.
+
 \begin{table}[H]
     \begin{center}
-        \begin{tabular}{|p{2cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+        \begin{tabular}{|p{2cm}|p{2cm}|p{1.7cm}|p{2.1cm}|p{2.1cm}|p{2.1cm}|p{2.1cm}|}
             \hline
-            \textbf{Échantillon} & \multicolumn{2}{|c|}{\textbf{Corps de chauffe}} & \multicolumn{2}{|c|}{\textbf{Circuit du thermocouple}}                                                                                            \\
+                                 &                    &                  & \multicolumn{2}{|c|}{\textbf{Corps de chauffe}} & \multicolumn{2}{|c|}{\textbf{Circuit du thermocouple}}                                                                                            \\
             \hline
-                                 & \textbf{Résistance directe} [$\Omega$]          & \textbf{Résistance pointes ressorts} [$\Omega$]        & \textbf{Résistance directe} [$\Omega$] & \textbf{Résistance pointes ressorts [$\Omega$]} \\
+            \textbf{Échantillon} & \textbf{Membranes} & \textbf{Méthode} & \textbf{Résistance directe} [$\Omega$]          & \textbf{Résistance pointes ressorts} [$\Omega$]        & \textbf{Résistance directe} [$\Omega$] & \textbf{Résistance pointes ressorts [$\Omega$]} \\
             \hline
-            D06                  & 74.29                                           & 75.3                                                   & 151.5                                  & 157                                             \\
+            D06                  & GTTP               & A                & 74.29                                           & 75.3                                                   & 151.5                                  & 157                                             \\
             \hline
-            D11                  & 2.8                                             & 2.7                                                    & 35 000 000                             & 20 000 000                                      \\
+            D11                  & PI25005            & A                & 2.8                                             & 2.7                                                    & 35 000 000                             & 20 000 000                                      \\
             \hline
-            D12                  & 2.44                                            & 2.45                                                   & 5600                                   & 5580                                            \\
+            D12                  & PI25005            & A                & 2.44                                            & 2.45                                                   & 5600                                   & 5580                                            \\
             \hline
-            D13                  & 6.07                                            & 6.14                                                   & 585.5                                  & 570.2                                           \\
+            D13                  & PI25005            & B                & 6.07                                            & 6.14                                                   & 585.5                                  & 570.2                                           \\
             \hline
-            D14                  & 2.53                                            & 2.58                                                   & 6.83                                   & 6.91                                            \\
+            D14                  & VCTP               & A                & 2.53                                            & 2.58                                                   & 6.83                                   & 6.91                                            \\
             \hline
         \end{tabular}
         \caption{Résistances sur le capteur}
         \label{tab:resistancePointeRessort}
     \end{center}
 \end{table}
-Sur le tableau \ref*{tab:resistancePointeRessort}, une légère différence entre la résistance mesurée directement sur la piste d'or (résistance 
+
+Sur le tableau \ref{tab:resistancePointeRessort}, une légère différence entre la résistance mesurée directement sur la piste d'or (résistance 
 appelée Résistance directe) et la résistance à travers les pointes ressort est visible. Ceci peut être dû au fait que les pointes ressort ont 
 également une petite résistance qui vient alors changer la résistance totale du corps de chauffe. Cependant, il faut également prendre en 
 compte le fait que la résistance change suivant la position de la mesure. En effet, une mesure faite aux extrémités de la piste d'or sera différente 
 d'une mesure effectuée sur le centre de la piste d'or. \\
 
-L'échantillon D11 possède une résistance de thermocouple très instable et élevée. Pour cette raison, il a été décidé que les mesures suivantes ne seront 
-pas effectuées, car ce capteur a peu de chance de donner des résultats concluants. 
+L'échantillon D11 possède une résistance de thermocouple très instable et élevée. Pour cette raison, il a été décidé que, sur ce capteur, les 
+mesures suivantes ne seront pas effectuées, car cet échantillon a peu de chance de donner des résultats concluants. 
 
 \begin{comment}
 \section{Résultats concluants}
@@ -96,14 +98,17 @@ uniquement sur la réponse du capteur, l'amplificateur a été mis de côté pou
 
 \section{Procédure de mesures "classiques"}
 \begin{enumerate}
-    \item Mesure avec un corps de chauffe pulsé\\
-    \item Mesure avec un corps de chauffe pulsé et un flux d'air comprimé constant\\
-    \item Mesure avec un flux d'air comprimé pulsé\\
-    \item Mesure avec un flux d'air comprimé pulsé et un corps de chauffe constant\\
-    \item Mesure sans corps de chauffe et une respiration humaine\\
-    \item Mesure avec corps de chauffe constant et respiration humaine
+    \item Mesures avec un corps de chauffe pulsé\\
+    \item Mesures avec un corps de chauffe pulsé et un flux d'air comprimé constant\\
+    \item Mesures avec un flux d'air comprimé pulsé\\
+    \item Mesures avec un flux d'air comprimé pulsé et un corps de chauffe constant\\
+    \item Mesures sans corps de chauffe et une respiration humaine\\
+    \item Mesures avec corps de chauffe constant et respiration humaine
 \end{enumerate}
-Ces mesures ont été effectuées sur quatre échantillons décrits au chapitre \ref{chap:capteur}. 
+Ces mesures ont été effectuées sur les quatre échantillons décrits sur le tableau \ref{tab:resistancePointeRessort}. \\
+
+Malheureusement, le problème du bruit conséquent sortant de l'amplificateur n'a pas pu être résolu pour ce projet. Toutes les mesures ont alors 
+été effectuées directement sur le capteur \gls{capteur}, sans passer par l'amplificateur. 
 
 \section{Mesures du capteur sans amplificateur}
 Plusieurs mesures ont été faites avec plusieurs types de paramètres. Toutes les mesures avec leurs paramètres ont été regroupées et sauvegardées
@@ -118,59 +123,73 @@ Chacune des mesures sur cet Excel est liée à un autre fichier contenant toutes
 
 Les mesures les plus significatives seront présentées dans ce rapport. \\
 
-\subsection{Résultats avec un corps de chauffe pulsé}
+\subsection{Résultats avec utilisation du corps de chauffe}
+\subsubsection{Corps de chauffe pulsé}
 Des premières mesures ont été effectuées sans flux d'air. En effet, il est déjà intéressant d'observer le comportement du capteur
 lorsque seulement le corps de chauffe est activé. Ce dernier est alimenté avec 15 mA. Les résultats sont les suivants :
 \begin{figure}[H]
     \hspace{-0.5cm}
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[scale = 0.45]{assets/figures/D06_corps_chauffe_pulse_green.png}
-        \caption{Support Design 5 - Corps de chauffe pulsé}
+        \caption{Support solution 5 - Corps de chauffe pulsé}
         \label{fig:chauffe_pulse_g}
     \end{subfigure}
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[scale = 0.45]{assets/figures/D06_corps_chauffe_pulse_blue.png}
-        \caption{Support Design 1 - Corps de chauffe pulsé}
+        \caption{Support solution 1 - Corps de chauffe pulsé}
         \label{fig:chauffe_pulse_b}
     \end{subfigure}
 \end{figure}
 
-Sur la figure \ref{fig:chauffe_pulse_g}, aucun signal n'est distinguable. En effet, il semble n'y avoir que du bruit. Cependant, sur la figure
-\ref{fig:chauffe_pulse_b}, la tension est bien moins stable. Pourtant, aucun flux n'est encore ajouté. \\
+Sur la figure \ref{fig:chauffe_pulse_g}, aucun signal n'est distinguable. En effet, il semble n'y avoir que du bruit. \\
 
+Cependant, sur la figure \ref{fig:chauffe_pulse_b}, la tension forme un certain signal. Pourtant, aucun flux n'est encore ajouté. \\
 La raison de ce phénomène peut se trouver dans le fait que chaque électrodéposition est faite à la main, une après l'autre. Ceci signifie que
 les deux électrodépositions diffèrent certainement l'une de l'autre. \\
 De plus, le corps de chauffe est assez proche des deux électrodépositions. De ce fait, il est probable que lorsqu'il est en marche, le corps de
-chauffe transfert de la chaleur aux deux extrémités du capteur. Ces deux extrémités sont alors chauffées, mais comme elles possèdent des nanofils
+chauffe transfert de la chaleur aux deux extrémités en "L" du capteur. Ces deux extrémités sont alors chauffées, mais comme elles possèdent des nanofils
 quelque peu différents d'un côté ou de l'autre, un gradient de température se forme et une certaine tension circule. \\
 C'est une hypothèse du phénomène que l'on peut observer sur la figure \ref{fig:chauffe_pulse_b}.\\
 
-Le support Design 5 semble, lui, éviter ce transfert de chaleur. Cela peut être dû au fait qu'étant donné que la membrane est plaquée contre
-la pièce du support, la chaleur transférée par le corps de chauffe est "perdue" dans la matière du support (ici : PLA).\\
+Le support solution 5 semble, lui, éviter ce transfert de chaleur. Cela peut être dû au fait qu'étant donné que la membrane est plaquée contre
+la base du support, la chaleur transférée par le corps de chauffe est "perdue" dans la matière du support (ici : PLA).\\
 
-Pour ces raisons, le support Design 1 a été privilégié étant donné qu'il semblait plus sensible que le support Design 5.\\
+Pour ces raisons, le support solution 1 a été privilégié étant donné qu'il semble plus sensible que le support solution 5.\\
 
-\subsection{Mesures avec corps de chauffe constant et flux d'air comprimé pulsé}
+\subsubsection{Corps de chauffe constant et flux d'air comprimé pulsé}
+La figure \ref{fig:test_cdc}, montre la réponse du capteur lorsqu'un flux d'air comprimé vient souffler sur le capteur pendant 3 s, puis 
+stoppe le flux d'air pendant également 3 s. Après environ 50 s, le corps de chauffe est activé. 
 \begin{figure}[H]
-    \centering
-    \includegraphics[scale = 0.5]{assets/figures/D06_air_comprime_pulse.png}
-    \caption{Échantillon D06 - Flux d'air comprimé pulsé (corps de chauffe constant)}
-    \label{fig:D06_airPulse}
+    \hspace{-0.3cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[scale = 0.4]{assets/figures/D06_air_pulse_test_cdc.png}
+        \caption{D06 - Air comprimé pulsé - Sans, puis avec corps de chauffe}
+        \label{fig:d06_test_cdc}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[scale = 0.4]{assets/figures/D13_air_comprime_pulse_test_cdc.png}
+        \caption{D13 - Air comprimé pulsé - Sans, puis avec corps de chauffe}
+        \label{fig:d13_test_cdc}
+    \end{subfigure}
+    \caption{Test corps de chauffe avec air comprimé pulsé}
+    \label{fig:test_cdc}
 \end{figure}
-La figure \ref{fig:D06_airPulse}, montre la réponse du capteur lorsqu'un flux d'air comprimé vient souffler sur le capteur pendant 3 s, puis 
-stoppe le flux d'air pendant également 3 s. 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale = 0.6]{assets/figures/D13_air_comprime_pulse_blue.pdf}
-    \caption{Échantillon D13 - Flux d'air comprimé pulsé en sens inverse puis direct}
-    \label{fig:D13_air_comp_pulse}
-\end{figure}
+La figure \ref{fig:d06_test_cdc} nous permet de voir que le corps de chauffe a une influence sur la réponse du capteur. \\
+Comme attendu, la figure \ref{fig:d13_test_cdc} représentant l'échantillon D13, ne montre pas une différence frappante avec ou sans corps de 
+chauffe. Ce résultat était plutôt prévisible étant donné que les mesures à la caméra thermique ne donnait pas non plus de résultat pour cet 
+échantillon. \\
 
-Sur la figure \ref{fig:D13_air_comp_pulse}, la fréquence du souffle d'air comprimé est la même que pour la figure précédente 
-(\ref{fig:D06_airPulse}). Cependant, après environ 50 s, le tube d'arrivée d'air est débranché pour venir se rebrancher dans l'autre sens 
-du capteur. 
+Les différents résultats communiqués par les graphes soulignent que le corps de chauffe pourrait être amélioré. En effet, il serait intéressant 
+à l'avenir de développer la géométrie générale du corps de chauffe. Par exemple, ce dernier pourrait être une piste d'or en configuration 
+"serpentin". Ceci permettrait d'avoir un échauffement plus élevé. \\
+Une autre solution serait d'épaissir la couche d'or. Elle serait peut-être moins fragile et il serait alors possible d'y amener un courant plus élevé. \\
 
+Pour la suite des mesures, étant donné que le corps de chauffe n'offre pas un avantage notable, le corps de chauffe a été mis de côté. 
+
+\begin{comment}
+Par la suite, le sens par lequel est insufflé l'air a été testé. 
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.3]{assets/figures/Inverse_direct.pdf}
@@ -178,12 +197,46 @@ du capteur.
     \label{fig:direct_inverse}
 \end{figure}
 
-Cette manipulation permet d'observer si un comportement différent est à noter. Dans notre cas, l'allure du graphe semble peu changer d'un sens 
-ou de l'autre. Les électrodépositions sont alors assez différentes du côté droit que du côté gauche pour générer un signal lorsque seulement un 
-corps de chauffe pulsé et utilisé, mais pas complètement dissemblables, jusqu'à obtenir des résultats qui diffèrent d'un sens ou de l'autre. 
+Sur la figure \ref{fig:D13_air_comp_pulse}, après environ 50 s, le tube d'arrivée d'air est débranché pour venir se rebrancher dans l'autre sens du capteur (sens direct vs sens inverse). 
+Cette manipulation permet d'observer si un comportement différent est à noter. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.6]{assets/figures/D13_air_comprime_pulse_blue.pdf}
+    \caption{Échantillon D13 - Flux d'air comprimé pulsé en sens inverse puis direct}
+    \label{fig:D13_air_comp_pulse}
+\end{figure}
+\end{comment}
+
 
 \subsection{Respiration humaine}
 Au lieu d'amener le flux d'air par une source d'air comprimé, l'arrivée d'air sera effectué par une respiration humaine. Ceci nous a donné les résultats suivants :
+
+\begin{figure}[H]
+    \hspace{-0.5cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[scale = 0.45]{assets/figures/D06_hb_direct.png}
+        \caption{D06 - Respiration humaine - Sens direct}
+        \label{fig:d06_hb_direct}
+    \end{subfigure}
+    \hspace{0.7cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[scale = 0.45]{assets/figures/D06_hb_indirect.png}
+        \caption{D06 - Respiration humaine - Sens indirect}
+        \label{fig:d06_hb_indirect}
+    \end{subfigure}
+    \caption{D06 - Respiration humaine - Étude du sens direct et indirect}
+\end{figure}
+Ces figures permettent de construire une courbe tendance de la réponse du capteur \gls{capteur} en sens direct et inverse. C'est ce que représente 
+la figure suivante :\\
+
+////////////////////////iPad\\
+
+Les graphes obtenus pour cet échantillon sont intéressants, car ils permettent d'observer plusieurs phénomènes. \\
+\begin{enumerate}
+    \item Un premier petit pic aparraît au début de l'expiration
+    \item Un
+\end{enumerate}
 
 \begin{figure}[H]
     \centering
