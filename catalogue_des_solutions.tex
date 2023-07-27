@@ -6,38 +6,19 @@ fabriquées avec plusieurs membranes différentes et selon 2 méthodes :
 \subsection{Membranes à disposition}
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|}
+    \begin{tabular}{|c|p{3cm}|c|p{3cm}|p{2cm}|p{2cm}|}
         \hline
-        Matériau de la membrane & Épaisseur de la membrane \\
+        Membrane & Épaisseur de la membrane [$\upmu$m] & Matériau      & Densité des pores [cm$^2$] & Diamètre des pores [nm] & Porosité de surface \\
         \hline
-        GTTP                    & 6 à 10 $\mu m$           \\
+        GTTP     & 25                                  & Polycarbonate & $1.8 \cdot 10^8$           & 220                     & 13.7\%              \\
         \hline
-        VCTP                    & 6 à 10 $\mu m$           \\
+        VCTP     & 25                                  & Polycarbonate & $2.7 \cdot 10^8$           & 100                     & 4.2\%               \\
         \hline
-        PI25005                 & 25 $\mu m$               \\
+        PI25005  & 25                                  & Polyimide     & $1 \cdot 10^8$             & 50                      & 0.4\%               \\
         \hline
     \end{tabular}
     \caption{Matériau des membranes disponibles}
     \label{tab:membranes}
-\end{table}
-
-\subsection{Dénomination des échantillons}
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|c|c|c|}
-        \hline
-        Échantillon & Membrane & Méthode d'électrodéposition \\
-        \hline
-        D06         & GTTP     & A                           \\
-        \hline
-        D12         & PI25005  & A                           \\
-        \hline
-        D13         & PI25005  & B                           \\
-        \hline
-        D14         & VCTP     & A                           \\
-        \hline
-    \end{tabular}
-    \caption{Dénomination des échantillons}
 \end{table}
 
 \newpage
@@ -73,7 +54,7 @@ Les capteurs ont été conçus soit par la méthode A, soit par la méthode B. C
                     Cette couche d'or servira de court-circuit pour le capteur. \\
               \item Par la suite, vient l'étape des électrodépositions. Une première électrodéposition vient remplir les nanopores de la membrane
                     sur un côté du court-circuit. L'électrodéposition se fait au sein de toutes les nanopores dans un diamètre défini (nommé diamètre du via). 
-                    Les nanofis se forment depuis la couche d'or de court-circuit et s'accroissent jusqu'à atteindre l'autre face de la membrane. 
+                    Les nanofils se forment depuis la couche d'or de court-circuit et s'accroissent jusqu'à atteindre l'autre face de la membrane. 
                     Puis une seconde électrodéposition se fera, de la même manière, de l'autre côté de la couche d'or du court-circuit. \\
               \item La dernière étape de cette méthode consiste à effectuer une \gls{pvd} sur l'autre face de la membrane. Cette \gls{pvd} formera
                     le circuit du thermocouple complet ainsi que le corps de chauffe (au centre). 
@@ -112,6 +93,25 @@ Les capteurs ont été conçus soit par la méthode A, soit par la méthode B. C
           \end{enumerate}
 \end{itemize}
 
+\subsection{Dénomination des échantillons}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Échantillon & Membrane & Méthode d'électrodéposition \\
+        \hline
+        D06         & GTTP     & A                           \\
+        \hline
+        D12         & PI25005  & A                           \\
+        \hline
+        D13         & PI25005  & B                           \\
+        \hline
+        D14         & VCTP     & A                           \\
+        \hline
+    \end{tabular}
+    \caption{Dénomination des échantillons}
+\end{table}
+
 \newpage
 \section{Catalogue des solutions du support}
 \label{chap:catalogueSol}
@@ -130,7 +130,7 @@ ainsi que d'y attacher un système apportant un flux d'air (imitation de la resp
         \includegraphics[scale = 0.45]{images/Design1_dessus.png}
         \caption{Vue de dessus}
     \end{subfigure}
-    \caption{Support solution 1}
+    \caption{Support 1}
     \label{fig:solution1}
 \end{figure}
 Cette première solution est la plus basique. Elle vient plaquer le capteur entre deux pièces presque semblables. Sur le couvercle se trouve des
@@ -146,7 +146,7 @@ Afin d'éviter l'entrée d'air scindée en deux, une solution pourrait être cel
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.4]{images/Capteur_design2_caoutch.png}
-    \caption{Solution 2}
+    \caption{Support 2}
     \label{fig:solution2}
 \end{figure}
 L'arrivée d'air se fait par le haut du système et est dévié par la suite afin d'arriver sur le capteur. Cette solution permet d'avoir une
@@ -163,7 +163,7 @@ membrane. Cette solution est illustrée par la figure \ref{fig:solution3}.
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.3]{images/Design4}
-    \caption{Solution 3}
+    \caption{Support 3}
     \label{fig:solution3}
 \end{figure}
 Cette solution a le désavantage d'augmenter l'encombrement général du capteur et ne garanti pas de supprimer totalement les turbulences. 
@@ -201,7 +201,7 @@ Finalement, une dernière conception a été imaginée :
         \includegraphics[scale = 0.3]{images/Design5_dessous.png}
         \caption{Vue de dessous}
     \end{subfigure}
-    \caption{Solution support 4}
+    \caption{Support 4}
     \label{fig:solution4}
 \end{figure}
 
@@ -211,6 +211,6 @@ sur la figure). Puis, un couvercle viendrait s'appuyer en sandwich contre le joi
 d'air au niveau du capteur. Des plus petits perçages ainsi que des espaces creusés dans la pièce du dessus permettent aux pointes ressorts de 
 venir se poser sur la membrane afin d'assurer la connexion électrique.\\
 
-Finalement, deux solutions ont été retenues. La solution 1 ainsi que la solution 5. Ces deux solutions vont être testées afin de mesurer la
+Finalement, deux solutions ont été retenues. Le support 1 (représenté en bleu) ainsi que le support 5(représenté en vert). Ces deux solutions vont être testées afin de mesurer la
 performance d'un capteur recevant un flux d'air depuis le haut et depuis le bas simultanément ainsi qu'un capteur ne recevant un flux
 d'air seulement par le haut (car le capteur est plaqué contre une surface).

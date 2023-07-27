@@ -92,11 +92,12 @@ effectuées. Ces mesures nous ont montré que le capteur fonctionnait. En effet,
         \end{tabular}
     \end{center}
 \end{table}
-Malgré le bruit non-négligeable mesuré à travers l'amplificateur, la tension change suivant les conditions du capteur. Afin de se concentrer
+Malgré le bruit non négligeable mesuré à travers l'amplificateur, la tension change suivant les conditions du capteur. Afin de se concentrer
 uniquement sur la réponse du capteur, l'amplificateur a été mis de côté pour les futures mesures.
 \end{comment}
 
 \section{Procédure de mesures "classiques"}
+Une marche à suivre des différentes mesures à effectuer a été établi.
 \begin{enumerate}
     \item Mesures avec un corps de chauffe pulsé\\
     \item Mesures avec un corps de chauffe pulsé et un flux d'air comprimé constant\\
@@ -105,7 +106,7 @@ uniquement sur la réponse du capteur, l'amplificateur a été mis de côté pou
     \item Mesures sans corps de chauffe et une respiration humaine\\
     \item Mesures avec corps de chauffe constant et respiration humaine
 \end{enumerate}
-Ces mesures ont été effectuées sur les quatre échantillons décrits sur le tableau \ref{tab:resistancePointeRessort}. \\
+Ces mesures ont été effectuées sur les quatre échantillons décrits sur le tableau \ref{tab:resistancePointeRessort} (sans prendre en compte le D11). \\
 
 Malheureusement, le problème du bruit conséquent sortant de l'amplificateur n'a pas pu être résolu pour ce projet. Toutes les mesures ont alors 
 été effectuées directement sur le capteur \gls{capteur}, sans passer par l'amplificateur. 
@@ -131,12 +132,12 @@ lorsque seulement le corps de chauffe est activé. Ce dernier est alimenté avec
     \hspace{-0.5cm}
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[scale = 0.45]{assets/figures/D06_corps_chauffe_pulse_green.png}
-        \caption{Support solution 5 - Corps de chauffe pulsé}
+        \caption{Support 4 - Corps de chauffe pulsé}
         \label{fig:chauffe_pulse_g}
     \end{subfigure}
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[scale = 0.45]{assets/figures/D06_corps_chauffe_pulse_blue.png}
-        \caption{Support solution 1 - Corps de chauffe pulsé}
+        \caption{Support 1 - Corps de chauffe pulsé}
         \label{fig:chauffe_pulse_b}
     \end{subfigure}
 \end{figure}
@@ -151,42 +152,39 @@ chauffe transfert de la chaleur aux deux extrémités en "L" du capteur. Ces deu
 quelque peu différents d'un côté ou de l'autre, un gradient de température se forme et une certaine tension circule. \\
 C'est une hypothèse du phénomène que l'on peut observer sur la figure \ref{fig:chauffe_pulse_b}.\\
 
-Le support solution 5 semble, lui, éviter ce transfert de chaleur. Cela peut être dû au fait qu'étant donné que la membrane est plaquée contre
-la base du support, la chaleur transférée par le corps de chauffe est "perdue" dans la matière du support (ici : PLA).\\
+Le support 4 semble, lui, éviter ce transfert de chaleur. Cela peut être dû au fait qu'étant donné que la membrane est plaquée contre
+la base du support, la chaleur transférée par le corps de chauffe est "perdue" dans la matière du support (ici : acide polylactique ou \gls{pla}).\\
 
-Pour ces raisons, le support solution 1 a été privilégié étant donné qu'il semble plus sensible que le support solution 5.\\
+Pour ces raisons, le support 1 a été privilégié étant donné qu'il semble plus sensible que le support 4.\\
 
 \subsubsection{Corps de chauffe constant et flux d'air comprimé pulsé}
-La figure \ref{fig:test_cdc}, montre la réponse du capteur lorsqu'un flux d'air comprimé vient souffler sur le capteur pendant 3 s, puis 
-stoppe le flux d'air pendant également 3 s. Après environ 50 s, le corps de chauffe est activé. 
+La figure \ref{fig:d06_test_cdc} et \ref{fig:d13_test_cdc}, montre la réponse du capteur lorsqu'un flux d'air comprimé vient souffler sur le capteur pendant 3 s, puis 
+stoppe le flux d'air pendant également 3 s. Après environ 40-50 s, le corps de chauffe est activé. 
+
 \begin{figure}[H]
-    \hspace{-0.3cm}
-    \begin{subfigure}{0.45\textwidth}
-        \includegraphics[scale = 0.4]{assets/figures/D06_air_pulse_test_cdc.png}
-        \caption{D06 - Air comprimé pulsé - Sans, puis avec corps de chauffe}
-        \label{fig:d06_test_cdc}
-    \end{subfigure}
-    \hspace{0.5cm}
-    \begin{subfigure}{0.45\textwidth}
-        \includegraphics[scale = 0.4]{assets/figures/D13_air_comprime_pulse_test_cdc.png}
-        \caption{D13 - Air comprimé pulsé - Sans, puis avec corps de chauffe}
-        \label{fig:d13_test_cdc}
-    \end{subfigure}
-    \caption{Test corps de chauffe avec air comprimé pulsé}
-    \label{fig:test_cdc}
+    \centering
+    \includegraphics[scale = 0.51]{assets/figures/D06_air_pulse_test_cdc.png}
+    \caption{D06 - Air comprimé pulsé - Sans, puis avec corps de chauffe}
+    \label{fig:d06_test_cdc}
 \end{figure}
 
-La figure \ref{fig:d06_test_cdc} nous permet de voir que le corps de chauffe a une influence sur la réponse du capteur. \\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{assets/figures/D13_air_comprime_pulse_test_cdc.png}
+    \caption{D13 - Air comprimé pulsé - Sans, puis avec corps de chauffe}
+    \label{fig:d13_test_cdc}
+\end{figure}
+
+La figure \ref{fig:d06_test_cdc} concerne l'échantillon D06. Elle nous permet de voir que le corps de chauffe a une certaine influence sur la réponse du capteur. \\
 Comme attendu, la figure \ref{fig:d13_test_cdc} représentant l'échantillon D13, ne montre pas une différence frappante avec ou sans corps de 
 chauffe. Ce résultat était plutôt prévisible étant donné que les mesures à la caméra thermique ne donnait pas non plus de résultat pour cet 
 échantillon. \\
 
 Les différents résultats communiqués par les graphes soulignent que le corps de chauffe pourrait être amélioré. En effet, il serait intéressant 
-à l'avenir de développer la géométrie générale du corps de chauffe. Par exemple, ce dernier pourrait être une piste d'or en configuration 
-"serpentin". Ceci permettrait d'avoir un échauffement plus élevé. \\
+à l'avenir de développer la géométrie générale du corps de chauffe. \\
 Une autre solution serait d'épaissir la couche d'or. Elle serait peut-être moins fragile et il serait alors possible d'y amener un courant plus élevé. \\
 
-Pour la suite des mesures, étant donné que le corps de chauffe n'offre pas un avantage notable, le corps de chauffe a été mis de côté. 
+Pour la suite des mesures, étant donné que le corps de chauffe n'offre pas un avantage notable, il a été mis de côté. 
 
 \begin{comment}
 Par la suite, le sens par lequel est insufflé l'air a été testé. 
@@ -210,48 +208,117 @@ Cette manipulation permet d'observer si un comportement différent est à noter.
 
 
 \subsection{Respiration humaine}
-Au lieu d'amener le flux d'air par une source d'air comprimé, l'arrivée d'air sera effectué par une respiration humaine. Ceci nous a donné les résultats suivants :
+Au lieu d'amener le flux d'air par une source d'air comprimé, l'arrivée d'air est effectuée par une respiration humaine. Ceci nous a donné les résultats suivants :
 
-\begin{figure}[H]
-    \hspace{-0.5cm}
-    \begin{subfigure}{0.45\textwidth}
-        \includegraphics[scale = 0.45]{assets/figures/D06_hb_direct.png}
-        \caption{D06 - Respiration humaine - Sens direct}
-        \label{fig:d06_hb_direct}
-    \end{subfigure}
-    \hspace{0.7cm}
-    \begin{subfigure}{0.45\textwidth}
-        \includegraphics[scale = 0.45]{assets/figures/D06_hb_indirect.png}
-        \caption{D06 - Respiration humaine - Sens indirect}
-        \label{fig:d06_hb_indirect}
-    \end{subfigure}
-    \caption{D06 - Respiration humaine - Étude du sens direct et indirect}
-\end{figure}
-Ces figures permettent de construire une courbe tendance de la réponse du capteur \gls{capteur} en sens direct et inverse. C'est ce que représente 
-la figure suivante :\\
-
-////////////////////////iPad\\
-
-Les graphes obtenus pour cet échantillon sont intéressants, car ils permettent d'observer plusieurs phénomènes. \\
-\begin{enumerate}
-    \item Un premier petit pic aparraît au début de l'expiration
-    \item Un
-\end{enumerate}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.6]{assets/figures/D13_human_breath_direct_invert_blue.pdf}
+    \includegraphics[scale = 0.3]{assets/figures/D06_hb_direct.png}
+    \caption{D06 - Respiration humaine - Sens direct}
+    \label{fig:d06_hb_direct}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.3]{assets/figures/D06_hb_indirect2.png}
+    \caption{D06 - Respiration humaine - Sens indirect}
+    \label{fig:d06_hb_indirect}
+\end{figure}
+
+Tout d'abord, il est notable que la respiration humaine engendre un signal bien plus clair et précis que l'air comprimé. Ceci est probablement 
+en lien avec le fait que notre respiration est chaude et humide lorsque l'on expire et moins chaude lorsque l'on inspire. Les capteurs \gls{capteur}s
+sont alors potentiellement sensible à l'humidité également. \\
+
+Ces différentes figures permettent de construire une courbe tendance de la réponse du capteur \gls{capteur} en sens direct et inverse. C'est ce que représente 
+la figure \ref{fig:schemas_tendance} :\\
+\begin{figure}[H]
+    \hspace{-1.5cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[scale = 0.5]{assets/figures/D06_courbe_tendance.png}
+        \caption{Séquence observable sur l'échantillon D06}
+        \label{fig:courbe_tendance}
+    \end{subfigure}
+    \hspace{2cm}
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[scale = 0.5]{assets/figures/D06_courbe_tendance_diff.png}
+        \caption{Étapes clés entre le sens direct et inverse}
+        \label{fig:tendance_2}
+    \end{subfigure}
+    \caption{D06 - Schémas de la séquence observable en respiration directe et inverse}
+    \label{fig:schemas_tendance}
+\end{figure}
+
+
+Les graphes obtenus pour cet échantillon sont intéressants, car ils permettent d'observer plusieurs subtilités entre le sens direct et inverse. \\
+Les quatre étapes soulignées par la figure \ref{fig:tendance_2} sont décrites ci-dessous. 
+\begin{enumerate}
+    \item Un premier léger pic positif apparaît au début de l'expiration en sens direct, mais il est moins visible dans le sens direct.\\
+    \item Un deuxième léger pic positif apparaît en sens direct, au tout début de l'inspiration. Ce pic positif, invisible en sens inverse, est
+          peut-être inversé (devient négatif) et confondu avec le pic suivant. \\
+    \item Un pic négatif, franc et rapide est observable pour les sens direct et inverse. Ce pic semble donc indépendant du sens. \\
+    \item Pour finir, une thermalisation plutôt lente est visible pour les deux sens. Cependant, contrairement à l'étape précédente, ce régime
+          lent semble totalement dépendant du sens. 
+\end{enumerate}
+Le pic décrit au point (3) correspond à un régime rapide. En effet, il atteint sa valeur culminante après moins de 500 ms. Les régimes 
+rapides proviennent certainement de l'échauffement des surcroissances des \gls{ed}. \\
+
+Au contraire, le régime décrit au point 4 est lent. L'hypothèse est donc que ce régime provient de la thermalisation de la membrane (la 
+température des pistes d'or et de la membrane entière s'équilibrent peu à peu). \\
+
+Les mêmes mesures avec le même échantillon ont été faites avec le support 4. 
+\begin{figure}[H]
+    \hspace{-2.5cm}
+    \includegraphics[scale = 0.4]{assets/figures/D06_hb_direct_inverse_green.png}
+    \caption{D06 - Respiration humaine - Sens direct puis inverse}
+    \label{fig:d06_hb_dirInv}
+\end{figure}
+La figure \ref{fig:d06_hb_dirInv} montre que les thermalisations lentes semblent toutes disparaître et seuls les pics rapides persistent. Ce phénomène est peut-être dû au fait que le 
+PLA du support absorbe la chaleur entraînant alors un retour rapide à un certain équilibre thermique. \\
+
+Il est intéressant de voir si ces phénomènes sont visibles sur les autres échantillons. Par exemple, l'échantillon D13 produit les résultats suivants :
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{assets/figures/D13_human_breath_direct_invert_blue.pdf}
     \caption{D13 - Réponse du capteur à la respiration humaine en sens direct et inverse}
     \label{fig:D13_human_breath_direct_invert}
 \end{figure}
 
 La partie gauche du graphe de la figure \ref{fig:D13_human_breath_direct_invert}, correspond à la réponse du capteur et du débitmètre lorsque la 
 respiration se fait en sens direct. La partie droite, quant à elle, montre ces deux mêmes réponses, mais lorsque la respiration se fait en sens 
-inverse (cf. figure \ref{fig:direct_inverse}). 
+inverse (cf. figure \ref{fig:D13_human_breath_direct_invert}). \\
+Ces graphes ne montrent pas un signal aussi varié que ce qui était observable pour l'échantillon D06 (figure 
+\ref{fig:d06_hb_direct} et \ref{fig:d06_hb_indirect}). Cependant, l'allure générale reste semblable. Les pics qui marquent le début de l'expiration 
+et de l'inspiration sont bien présents. Les pics d'inspiration ont une amplitude plus forte dans le sens direct que le sens indirect. \\
 
-Les mesures de la respiration humaine avec et sans corps de chauffe ont montré très peu de différences. Ainsi, le corps de chauffe a été laissé 
-de côté pour le moment. 
+Les mêmes manipulations ont également été conduites sur l'échantillon D14 et D12. Malheureusement, les résultats de l'échantillon D12 montrent 
+beaucoup de bruit et ont donc été mis de côté. En observant le tableau \ref{tab:resistancePointeRessort}, la valeur de résistance du thermocouple 
+de l'échantillon 12 est la plus élevée après l'échantillon D11. Ceci peut être lié aux bruits obtenus lors des mesures avec cet échantillon D12. \\
 
+Toutefois, l'échantillon D14 montre les graphes illustrés par les figures \ref{fig:d14_hb_direct} et \ref{fig:d14_hb_indirect}. 
+
+
+\begin{figure}[H]
+    \hspace{-1cm}
+    \includegraphics[scale = 0.35]{assets/figures/D14_hb_sensDirect.png}
+    \caption{D14 - Respiration humaine - Sens direct}
+    \label{fig:d14_hb_direct}
+\end{figure}
+
+\begin{figure}[H]
+    \hspace{-1cm}
+    \includegraphics[scale=0.35]{assets/figures/D14_hb_sensIndirect.png}
+    \caption{D14 - Respiration humaine - Sens indirect}
+    \label{fig:d14_hb_indirect}
+\end{figure}
+
+
+Ces graphes montrent, comme pour l'échantillon D13, une allure similaire, mais également moins d'informations sont communiquées que l'échantillon D06. \\
+
+Ainsi, pour tous ces échantillons l'hypothèse reste que les pics rapides sont engendrés par l'échauffement des surcroissances et que les thermalisations 
+lentes sont, quant à elle, une conséquence de l'échauffement de la membrane. \\
+De plus, étant donné que l'échantillon D06 possèdent les informations les plus détaillées et qu'il possède également un diamètre de pores le plus élevé, il est probable 
+que ce paramètre engendre de meilleurs résultats. 
+
+\begin{comment}
 \subsection{Mesure concernant la condensation}
 Les résultats avec la respiration humaine sont bien plus nettes que ceux avec l'air comprimé. Ce phénomène peut être dû au fait que le capteur 
 est sensible à l'humidité (en plus de la chaleur). De plus, étant donné que le comportement est différent lors de l'inspiration ou l'expiration, 
@@ -265,7 +332,8 @@ il était intéressant d'émettre quelques hypothèses :
 Afin d'étudier ces hypothèses, une expérience a été effectuée en expirant seulement pendant quelques secondes (ici 5 s), puis en laissant le 
 capteur reposer un certain temps. Cette manipulation permettrait d'observer si l'humidité de l'expiration s'évapore (si tel est le cas, le 
 capteur devrait montrer quelque chose après l'expiration, mais avant le retour au zéro). 
-\begin{comment}
+
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.5]{name}
@@ -274,5 +342,30 @@ capteur devrait montrer quelque chose après l'expiration, mais avant le retour 
 \end{figure}
 \end{comment}
 
-\section{Dépendances}
-\section{Discussion}
+\section{Synthèse des résultats}
+Les différentes mesures réalisées permettent de faire une première synthèse sur les capteurs \gls{capteur}s. 
+\begin{itemize}
+    \item La résistance de thermocouple annonce la précision des résultats. \\
+          Une résistance trop élevée (au-delà de 5 k$\Omega$) entraînera certainement des résultats avec beaucoup de bruit. \\
+          
+    \item Le corps de chauffe porte une influence, cependant sa conception est à développer.\\
+          Le corps de chauffe ne semblait fonctionnel que sur un échantillon sur quatre. Sa forme générale ainsi que son épaisseur sont alors à revoir. \\
+          
+    \item Le support 1 est plus adapté que le support 4. \\
+          Les résultats avec le support 1 sont plus fins et étoffés que les résultats avec le support 4. \\
+          
+    \item Malgré l'absence du corps de chauffe, les capteurs \gls{capteur}s par nanotechnologie sont sensibles à la respiration humaine. \\
+          Le flux d'air comprimé entraîne aussi des résultats, mais ces derniers sont bien moins précis que ceux provoqués par une respiration humaine. \\
+          
+    \item Deux régimes sont visibles lors de l'expiration et de l'inspiration.\\
+          Le régime rapide (pics) est peut-être provoqué par l'échauffement des surcroissances de l'\gls{ed} contrairement au régime lent qui provient certainement de 
+          l'échauffement de la membrane. \\
+          
+    \item La méthode A et la méthode B n'ont pas montré une différence frappante. \\
+          Une étude plus développée, avec plus de mesures et d'échantillons seraient nécessaires afin d'étudier toutes les hypothèses émises lors du chapitre 
+          \ref{chap:hypotheses_echantillon_patho}. \\
+          
+    \item Le diamètre des nanofils porte peut-être une influence sur la qualité des résultats.\\
+          C'est un point également à développer. 
+\end{itemize}
+
