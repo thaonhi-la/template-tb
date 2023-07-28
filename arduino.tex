@@ -1,0 +1,19 @@
+\begin{verbatim}
+#define pinSignalDeSortie 12             // On prendra arbitrairement la sortie D12 de 
+                                            l'Arduino Nano, pour y sortir le signal carré 
+                                            +5V/0V
+
+    void setup() {
+    pinMode(pinSignalDeSortie, OUTPUT);    // On définit la broche D12 comme étant une 
+                                              broche de SORTIE
+    }
+
+    void loop() {
+    digitalWrite(pinSignalDeSortie, HIGH); // On met la sortie D12 à l'état haut(+5V)
+    _delay_ms(3000);                       // Temps de souffle en ms 
+                                              à modifier si nécessaire
+    digitalWrite(pinSignalDeSortie, LOW);  // On met la sortie D12 à l'état bas (0V)
+    _delay_ms(3000);                       // Temps de repos en ms 
+                                              à modifier si nécessaire
+    }
+\end{verbatim}

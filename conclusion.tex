@@ -8,7 +8,6 @@ fragiles et donc, sujets à diverses maladies pulmonaires.\\
 Un nouveau capteur de débit a alors été développé. Sa réponse à divers environnements a été mesurée et testée afin d'en apprendre davantage sur 
 ce type de débitmètre. Pour ce faire, un banc de test a été réalisé. Ce banc de test permet de souffler un flux d'air mesurable dans 
 le capteur, puis d'obtenir la réponse du dispositif sur un programme LabView (graphe tension en fonction du temps). \\
-
 Une revue plus précise des points clés du projet se trouve dans les chapitres suivants. 
 
 \section{Revue des objectifs}
@@ -53,6 +52,7 @@ montrent plus d'informations qu'avec les autres échantillons, notamment au nive
 Les mesures ont montré que le temps de réponse d'un tel capteur est inférieur à 500 ms pour tous les échantillons. Cette valeur est positive, mais 
 n'est pas encore assez précise. En effet, elle ne permet pas de savoir si ce temps de réponse franchi la limite des 100 ms souhaité ou pas. 
 
+\newpage
 \subsection{Délivrables}
 Les délivrables de ce projet sont les suivants :
 \begin{itemize}
@@ -70,7 +70,10 @@ Plusieurs points ont été étudiés, mais restent à développer.
     \item L'amplificateur de tension ne semble pas adéquat pour ce projet. En effet, il amplifie davantage le bruit que le signal à mesurer. Une
           étude plus poussée sur l'électronique et l'amplificateur pourrait être avantageuse. Sans quoi, un autre amplificateur devrait être utilisé. \\
     \item Dans le cadre de ce projet, la respiration humaine était réalisée par une personne physique. Une amélioration pourrait être de concevoir
-          un système qui simulerait une respiration humaine (avec une certaine humidité et une certaine chaleur). 
+          un système qui simulerait une respiration humaine (avec une certaine humidité et une certaine chaleur). \\
+    \item Afin d'obtenir un graphe de la réponse du débitmètre de référence ainsi que le graphe du capteur \gls{capteur} correspondant, une
+          synchronisation manuelle était réalisée (activer l'oscilloscope en même temps que le programme LabView). Afin d'avoir un temps de réponse très 
+          précis, une synchronisation automatique est préférable. 
 \end{itemize}
 
 \section{Remarques personnelles}

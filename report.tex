@@ -58,8 +58,8 @@
     \listoffigures
     \let\cleardoublepage\clearpage
     \listoftables
-    \let\cleardoublepage\clearpage
-    \listoflistings
+    %\let\cleardoublepage\clearpage
+    %\listoflistings
 }
 
 \printnomenclature
@@ -118,16 +118,37 @@ Les annexes contiennent généralement :
           \end{itemize}
     \item des développements mathématiques.
 \end{itemize}
-\section{Sous section}
-\lipsum[1]
-%%fi
 
+%%fi
+\newpage
 \section{Datasheet Câble de liaison pour Débitmètre FESTO}
 \begin{figure}[H]
     \hspace{-1cm}
     \includegraphics[scale = 0.85, page = 1]{assets/pdf/Festo_Cable_liaison.pdf}
 \end{figure}
 \includepdf[pages=2]{assets/pdf/Festo_Cable_liaison.pdf}
+
+\section{Datasheet Débitmètre de référence FESTO}
+\begin{figure}[H]
+    \hspace{-1cm}
+    \includegraphics[scale = 0.8, page = 1]{assets/pdf/Festo_DebitmetreSFAH.PDF}
+\end{figure}
+\includepdf[pages=2-]{assets/pdf/Festo_DebitmetreSFAH.PDF}
+
+\section{Datasheet Électrovanne FESTO}
+\begin{figure}[H]
+    \hspace{-1cm}
+    \includegraphics[scale = 0.8, page = 1]{assets/pdf/Electrovanne_datasheet.pdf}
+\end{figure}
+\includepdf[pages=2-]{assets/pdf/Electrovanne_datasheet.pdf}
+
+\section{Datasheet MOSFET IRL540N}
+\begin{figure}[H]
+    \hspace{-1cm}
+    \includegraphics[scale = 0.8, page = 1]{assets/pdf/Infineon-IRL540N-DataSheet-v01_01-EN.pdf}
+\end{figure}
+\includepdf[pages=2-]{assets/pdf/Infineon-IRL540N-DataSheet-v01_01-EN.pdf}
+
 \section{Programme LabView}
 \begin{figure}[H]
     \hspace{-1cm}
@@ -137,6 +158,17 @@ Les annexes contiennent généralement :
     \hspace{-1cm}
     \includegraphics[scale = 0.5]{assets/figures/LabView2.PNG}
 \end{figure}
+
+\section{Code Arduio}
+\input{arduino.tex}
+
+\newpage
+\section{Recueil de toutes les mesures et leurs paramètres correspondants}
+\begin{figure}[H]
+    \vspace*{-2cm}
+    \includegraphics[scale = 0.85, page = 1]{assets/pdf/Data_descriptions.pdf}
+\end{figure}
+
 
 \let\cleardoublepage\clearpage
 \backmatter
