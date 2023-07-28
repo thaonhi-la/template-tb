@@ -27,15 +27,18 @@ mesures. Pour ce banc de test, le matériel suivant est utilisé :
     \item \textbf{Capteur avec son support (Solution 1 ou 5)}\\
           La géométrie générale du Design 1 et 5 est expliquée et représentée au chapitre \ref*{chap:catalogueSol}. \\
           
-    \item \textbf{Alimentation de laboratoire}\\
+    \item \textbf{Alimentation de laboratoire Aim TTi EL302RD Dual Power Supply}\\
           Elle fournit la tension nécessaire au débitmètre de référence, à l'électrovanne et au corps de chauffe si ce dernier chauffe de manière 
           continue. \\
           
-    \item \textbf{Générateur de fonctions}
+    \item \textbf{Générateur de fonctions Agilent 33220A}
           Le générateur de fonctions permet d'alimenter le corps de chauffe de manière cadencée. \\
           
-    \item \textbf{Oscilloscope}\\
+    \item \textbf{Oscilloscope GW Instek GDS 105 4B}\\
           Cet appareil permet d'observer le signal analogique du débitmètre de référence ainsi que le signal du capteur \gls{capteur}. \\
+          
+    \item \textbf{Multimètre Agilent 34401A}\\
+          Le multimètre, combiné au programme LabView, permet d'observer le signal du capteur. \\
           
     \item \textbf{Débitmètre de référence FESTO SFAH-10B-Q6S-PNLK-PNVBA-M8}\\
           Le débitmètre choisi est un débitmètre bidirectionnel avec une entrée d'air de 6 mm de diamètre. Il sera placé juste avant l'entrée du flux
@@ -120,6 +123,9 @@ mesures. Pour ce banc de test, le matériel suivant est utilisé :
           C'est grâce à l'arduino que la fréquence du flux d'air sera modulable. En effet, ce composant va contrôler le \gls{mosfet}, qui 
           transmettra ensuite les informations à l'électrovanne.\\
           Le code utilisé afin de créer une sortie en tension par pulsation est fourni en annexe. Il a été réalisé sur le logiciel Arduino IDE.\\
+          
+    \item \textbf{Amplificateur x 1000 Thorlabs AMP200}
+          Cet amplificateur permet d'amplifier le signal du capteur \gls{capteur}. 
 \end{itemize}
 
 Toutes les Datasheets des composants utilisés et achetés se trouvent en annexe. Ces Datasheets contiennent toutes les valeurs et schémas nécessaires
@@ -257,14 +263,19 @@ Le capteur, quant à lui, est situé dans un circuit relativement déconnecté d
     \label{fig:circuit_capteur}
 \end{figure}
 Le capteur \gls{capteur} est relié au débitmètre de référence et à l'électrovanne par les tuyaux d'air comprimé. Il est ensuite connecté soit directement au 
-multimètre soit à l'oscilloscope via l'amplificateur. La figure \ref{fig:circuit_capteur} illustre le cas du multimètre. \\
+multimètre soit à l'oscilloscope via l'amplificateur. La figure \ref{fig:circuit_capteur} illustre le cas du multimètre (lié au programme LabView 
+qui permettra l'acquisition du signal en fonction du temps). \\
+
+Note : l'amplificateur x 1000 Thorlabs AMP200 a été utilisé pour à acquérir le signal amplifier sur l'oscilloscope. Malheureusement cet 
+amplificateur prévu pour des photodiodes ne possède pas de filtre et amplifie aussi le bruit. Le faible rapport signal/bruit a conduit à 
+l'abandon de cet amplificateur, et à mesurer le signal des capteurs \gls{capteur} directement sur le multimètre AGILENT. \\
 
 Le corps de chauffe du capteur peut être alimenté soit par une alimentation (corps de chauffe continu), soit par un générateur de fonction (corps 
 de chauffe cadencé). La figure \ref{fig:circuit_capteur} montre le cas du corps de chauffe continu. 
 
 \subsection{Conception 3D et réelle du banc de test}
 \begin{figure}[H]
-    \centering
+    \hspace{-0.3cm}
     \begin{subfigure}{0.45\textwidth}
         \includegraphics[scale = 0.4]{assets/figures/Banc_de_test.png}
         \caption{Conception 3D du banc de test}
@@ -272,7 +283,7 @@ de chauffe cadencé). La figure \ref{fig:circuit_capteur} montre le cas du corps
     \end{subfigure}
     \hspace{1cm}
     \begin{subfigure}{0.45\textwidth}
-        \includegraphics[scale = 0.05, angle = -90]{assets/figures/Banc_de_test_real.png}
+        \includegraphics[scale = 0.07, angle = -90]{assets/figures/Banc_de_test_real.png}
         \caption{Réalisation du banc de test}
         \label{fig:banc_test_reel}
     \end{subfigure}
@@ -369,7 +380,7 @@ En effet, ce couple de matériaux possède un coefficient Seebeck plus avantageu
 
 Ainsi, afin de chauffer une des deux parties électrodéposées, une court tube a été utilisé. Un flux d'air chaud a été soufflé directement sur cette
 partie afin de créer un gradient de température, mais à nouveau, aucun résultat n'a été observé. Cela signifie que la jonction avec le tellure
-de bismuth est probablement pathologique.\\
+de bismuth est probablement "pathologique".\\
 
 Il était tout de même nécessaire et intéressant de vérifier si le banc de test fonctionnait de manière appropriée. Pour cela, un autre capteur
 a été utilisé afin de vérifier la fonctionnalité du banc de test. \\
@@ -408,14 +419,14 @@ l'amplificateur montrait un bruit conséquent régulier. Quelques tests sur ce c
 Par exemple, le facteur d'amplification a été vérifié. Le programme LabView a donc été utilisé afin de mesurer, dans un
 premier temps, la réponse du capteur \gls{infrarouge} sans amplificateur, puis, dans un second temps, la réponse avec amplificateur. Ceci nous
 permet de calculer le facteur d'amplification réel. Cette manipulation, présente dans les détails en annexe, a donné un facteur d'amplification 
-d'environ 670. Cette valeur paraît loin de l'amplification de 1000 indiquée par les données techniques, mais reste dans un ordre de grandeur 
+d'environ 808. Cette valeur paraît relativement loin de l'amplification de 1000 indiquée par les données techniques, mais reste dans un ordre de grandeur 
 tout à fait correct. \\
 De plus, les imprécisions de calculs et de manipulation ne sont pas négligeables dans cette étape. 
 
 Ces différents tests prouvent que le banc de test semble fonctionner de manière adéquate. L'échantillon est alors certainement le facteur engendrant de
 mauvais résultats. 
 
-\subsection{Hypothèses concernant l'échantillon pathologique}
+\subsection{Hypothèses concernant l'échantillon "pathologique"}
 \label{chap:hypotheses_echantillon_patho}
 Afin de détecter où se situe le problème, les différents paramètres du capteur \gls{capteur} ont été remis en question :
 \begin{itemize}

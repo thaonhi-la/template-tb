@@ -98,29 +98,33 @@
 %%if
 \chapter{Annexes}
 
-Les annexes n'ont pas un contenu \underline{normatif} mais \underline{descriptif}. Tout contenu annexé ne doit pas être nécessaire à la bonne compréhension du travail.
+\section{Descriptif du Travail de Bachelor}
+\begin{figure}[H]
+    \vspace*{-2cm} \hspace{-1cm}
+    \includegraphics[scale = 0.8, page = 1]{assets/pdf/descriptif_TB.pdf}
+\end{figure}
+\includepdf[pages=2]{assets/pdf/descriptif_TB}
 
-Les annexes contiennent généralement :
+\section{Vérification du facteur d'amplification de l'amplificateur}
+\begin{figure}[H]
+    \hspace{-1cm}
+    \includegraphics[scale = 0.8]{assets/figures/Facteur_ampli1.png}
+\end{figure}
+\begin{figure}[H]
+    \hspace{-1cm}
+    \includegraphics[scale = 0.8]{assets/figures/Facteur_ampli2.png}
+\end{figure}
 
-\begin{itemize}
-    \item le cahier des charges
-    \item les dessins mécaniques (mises en plan);
-    \item les schémas électriques détaillés;
-    \item des photographies du projet;
-    \item des scripts et des extraits de code source;
-          \begin{itemize}
-              \item Code Arduino
-          \end{itemize}
-    \item des documents techniques \pex \emph{datasheet};
-          \begin{itemize}
-              \item Débitmètre de référence;
-              \item MOSFET IRL540N;
-          \end{itemize}
-    \item des développements mathématiques.
-\end{itemize}
+\section{Réponse du capteur avec la sortie de l'amplificateur}
+\begin{figure}[H]
+    \hspace{-1cm}
+    \includegraphics[scale = 0.8]{assets/figures/Bruit_ampli1.png}
+\end{figure}
+\begin{figure}[H]
+    \hspace{-1cm}
+    \includegraphics[scale = 0.8]{assets/figures/Bruit_ampli2.png}
+\end{figure}
 
-%%fi
-\newpage
 \section{Datasheet Câble de liaison pour Débitmètre FESTO}
 \begin{figure}[H]
     \hspace{-1cm}
@@ -159,7 +163,7 @@ Les annexes contiennent généralement :
     \includegraphics[scale = 0.5]{assets/figures/LabView2.PNG}
 \end{figure}
 
-\section{Code Arduio}
+\section{Code Arduino}
 \input{arduino.tex}
 
 \newpage

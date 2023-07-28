@@ -20,24 +20,19 @@ Ce projet vise ainsi à fabriquer des débitmètres par nanotechnologie et de d�
 \section{Objectifs}
 Ce travail de Bachelor vise à démontrer la faisabilité de débitmètre respiratoire utilisant des capteurs élaborés par une nanotechnologie à 
 faibles coûts. Il se décline en quatre objectifs pratiques : \\
-Objectif 1 - Élaboration d'un cahier de spécifications \& d'un catalogue de solutions. \\
-
-Objectif 2 - Conception et réalisation d'un débitmètre par nanotechnologie. \\
-
-Objectif 3 - Conception et réalisation d'un banc de test dédié au débitmètre.\\
-
-Objectif 4 - Qualification des performances du débitmètre.
+\vspace{0.2cm}
+\textbf{Objectif 1} - Élaboration d'un cahier de spécifications \& d'un catalogue de solutions. \\
+\vspace{0.2cm}
+\textbf{Objectif 2} - Conception et réalisation d'un débitmètre par nanotechnologie. \\
+\vspace{0.2cm}
+\textbf{Objectif 3} - Conception et réalisation d'un banc de test dédié au débitmètre.\\
+\vspace{0.2cm}
+\textbf{Objectif 4} - Qualification des performances du débitmètre.
 
 \section{État de l'art}
 \subsection{Débitmètres néonatals sur le marché}
-\begin{comment}
-Actuellement, ce qui existe sur le marché sont des anémomètres à double fils chauds (double hot wire anemometer). Ces débitmètres 
-mesurent le flux des patients néonatals. \\
-Les revues scientifiques parlent également de débitmètre pédiatrique. Leur fonctionnement  
-\end{comment}
 Plusieurs entreprises proposent des débitmètres néonatals. Ces entreprises ont été regroupées dans le tableau ci-dessous avec les 
 technologies de capteur utilisées. \\
-
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|}
@@ -72,7 +67,7 @@ performances. \\
 Les articles pertinents pour ce Travail de Bachelor sont résumés dans ce chapitre et classé par ordre chronologique sur la figure 
 \ref{fig:articlesChrono}. \\
 
-Les chapitres suivants seront consacrés à une revue des technologies déjà exploitées. 
+Les principales technologies exploitées comme débitmètre pédiatrique sont passée en revue ci-dessous. 
 
 \subsubsection{Effet de Venturi}
 Le débit respiratoire est mesuré grâce à une différence de pression. Cette différence de pression est engendré par un rétrécissement de 
@@ -88,7 +83,7 @@ La figure \ref{fig:venturi} illustre l'effet Venturi. Avec un rétrécissement d
 sera accéléré et subira également une dépression à cet endroit. Ainsi, en mesurant la pression à différents endroits du tube, il est possible 
 de calculer le flux d'air. \\
 
-C'est la technologie utilisée par les pneumotachographes (le pneumotacographe de Fleisch par exemple). Mais elle peut également être utilisée 
+C'est la technologie utilisée par les pneumotachographes (le pneumotachographe de Fleisch par exemple). Mais elle peut également être utilisée 
 dans une application quelque peu différente. En effet, un article mentionne son utilisation dans un ressuscitateur \cite{jacq_ultra-low_2011}. 
 Un tel appareil permet la réanimation du patient qui ne respire plus. Le ressuscitateur gonfle les poumons d'air et ainsi s'assure qu'un bon 
 taux d'oxygène circule dans le patient. \\
@@ -143,14 +138,14 @@ ainsi que quelques recherches supplémentaires. \\
 
 Cette technologie a le grand avantage d'être non invasive, mais n'est pas encore aboutie. 
 
-\subsubsection{Mesure thermique de l'entreprise Sensirion}
+\subsubsection{Mesure thermique par l'entreprise Sensirion}
 L'entreprise Sensirion propose une technologie basée sur des mesures de températures. Une membrane incorporée dans une puce est utilisé comme 
 capteur de débit. Un flux d'air vient transférer la chaleur du corps de chauffe placé au milieu de la membrane. Deux capteurs de température 
 sont placés en aval et en amont du corps de chauffe, en direction du flux. Un signal précis engendré par la différence de température en aval et  
 en amont sera finalement mesurable. 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.1]{assets/figures/Sensirion_tech.png}
+    \includegraphics[scale = 0.15]{assets/figures/Sensirion_tech.png}
     \caption{Technologie proposée par Sensirion\cite{noauthor_smart_nodate}}
     \label{fig:sensirion}
 \end{figure}
@@ -191,63 +186,30 @@ Ce travail de Bachelor est donc une recherche à propos d'un débitmètre dont l
 
 Le capteur développé repose sur le phénomène de l'effet Seebeck, phénomène que l'on peut également retrouver dans les thermocouples. L'effet 
 Seebeck est le suivant :\\
-Lorsque deux matériaux conducteurs ou semi-conducteurs sont soumis à des températures différentes, une tension va être produite entre ces deux matériaux. \\
-Sur la Figure \ref{fig:Seebeck}, deux matériaux sont côte à côte. Une source de chaleur vient chauffer le matériau de gauche. 
+
+Lorsqu'un matériau conducteur ou semiconducteur est soumis à un gradient de température, les électrons libres vont se déplacer du chaud vers le 
+froid : une tension s'établit alors entre les extrémités du matériau (Figure \ref{fig:Seebeck}\cite{instrumentys_effet_2021}).
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.3]{images/Seebeck.jpg}
     \caption{Effet de Seebeck}
     \label{fig:Seebeck}
 \end{figure}
-Les électrons au sein de la matière vont se déplacer du chaud vers le froid, créant ainsi un courant \cite{instrumentys_effet_2021}.\\
+
 La tension est calculée grâce à la formule suivante :
 \[V = S \cdot (T_{chaude} - T_{froide})\]
-Avec S, le coefficient de Seebeck\\
+Avec S, le coefficient Seebeck de l'ordre de quelques $\upmu$V/K\\
 
-Comme évoqué plus haut, le capteur est constitué de membranes nanoporeuses achetées sur le marché. 
-Un côté de la membrane va être recouvert d'un matériau conducteur, l'or, grâce à un dépôt physique en phase vapeur (\gls{pvd}). Puis, Les pores de cette membrane sont remplies par 
-électrodéposition (\gls{ed}) avec une solution de Tellure de Bismuth ou $Bi_2Te_3$ (cf. figure \ref{fig:electrodeposition}). Ces pores remplis de tellure de 
-Bismuth deviennent alors des nanofils. 
+Le principe du débitmètre nanostructuré est illustré sur la figure \ref{fig:schema_coupe} : un corps de chauffe est encadré par deux vias de nanofils 
+thermoélectriques formants chacun un thermocouple. Un flux d'air déportera la chaleur de façon à refroidir un thermocouple et réchauffer l'autre. La 
+différence de température indiquée par la tension Seebeck permettra de déduire le débit du flux d'air. De la très faible inertie thermique des 
+structures nanofils est attendue une réponse temporelle très rapide. 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.4]{images/Electrodeposition.png}
-    \caption{Électrodéposition}
-    \label{fig:electrodeposition}
+    \includegraphics[scale = 0.4]{images/CapteurFUN.png}
+    \caption{Schéma de principe du débitmètre nanostructuré}
+    \label{fig:schema_coupe}
 \end{figure}
-
-Le fonctionnement du débitmètre pédiatrique combine la nanotechnologie et l'effet de Seebeck. \\
-En effet, un corps de chauffe est placé entre deux couches d'or en forme de L (cf. figure \ref{fig:schema_global}). Lorsqu'un courant viendra 
-alimenter la piste d'or du milieu, celle-ci va s'échauffer. Une différence de température va se créer entre les deux pistes d'or en "L" lorsque 
-le patient viendra expirer ou inspirer de l'air sur le corps de chauffe (figure \ref{fig:schema_coupe}). 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale = 0.4]{assets/figures/schema_capteur_vue_generale.png}
-    \caption{Schéma du capteur - Vue globale}
-    \label{fig:schema_global}
-\end{figure}
-\begin{figure}[H]
-    \hspace{-0.7cm}
-    \begin{subfigure}{0.4\textwidth}
-        \includegraphics[scale = 0.3]{assets/figures/schema_capteur_vue_dessus.png}
-        \caption{Schéma du capteur - Vue de dessus}
-        \label{fig:schema_dessus}
-    \end{subfigure}
-    \begin{subfigure}{0.4\textwidth}
-        \includegraphics[scale = 0.4]{images/CapteurFUN.png}
-        \caption{Schéma du capteur - Vue en coupe}
-        \label{fig:schema_coupe}
-    \end{subfigure}
-    \caption{Schéma du capteur - Vue de dessus et en coupe}
-\end{figure}
-Nous pouvons observer sur la figure \ref{fig:schema_coupe} que plusieurs électrodépositions (\gls{ed}) sont faites (à l'endroit des nanofils). Une première 
-se situe à gauche du corps de chauffe et la deuxième, à sa droite. \\
-Avec une différence de température de part et d'autre du corps de chauffe, un courant va circuler entre la couche d'or en "L" de gauche, à 
-travers les nanofils gauches, au sein de la couche d'or du bas (couche d'or de court-circuit) puis dans les nanofils de droite (circuit du thermoélectrique). 
-Une tension va apparaître et il sera alors possible de lier cette tension au débit inspiré et expiré du nouveau-né.\\
-Cette membrane nanoporeuse associée des différentes électrodépositions et couches d'or sera appelée capteur \gls{capteur}. 
-
-Étant donné que les nanopores sont extrêmement fins et courts, il est attendu d'obtenir un temps de réponse très intéressant (temps 
-de réponse faible). 
 
 \section{Livrables}
 \begin{itemize}
@@ -256,6 +218,8 @@ de réponse faible).
     \item Banc de test
     \item Rapport technique
 \end{itemize}
+
+\newpage
 \section{Planification}
 \begin{table}[H]
     \centering
@@ -275,30 +239,16 @@ de réponse faible).
 L'avancée du travail a été suivie par une séance hebdomadaire. 
 
 \section{Plan du rapport}
-Le travail effectué s'est organisé en plusieurs parties : \\
-\begin{enumerate}
-    \item Cahier des spécifications\\
-          Revue de la littérature, rédaction d'un état de l'art et définition du benchmarking. \\
-    \item Conception et réalisation du capteur nanostructuré\\
-          Électrodéposition, déposition physique en phase vapeur (\gls{pvd}), conditionnement du capteur (réalisation des supports)\\
-    \item Conception et réalisation du banc de test\\
-          Commandes, études des différents composants du banc de test, réalisation, montage et validation\\
-    \item Qualification du capteur\\
-          Définition d'un protocole de mesures, résultats et analyses\\
-    \item Rapport technique\\
-          Rédaction du rapport
-\end{enumerate}
+La présentation du travail effectué est structurée en cinq chapitres distincts :
+\begin{description}
+    \item[Chapitre 1 -] Cahier des spécifications\\
+        Revue de la littérature, rédaction d'un état de l'art et définition du benchmarking. \\
+    \item[Chapitre 2 -] Conception et réalisation du capteur nanostructuré\\
+        Électrodéposition, déposition physique en phase vapeur (\gls{pvd}), conditionnement du capteur (réalisation des supports)\\
+    \item[Chapitre 3 -] Conception et réalisation du banc de test\\
+        Commandes, études des différents composants du banc de test, réalisation, montage et validation\\
+    \item[Chapitre 4 -] Qualification du capteur\\
+        Définition d'un protocole de mesures, résultats et analyses\\
+    \item[Chapitre 5 -] Conclusion\\
+\end{description}
 
-\begin{comment}
-%%if
-\section{Citations et bibliographie}
-Citer vos sources est essentiel. Avec \texttt{biblatex} vous pouvez facilement citer des articles, des livres ou des sites internet. Toutes les citations dans le texte seront automatiquement regroupées en fin de document dans la section \guillemotleft Bibliographie\guillemotright. Par exemple, citons un article d'Einstein \cite{einstein} ou le livre de Dirac \cite{dirac}.
-
-Parfois, il peut être utile d'utiliser un gestionnaire de bibliographie. La communauté académique recommande l'outil \href{https://www.zotero.org/}{Zotero} qui permet de gérer une bibliothèque numérique d'ouvrages et de références numériques. Il permet également de générer une bibliographie compatible avec \LaTeX.
-
-Notez qu'il est très facile d'obtenir l'extrait \texttt{bibtex} depuis des journaux. Sélectionnez \emph{export/citation}. Si vous le pouvez choisissez \texttt{bibtex}. Dans le cas d'un format \texttt{.ris}, utilisez un convertisseur en ligne comme \href{http://www.bruot.org/ris2bib/}{ris2bib}.
-
-\section{Adapter votre modèle}
-Ce document n'est qu'un modèle ayant pour but de revoir les quelques avantages de \LaTeX~ et les fonctionnalités qui pourraient vous être utiles pour rédiger un rapport académique. N'hésitez pas à supprimer les parties inutiles et à adapter ce modèle à vos besoins.
-%%fi
-\end{comment}
